@@ -61,6 +61,7 @@ def test_parse_off_product_maps_fields_and_brand():
     assert parsed == {
         "barcode": "3017620422003", "name": "Nutella", "name_uk": None, "brand": "Nutella",
         "calories_per_100g": 539.0, "proteins": 6.3, "fats": 30.9, "carbs": 57.5, "nutri_grade": None,
+        "sugars": None, "saturated_fat": None, "fiber": None, "salt": None,  # not in this fixture
         "countries": [], "ukraine": False,
         "searchable": False,  # no market: found by barcode only
     }
@@ -404,6 +405,28 @@ def test_builtin_foods_get_usda_micronutrients(app):
         assert micros("Oatmeal")["Magnesium"] == USDA_MICROS["Oatmeal"][2]["Magnesium"]  # PRODUCT_SEED too
         assert ProductMicronutrient.query.count() == sum(len(m) for _, _, m in USDA_MICROS.values())
         assert {m.name for m in Micronutrient.query} >= {k for _, _, m in USDA_MICROS.values() for k in m}
+
+
+def test_builtin_foods_get_every_label_field(app):
+    """The Nutri-Score label model needs sugars, saturated fat and salt: every built-in food has them."""
+    from app import _seed_generic_foods, _seed_products_and_links
+    from ml_inference import LABEL_FIELDS
+    from usda_micros import LABEL_ESTIMATED, USDA_LABEL
+
+    with app.app_context():
+        _seed_products_and_links()
+        _seed_generic_foods()
+        builtin = Product.query.filter(Product.created_by_id.is_(None), Product.name.in_(USDA_LABEL)).all()
+        assert len(builtin) == len(USDA_LABEL)
+        for product in builtin:
+            assert all(getattr(product, field) is not None for field in LABEL_FIELDS), product.name
+            # A part never exceeds its total, even where our macros differ a little from USDA.
+            assert float(product.sugars) <= float(product.carbs), product.name
+            assert float(product.fiber) <= float(product.carbs), product.name
+            assert float(product.saturated_fat) <= float(product.fats), product.name
+        assert float(Product.query.filter_by(name="Banana").one().sugars) == USDA_LABEL["Banana"]["sugars"]
+        assert float(Product.query.filter_by(name="Tvorog 5%").one().sugars) == 1.8  # USDA 4.0, carbs 1.8
+        assert set(LABEL_ESTIMATED) <= set(USDA_LABEL) and len(LABEL_ESTIMATED) <= 10  # estimates stay rare
 
 
 def test_retired_builtin_foods_are_removed_unless_logged(app):

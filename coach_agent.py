@@ -10,7 +10,7 @@ from __future__ import annotations
 
 import json
 import logging
-from datetime import date, datetime, timedelta
+from datetime import date, datetime, timedelta, timezone
 from typing import Any, Callable
 
 from sqlalchemy.orm import joinedload
@@ -618,7 +618,9 @@ def chat_history(user_id: int, limit: int = 50) -> list[CoachMessage]:
 
 
 def messages_today(user_id: int) -> int:
-    today_start = datetime.combine(date.today(), datetime.min.time())
+    # created_at is naive UTC (datetime.utcnow); "today" starts at local midnight.
+    local_midnight = datetime.combine(date.today(), datetime.min.time()).astimezone()
+    today_start = local_midnight.astimezone(timezone.utc).replace(tzinfo=None)
     return CoachMessage.query.filter(
         CoachMessage.user_id == user_id,
         CoachMessage.role == "user",

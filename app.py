@@ -77,6 +77,7 @@ from i18n import (
 from llm_providers import ProviderError
 from ml_inference import (
     GRADES,
+    LABEL_FIELDS,
     PHOTO_MAX_BYTES,
     PHOTO_TYPES,
     photo_model_ready,
@@ -84,8 +85,9 @@ from ml_inference import (
     recognize_photo,
     score_model_ready,
 )
+from score_model import load_score_model
 from seed_foods import GENERIC_FOODS, RETIRED_FOODS, UK_NAMES, UK_SEARCH_NAMES
-from usda_micros import USDA_MICROS
+from usda_micros import USDA_LABEL, USDA_MICROS
 from nutrition import (
     auto_water_goal_ml,
     calculate_daily_targets,
@@ -214,6 +216,7 @@ def create_app(test_config: dict | None = None) -> Flask:
             return None
 
     register_routes(app)
+    load_score_model(app)
     return app
 
 
@@ -756,6 +759,9 @@ def _migrate_profile_goals_schema() -> None:
     if "nutri_grade" not in product_cols:
         db.session.execute(text("ALTER TABLE products ADD COLUMN nutri_grade VARCHAR(1)"))
         db.session.execute(text("ALTER TABLE products ADD COLUMN nutri_source VARCHAR(8)"))
+    for column in LABEL_FIELDS:
+        if column not in product_cols:
+            db.session.execute(text(f"ALTER TABLE products ADD COLUMN {column} NUMERIC(8, 2)"))
 
     tables = {
         row[0]
@@ -1540,6 +1546,10 @@ def register_routes(app: Flask) -> None:
         brand = request.form.get("brand", "").strip()[:255] or None
         kcal = parse_number(request.form.get("calories_per_100g"), 0, 950)
         macros = [parse_number(request.form.get(f) or "0", 0, 100) for f in ("proteins", "fats", "carbs")]
+        # Optional label fields: empty stays unknown (None), not 0.
+        label = {f: parse_number(request.form.get(f, "").strip(), 0, 100) if request.form.get(f, "").strip() else None
+                 for f in LABEL_FIELDS}
+        bad_label = any(request.form.get(f, "").strip() and label[f] is None for f in LABEL_FIELDS)
         raw_barcode = request.form.get("barcode", "").strip()
         barcode = food_db.normalize_barcode(raw_barcode)
 
@@ -1550,6 +1560,12 @@ def register_routes(app: Flask) -> None:
             error = _("Enter calories per 100 g (0–950).")
         elif any(m is None for m in macros):
             error = _("Protein, fat and carbs must be between 0 and 100 g.")
+        elif bad_label:
+            error = _("Sugars, saturated fat, fibre and salt must be between 0 and 100 g.")
+        elif label["sugars"] is not None and label["sugars"] > macros[2] + 0.5:
+            error = _("Sugars can't be more than carbs.")
+        elif label["saturated_fat"] is not None and label["saturated_fat"] > macros[1] + 0.5:
+            error = _("Saturated fat can't be more than fat.")
         elif raw_barcode and not barcode:
             error = _("That doesn't look like a barcode.")
         elif barcode and Product.query.filter_by(barcode=barcode).first():
@@ -1560,7 +1576,7 @@ def register_routes(app: Flask) -> None:
 
         product = Product(
             name=name, brand=brand, barcode=barcode,
-            calories_per_100g=kcal, proteins=macros[0], fats=macros[1], carbs=macros[2],
+            calories_per_100g=kcal, proteins=macros[0], fats=macros[1], carbs=macros[2], **label,
             source=SOURCE_USER, created_by_id=current_user.id,
         )
         product.refresh_search_terms()
@@ -2216,11 +2232,19 @@ def _seed_products_and_links() -> None:
 
 
 def _sync_usda_micronutrients(nutrient_map: dict[str, Micronutrient] | None = None) -> None:
-    """Set the micronutrients of built-in foods from USDA FoodData Central (idempotent; caller commits)."""
+    """Set the micronutrients and label fields (sugars, saturated fat, fibre, salt) of built-in foods
+    from USDA FoodData Central (idempotent; caller commits)."""
     nutrient_map = nutrient_map or {m.name: m for m in Micronutrient.query.all()}
     products = Product.query.filter(
         Product.created_by_id.is_(None), Product.source == SOURCE_SEED, Product.name.in_(USDA_MICROS)
     ).all()
+    for product in products:
+        # Our macros are rounded and not always from the same USDA record: a part never exceeds its total.
+        totals = {"sugars": product.carbs, "fiber": product.carbs, "saturated_fat": product.fats}
+        for field, amount in USDA_LABEL.get(product.name, {}).items():
+            if field in totals and totals[field] is not None:
+                amount = min(amount, float(totals[field]))
+            setattr(product, field, amount)
     existing = {
         (link.product_id, link.micronutrient_id): link
         for link in ProductMicronutrient.query.filter(ProductMicronutrient.product_id.in_([p.id for p in products]))

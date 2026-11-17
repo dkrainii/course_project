@@ -1,0 +1,287 @@
+{
+  "rows": 1001203,
+  "class_share": {
+    "a": 0.1284,
+    "b": 0.0993,
+    "c": 0.2266,
+    "d": 0.2626,
+    "e": 0.283
+  },
+  "describe": {
+    "kcal": {
+      "count": 1001203.0,
+      "mean": 273.64,
+      "std": 179.34,
+      "min": 0.0,
+      "25%": 115.0,
+      "50%": 256.1,
+      "75%": 401.0,
+      "max": 949.0
+    },
+    "proteins": {
+      "count": 1001203.0,
+      "mean": 8.28,
+      "std": 8.4,
+      "min": 0.0,
+      "25%": 2.3,
+      "50%": 6.2,
+      "75%": 11.48,
+      "max": 100.0
+    },
+    "fats": {
+      "count": 1001203.0,
+      "mean": 13.82,
+      "std": 16.06,
+      "min": 0.0,
+      "25%": 1.42,
+      "50%": 8.3,
+      "75%": 21.6,
+      "max": 100.0
+    },
+    "carbs": {
+      "count": 1001203.0,
+      "mean": 28.55,
+      "std": 26.34,
+      "min": 0.0,
+      "25%": 5.0,
+      "50%": 18.0,
+      "75%": 52.0,
+      "max": 100.0
+    },
+    "sugars": {
+      "count": 997262.0,
+      "mean": 12.94,
+      "std": 17.92,
+      "min": 0.0,
+      "25%": 1.0,
+      "50%": 4.1,
+      "75%": 19.0,
+      "max": 100.0
+    },
+    "saturated_fat": {
+      "count": 986900.0,
+      "mean": 5.12,
+      "std": 7.44,
+      "min": 0.0,
+      "25%": 0.3,
+      "50%": 2.1,
+      "75%": 7.14,
+      "max": 100.0
+    },
+    "fiber": {
+      "count": 654571.0,
+      "mean": 2.84,
+      "std": 3.98,
+      "min": 0.0,
+      "25%": 0.06,
+      "50%": 1.6,
+      "75%": 3.7,
+      "max": 100.0
+    },
+    "salt": {
+      "count": 1001157.0,
+      "mean": 1.08,
+      "std": 2.88,
+      "min": 0.0,
+      "25%": 0.1,
+      "50%": 0.58,
+      "75%": 1.3,
+      "max": 100.0
+    }
+  },
+  "median_by_grade": {
+    "a": {
+      "kcal": 112.04,
+      "proteins": 10.0,
+      "fats": 1.63,
+      "carbs": 8.2,
+      "sugars": 1.8,
+      "saturated_fat": 0.3,
+      "fiber": 2.6,
+      "salt": 0.1
+    },
+    "b": {
+      "kcal": 105.88,
+      "proteins": 4.9,
+      "fats": 2.1,
+      "carbs": 8.7,
+      "sugars": 1.9,
+      "saturated_fat": 0.5,
+      "fiber": 1.2,
+      "salt": 0.2
+    },
+    "c": {
+      "kcal": 150.0,
+      "proteins": 4.7,
+      "fats": 4.5,
+      "carbs": 14.29,
+      "sugars": 3.51,
+      "saturated_fat": 1.3,
+      "fiber": 1.6,
+      "salt": 0.7
+    },
+    "d": {
+      "kcal": 288.0,
+      "proteins": 7.2,
+      "fats": 13.0,
+      "carbs": 25.42,
+      "sugars": 4.4,
+      "saturated_fat": 3.6,
+      "fiber": 1.54,
+      "salt": 1.04
+    },
+    "e": {
+      "kcal": 409.0,
+      "proteins": 6.0,
+      "fats": 21.24,
+      "carbs": 47.0,
+      "sugars": 24.24,
+      "saturated_fat": 9.0,
+      "fiber": 1.39,
+      "salt": 0.62
+    }
+  },
+  "spearman_with_grade": {
+    "kcal": 0.498,
+    "proteins": -0.024,
+    "fats": 0.435,
+    "carbs": 0.274,
+    "sugars": 0.411,
+    "saturated_fat": 0.511,
+    "fiber": -0.12,
+    "salt": 0.299
+  },
+  "mutual_information": {
+    "kcal": 0.249,
+    "proteins": 0.085,
+    "fats": 0.23,
+    "carbs": 0.143,
+    "sugars": 0.202,
+    "saturated_fat": 0.253,
+    "fiber": 0.038,
+    "salt": 0.179
+  },
+  "grade_share_by_food_group": {
+    "sugary snacks": {
+      "a": 0.009,
+      "b": 0.01,
+      "c": 0.056,
+      "d": 0.256,
+      "e": 0.668
+    },
+    "salty snacks": {
+      "a": 0.08,
+      "b": 0.074,
+      "c": 0.228,
+      "d": 0.372,
+      "e": 0.246
+    },
+    "fat and sauces": {
+      "a": 0.064,
+      "b": 0.093,
+      "c": 0.251,
+      "d": 0.265,
+      "e": 0.327
+    },
+    "beverages": {
+      "a": 0.009,
+      "b": 0.157,
+      "c": 0.308,
+      "d": 0.188,
+      "e": 0.339
+    },
+    "milk and dairy products": {
+      "a": 0.078,
+      "b": 0.114,
+      "c": 0.31,
+      "d": 0.373,
+      "e": 0.125
+    },
+    "alcoholic beverages": {
+      "a": 0.0,
+      "b": 0.203,
+      "c": 0.441,
+      "d": 0.119,
+      "e": 0.237
+    },
+    "composite foods": {
+      "a": 0.086,
+      "b": 0.14,
+      "c": 0.443,
+      "d": 0.262,
+      "e": 0.068
+    },
+    "fish meat eggs": {
+      "a": 0.198,
+      "b": 0.093,
+      "c": 0.134,
+      "d": 0.275,
+      "e": 0.3
+    },
+    "cereals and potatoes": {
+      "a": 0.268,
+      "b": 0.17,
+      "c": 0.302,
+      "d": 0.198,
+      "e": 0.062
+    },
+    "fruits and vegetables": {
+      "a": 0.439,
+      "b": 0.14,
+      "c": 0.229,
+      "d": 0.135,
+      "e": 0.058
+    }
+  },
+  "food_group_rows": {
+    "sugary snacks": 181458,
+    "cereals and potatoes": 119329,
+    "fish meat eggs": 108105,
+    "milk and dairy products": 104866,
+    "composite foods": 78268,
+    "fat and sauces": 69833,
+    "beverages": 63394,
+    "fruits and vegetables": 53181,
+    "salty snacks": 48872,
+    "alcoholic beverages": 59
+  },
+  "created_year_rows": {
+    "2012": 2383,
+    "2013": 5527,
+    "2014": 7474,
+    "2015": 18937,
+    "2016": 24446,
+    "2017": 147274,
+    "2018": 123928,
+    "2019": 106573,
+    "2020": 154407,
+    "2021": 105891,
+    "2022": 93116,
+    "2023": 54403,
+    "2024": 57853,
+    "2025": 66957,
+    "2026": 32034
+  },
+  "ukraine_rows": 1920,
+  "ukraine_class_share": {
+    "a": 0.1,
+    "b": 0.1089,
+    "c": 0.1891,
+    "d": 0.2599,
+    "e": 0.3422
+  },
+  "label_ambiguity": {
+    "macros": {
+      "rows_in_repeated_profiles": 394677,
+      "share_rows_in_repeated_profiles": 0.3942,
+      "share_repeated_profiles_with_conflict": 0.3902,
+      "memorisation_accuracy_ceiling": 0.9149
+    },
+    "label": {
+      "rows_in_repeated_profiles": 23143,
+      "share_rows_in_repeated_profiles": 0.0231,
+      "share_repeated_profiles_with_conflict": 1.0,
+      "memorisation_accuracy_ceiling": 0.988
+    }
+  }
+}

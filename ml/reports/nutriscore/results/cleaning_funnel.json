@@ -1,0 +1,86 @@
+{
+  "funnel": [
+    {
+      "step": "graded a–e in the dump",
+      "rows": 1437444,
+      "removed": 0
+    },
+    {
+      "step": "energy and the three macronutrients present",
+      "rows": 1426763,
+      "removed": 10681
+    },
+    {
+      "step": "no Open Food Facts data-quality errors",
+      "rows": 1351069,
+      "removed": 75694
+    },
+    {
+      "step": "values in the physical range (0–100 g, 0–950 kcal)",
+      "rows": 1350243,
+      "removed": 826
+    },
+    {
+      "step": "proteins + fats + carbs ≤ 105 g",
+      "rows": 1350086,
+      "removed": 157
+    },
+    {
+      "step": "sugars ≤ carbs and saturated fat ≤ fats",
+      "rows": 1350012,
+      "removed": 74
+    },
+    {
+      "step": "label energy agrees with the macronutrients (Atwater)",
+      "rows": 1341051,
+      "removed": 8961
+    },
+    {
+      "step": "exact duplicates (same nutrients and grade) removed",
+      "rows": 1001203,
+      "removed": 339848
+    }
+  ],
+  "rows": 1001203,
+  "splits": {
+    "train": {
+      "rows": 700744,
+      "a": 90096,
+      "b": 69538,
+      "c": 158589,
+      "d": 184101,
+      "e": 198420
+    },
+    "val": {
+      "rows": 150336,
+      "a": 19270,
+      "b": 14988,
+      "c": 34073,
+      "d": 39541,
+      "e": 42464
+    },
+    "test": {
+      "rows": 150123,
+      "a": 19200,
+      "b": 14872,
+      "c": 34258,
+      "d": 39293,
+      "e": 42500
+    }
+  },
+  "missing_share": {
+    "sugars": 0.0039,
+    "saturated_fat": 0.0143,
+    "fiber": 0.3462,
+    "salt": 0.0,
+    "fvl": 0.5325,
+    "food_group": 0.1736
+  },
+  "ukraine_rows": 1920,
+  "thresholds": {
+    "max_kcal": 950.0,
+    "max_macro_sum": 105.0,
+    "energy_abs_tol": 50.0,
+    "energy_rel_tol": 0.25
+  }
+}

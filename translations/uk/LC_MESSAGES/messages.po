@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-10-06 13:31+0300\n"
+"POT-Creation-Date: 2026-11-17 16:28+0200\n"
 "PO-Revision-Date: 2026-09-27 12:03+0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: uk\n"
@@ -380,6 +380,15 @@ msgstr "Введіть калорійність на 100 г (0–950)."
 
 msgid "Protein, fat and carbs must be between 0 and 100 g."
 msgstr "Білки, жири й вуглеводи мають бути від 0 до 100 г."
+
+msgid "Sugars, saturated fat, fibre and salt must be between 0 and 100 g."
+msgstr "Цукри, насичені жири, клітковина й сіль мають бути від 0 до 100 г."
+
+msgid "Sugars can't be more than carbs."
+msgstr "Цукрів не може бути більше, ніж вуглеводів."
+
+msgid "Saturated fat can't be more than fat."
+msgstr "Насичених жирів не може бути більше, ніж жирів."
 
 msgid "A product with this barcode already exists."
 msgstr "Продукт із таким штрихкодом уже існує."
@@ -1600,6 +1609,28 @@ msgstr "Бренд"
 
 msgid "Per 100 g"
 msgstr "На 100 г"
+
+msgid "+ More from the label"
+msgstr "+ Більше з етикетки"
+
+msgid ""
+"Sugars, saturated fat and salt let Kolos estimate the Nutri-Score. Leave a field empty if it is "
+"not on the label."
+msgstr ""
+"За цукрами, насиченими жирами й сіллю Kolos оцінить Nutri-Score. Якщо чогось немає на етикетці, "
+"залиште поле порожнім."
+
+msgid "Sugars, g"
+msgstr "Цукри, г"
+
+msgid "Saturated fat, g"
+msgstr "Насичені жири, г"
+
+msgid "Fibre, g"
+msgstr "Клітковина, г"
+
+msgid "Salt, g"
+msgstr "Сіль, г"
 
 msgid "Barcode"
 msgstr "Штрихкод"

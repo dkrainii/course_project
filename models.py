@@ -104,6 +104,12 @@ class Product(db.Model):
     proteins: Mapped[float] = mapped_column(Numeric(8, 2), nullable=False, default=0)
     fats: Mapped[float] = mapped_column(Numeric(8, 2), nullable=False, default=0)
     carbs: Mapped[float] = mapped_column(Numeric(8, 2), nullable=False, default=0)
+    # The rest of a nutrition label, g per 100 g. Optional: None means "not on the label / unknown",
+    # which is not the same as 0. They feed the Nutri-Score model (see score_model.py).
+    sugars: Mapped[float | None] = mapped_column(Numeric(8, 2), nullable=True)
+    saturated_fat: Mapped[float | None] = mapped_column(Numeric(8, 2), nullable=True)
+    fiber: Mapped[float | None] = mapped_column(Numeric(8, 2), nullable=True)
+    salt: Mapped[float | None] = mapped_column(Numeric(8, 2), nullable=True)
     barcode: Mapped[str | None] = mapped_column(db.String(32), unique=True, index=True, nullable=True)
     brand: Mapped[str | None] = mapped_column(db.String(255), nullable=True)
     source: Mapped[str] = mapped_column(db.String(10), nullable=False, default=SOURCE_SEED)

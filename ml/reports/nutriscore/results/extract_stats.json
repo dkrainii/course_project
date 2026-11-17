@@ -1,0 +1,20 @@
+{
+  "dump_file": "en.openfoodfacts.org.products.csv.gz",
+  "dump_bytes": 1534754270,
+  "dump_modified_utc": "2026-11-12T14:12:11+00:00",
+  "rows_total": 4908651,
+  "rows_graded": 1437444,
+  "rows_with_macros": 3466224,
+  "rows_with_macros_ungraded": 2039461,
+  "grade_values": {
+    "unknown": 3295719,
+    "e": 401169,
+    "d": 359601,
+    "c": 300535,
+    "a": 210297,
+    "b": 165842,
+    "not-applicable": 109213,
+    "(empty)": 66275
+  },
+  "seconds": 125.8
+}

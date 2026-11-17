@@ -30,13 +30,14 @@ import urllib.request
 from typing import Any
 
 from i18n import current_language
-from ml_inference import GRADE_SOURCE_OFF, normalize_grade
+from ml_inference import GRADE_SOURCE_OFF, LABEL_FIELDS, normalize_grade
 from models import SOURCE_OFF, SOURCE_QUICK, Product, db
 
 logger = logging.getLogger(__name__)
 
 OFF_PRODUCT_URL = "https://world.openfoodfacts.org/api/v2/product/{code}"
 OFF_SEARCH_URL = "https://search.openfoodfacts.org/search"
+SALT_PER_SODIUM = 2.5  # g of salt per g of sodium (EU labelling rule)
 OFF_FIELDS = "code,lang,product_name,product_name_uk,product_name_en,brands,nutriments,countries_tags,nutriscore_grade"
 # OFF asks every client to identify itself: AppName/Version (contact).
 USER_AGENT = os.environ.get("OFF_USER_AGENT", "").strip() or "Kolos/1.0 (course project)"
@@ -251,6 +252,10 @@ def parse_off_product(raw: dict[str, Any] | None) -> dict[str, Any] | None:
         v = _number(nutr.get(key))
         return round(min(v, 100.0), 2) if v is not None else 0.0
 
+    def optional(key: str, factor: float = 1.0) -> float | None:
+        v = _number(nutr.get(key))
+        return round(min(v * factor, 100.0), 2) if v is not None else None
+
     item = {
         "barcode": barcode,
         "name": name[:255],
@@ -260,6 +265,12 @@ def parse_off_product(raw: dict[str, Any] | None) -> dict[str, Any] | None:
         "proteins": macro("proteins_100g"),
         "fats": macro("fat_100g"),
         "carbs": macro("carbohydrates_100g"),
+        # The rest of the label (None = not given); feeds the Nutri-Score model.
+        "sugars": optional("sugars_100g"),
+        "saturated_fat": optional("saturated-fat_100g"),
+        "fiber": optional("fiber_100g"),
+        "salt": optional("salt_100g") if nutr.get("salt_100g") is not None
+        else optional("sodium_100g", SALT_PER_SODIUM),
         "nutri_grade": normalize_grade(raw.get("nutriscore_grade")),  # "unknown"/"not-applicable" → None
         "countries": countries,
         "ukraine": ukraine,
@@ -352,8 +363,8 @@ def upsert_off_product(data: dict[str, Any]) -> Product:
         db.session.add(product)
     elif product.source != SOURCE_OFF:
         return product  # never overwrite catalogue or user foods that share a barcode
-    for field in ("name", "name_uk", "brand", "calories_per_100g", "proteins", "fats", "carbs"):
-        setattr(product, field, data[field])
+    for field in ("name", "name_uk", "brand", "calories_per_100g", "proteins", "fats", "carbs", *LABEL_FIELDS):
+        setattr(product, field, data.get(field))
     if data.get("nutri_grade"):
         product.nutri_grade, product.nutri_source = data["nutri_grade"], GRADE_SOURCE_OFF
     product.refresh_search_terms()

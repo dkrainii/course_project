@@ -1,0 +1,11 @@
+# Training-only dependencies (the web app does not need them, see ../requirements.txt).
+# Versions are the ones the reported experiments were run with.
+pandas==2.3.2
+numpy==1.26.4
+pyarrow==22.0.0
+scikit-learn==1.7.2
+lightgbm==4.7.0
+shap==0.49.1
+matplotlib==3.9.2
+scipy==1.13.0
+joblib==1.5.2
