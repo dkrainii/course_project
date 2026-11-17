@@ -1,0 +1,200 @@
+[
+  {
+    "kind": "base",
+    "variant": "macros",
+    "n_features": 4,
+    "trees": 1291,
+    "seconds": 168.1,
+    "accuracy": 0.6121,
+    "macro_f1": 0.5879,
+    "qwk": 0.7175,
+    "within_one": 0.8755
+  },
+  {
+    "kind": "add_one",
+    "variant": "macros + sugars",
+    "n_features": 5,
+    "trees": 1718,
+    "seconds": 248.9,
+    "accuracy": 0.6606,
+    "macro_f1": 0.636,
+    "qwk": 0.765,
+    "within_one": 0.8986
+  },
+  {
+    "kind": "add_one",
+    "variant": "macros + saturated_fat",
+    "n_features": 5,
+    "trees": 1596,
+    "seconds": 145.2,
+    "accuracy": 0.6714,
+    "macro_f1": 0.6423,
+    "qwk": 0.7645,
+    "within_one": 0.8978
+  },
+  {
+    "kind": "add_one",
+    "variant": "macros + fiber",
+    "n_features": 5,
+    "trees": 1471,
+    "seconds": 107.2,
+    "accuracy": 0.6458,
+    "macro_f1": 0.6249,
+    "qwk": 0.7596,
+    "within_one": 0.893
+  },
+  {
+    "kind": "add_one",
+    "variant": "macros + salt",
+    "n_features": 5,
+    "trees": 1365,
+    "seconds": 100.0,
+    "accuracy": 0.7349,
+    "macro_f1": 0.7106,
+    "qwk": 0.843,
+    "within_one": 0.9338
+  },
+  {
+    "kind": "base",
+    "variant": "label",
+    "n_features": 8,
+    "trees": 1176,
+    "seconds": 110.5,
+    "accuracy": 0.8898,
+    "macro_f1": 0.8681,
+    "qwk": 0.9336,
+    "within_one": 0.9691
+  },
+  {
+    "kind": "drop_one",
+    "variant": "label − kcal",
+    "n_features": 7,
+    "trees": 1014,
+    "seconds": 93.0,
+    "accuracy": 0.8846,
+    "macro_f1": 0.8629,
+    "qwk": 0.9312,
+    "within_one": 0.9683
+  },
+  {
+    "kind": "drop_one",
+    "variant": "label − proteins",
+    "n_features": 7,
+    "trees": 1104,
+    "seconds": 91.3,
+    "accuracy": 0.8728,
+    "macro_f1": 0.8442,
+    "qwk": 0.9269,
+    "within_one": 0.9671
+  },
+  {
+    "kind": "drop_one",
+    "variant": "label − fats",
+    "n_features": 7,
+    "trees": 1096,
+    "seconds": 95.9,
+    "accuracy": 0.8887,
+    "macro_f1": 0.8668,
+    "qwk": 0.9325,
+    "within_one": 0.9685
+  },
+  {
+    "kind": "drop_one",
+    "variant": "label − carbs",
+    "n_features": 7,
+    "trees": 1015,
+    "seconds": 85.0,
+    "accuracy": 0.8886,
+    "macro_f1": 0.867,
+    "qwk": 0.9319,
+    "within_one": 0.968
+  },
+  {
+    "kind": "drop_one",
+    "variant": "label − sugars",
+    "n_features": 7,
+    "trees": 1323,
+    "seconds": 104.5,
+    "accuracy": 0.8327,
+    "macro_f1": 0.8119,
+    "qwk": 0.9038,
+    "within_one": 0.9588
+  },
+  {
+    "kind": "drop_one",
+    "variant": "label − saturated_fat",
+    "n_features": 7,
+    "trees": 1318,
+    "seconds": 103.5,
+    "accuracy": 0.819,
+    "macro_f1": 0.8005,
+    "qwk": 0.9042,
+    "within_one": 0.9605
+  },
+  {
+    "kind": "drop_one",
+    "variant": "label − fiber",
+    "n_features": 7,
+    "trees": 1097,
+    "seconds": 84.6,
+    "accuracy": 0.8423,
+    "macro_f1": 0.8142,
+    "qwk": 0.9114,
+    "within_one": 0.9626
+  },
+  {
+    "kind": "drop_one",
+    "variant": "label − salt",
+    "n_features": 7,
+    "trees": 1661,
+    "seconds": 122.2,
+    "accuracy": 0.7319,
+    "macro_f1": 0.7063,
+    "qwk": 0.8213,
+    "within_one": 0.9213
+  },
+  {
+    "kind": "beyond_label",
+    "variant": "label + engineered ratios",
+    "n_features": 13,
+    "trees": 987,
+    "seconds": 97.2,
+    "accuracy": 0.8908,
+    "macro_f1": 0.8694,
+    "qwk": 0.9341,
+    "within_one": 0.9692
+  },
+  {
+    "kind": "beyond_label",
+    "variant": "label + food group",
+    "n_features": 9,
+    "trees": 1025,
+    "seconds": 91.4,
+    "accuracy": 0.9119,
+    "macro_f1": 0.8932,
+    "qwk": 0.955,
+    "within_one": 0.9797
+  },
+  {
+    "kind": "beyond_label",
+    "variant": "label + fruit/veg share",
+    "n_features": 9,
+    "trees": 1089,
+    "seconds": 96.1,
+    "accuracy": 0.9123,
+    "macro_f1": 0.8957,
+    "qwk": 0.9458,
+    "within_one": 0.9745
+  },
+  {
+    "kind": "beyond_label",
+    "variant": "label + food group + fruit/veg share",
+    "n_features": 10,
+    "trees": 1036,
+    "seconds": 98.4,
+    "accuracy": 0.9366,
+    "macro_f1": 0.9232,
+    "qwk": 0.9679,
+    "within_one": 0.9864
+  }
+]

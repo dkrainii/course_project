@@ -1,0 +1,744 @@
+{
+  "macros": {
+    "error_distance_share": {
+      "0": 0.6203,
+      "1": 0.2555,
+      "2": 0.0853,
+      "3": 0.0278,
+      "4": 0.0111
+    },
+    "direction": {
+      "too_healthy": 0.1693,
+      "too_unhealthy": 0.2104
+    },
+    "coverage_table": [
+      {
+        "min_confidence": 0.0,
+        "coverage": 1.0,
+        "accuracy": 0.6203,
+        "within_one": 0.8759
+      },
+      {
+        "min_confidence": 0.5,
+        "coverage": 0.7092,
+        "accuracy": 0.7059,
+        "within_one": 0.9247
+      },
+      {
+        "min_confidence": 0.6,
+        "coverage": 0.5108,
+        "accuracy": 0.7686,
+        "within_one": 0.9432
+      },
+      {
+        "min_confidence": 0.7,
+        "coverage": 0.3484,
+        "accuracy": 0.8287,
+        "within_one": 0.9606
+      },
+      {
+        "min_confidence": 0.8,
+        "coverage": 0.209,
+        "accuracy": 0.8847,
+        "within_one": 0.9736
+      },
+      {
+        "min_confidence": 0.9,
+        "coverage": 0.09,
+        "accuracy": 0.9362,
+        "within_one": 0.9846
+      }
+    ],
+    "coverage_table_val": [
+      {
+        "min_confidence": 0.0,
+        "coverage": 1.0,
+        "accuracy": 0.6228,
+        "within_one": 0.8776
+      },
+      {
+        "min_confidence": 0.5,
+        "coverage": 0.708,
+        "accuracy": 0.7085,
+        "within_one": 0.9264
+      },
+      {
+        "min_confidence": 0.6,
+        "coverage": 0.5104,
+        "accuracy": 0.7715,
+        "within_one": 0.9444
+      },
+      {
+        "min_confidence": 0.7,
+        "coverage": 0.3493,
+        "accuracy": 0.8292,
+        "within_one": 0.9608
+      },
+      {
+        "min_confidence": 0.8,
+        "coverage": 0.2106,
+        "accuracy": 0.8823,
+        "within_one": 0.9742
+      },
+      {
+        "min_confidence": 0.9,
+        "coverage": 0.0895,
+        "accuracy": 0.9377,
+        "within_one": 0.9863
+      }
+    ],
+    "reliability": {
+      "bins": [
+        {
+          "confidence": 0.28024211525917053,
+          "accuracy": 0.2814102564102564,
+          "share": 0.010391478987230472
+        },
+        {
+          "confidence": 0.35952654480934143,
+          "accuracy": 0.3491090520313614,
+          "share": 0.0934566988402843
+        },
+        {
+          "confidence": 0.4540022313594818,
+          "accuracy": 0.45022801767136955,
+          "share": 0.18696668731640056
+        },
+        {
+          "confidence": 0.548582136631012,
+          "accuracy": 0.5443892283929891,
+          "share": 0.19838399179339608
+        },
+        {
+          "confidence": 0.6485545039176941,
+          "accuracy": 0.6398047900262467,
+          "share": 0.16242681001578704
+        },
+        {
+          "confidence": 0.7488837242126465,
+          "accuracy": 0.7446818681581338,
+          "share": 0.1393457364960732
+        },
+        {
+          "confidence": 0.8486046195030212,
+          "accuracy": 0.8457363473589973,
+          "share": 0.11904904644857883
+        },
+        {
+          "confidence": 0.9426612854003906,
+          "accuracy": 0.9361859638732603,
+          "share": 0.08997955010224949
+        }
+      ],
+      "ece": 0.0055
+    },
+    "ukraine": {
+      "rows": 285,
+      "accuracy": 0.6632,
+      "balanced_accuracy": 0.6713,
+      "macro_f1": 0.6414,
+      "weighted_f1": 0.66,
+      "qwk": 0.7822,
+      "mae_grades": 0.4632,
+      "within_one": 0.9053
+    },
+    "confident_gross_errors": [
+      {
+        "name": "Smör",
+        "group": "fat and sauces",
+        "true": "B",
+        "predicted": "E",
+        "confidence": 0.989,
+        "kcal": 747.0,
+        "proteins": 0.6,
+        "fats": 82.0,
+        "carbs": 0.7,
+        "sugars": 0.7,
+        "saturated_fat": 1.9,
+        "fiber": null,
+        "salt": 0.0
+      },
+      {
+        "name": "Katjesdrop",
+        "group": "sugary snacks",
+        "true": "E",
+        "predicted": "A",
+        "confidence": 0.985,
+        "kcal": 348.0,
+        "proteins": 25.0,
+        "fats": 0.8,
+        "carbs": 63.0,
+        "sugars": 46.0,
+        "saturated_fat": 0.4,
+        "fiber": null,
+        "salt": 0.53
+      },
+      {
+        "name": "None",
+        "group": "fish meat eggs",
+        "true": "E",
+        "predicted": "A",
+        "confidence": 0.969,
+        "kcal": 105.0,
+        "proteins": 24.0,
+        "fats": 1.0,
+        "carbs": 0.0,
+        "sugars": 0.0,
+        "saturated_fat": 0.3,
+        "fiber": null,
+        "salt": 19.0
+      },
+      {
+        "name": "Organic Green Tea noodle 14.1 Oz (400 G)",
+        "group": null,
+        "true": "D",
+        "predicted": "A",
+        "confidence": 0.967,
+        "kcal": 357.14,
+        "proteins": 12.5,
+        "fats": 1.79,
+        "carbs": 73.21,
+        "sugars": 3.57,
+        "saturated_fat": 0.0,
+        "fiber": 1.79,
+        "salt": 2.19
+      },
+      {
+        "name": "Fish Sauce",
+        "group": "fat and sauces",
+        "true": "E",
+        "predicted": "A",
+        "confidence": 0.96,
+        "kcal": 53.6,
+        "proteins": 10.0,
+        "fats": 0.0,
+        "carbs": 3.4,
+        "sugars": 3.4,
+        "saturated_fat": 0.0,
+        "fiber": 0.0,
+        "salt": 24.4
+      },
+      {
+        "name": "Bacalao Salted Pollock Fillets",
+        "group": "fish meat eggs",
+        "true": "E",
+        "predicted": "A",
+        "confidence": 0.96,
+        "kcal": 106.0,
+        "proteins": 24.71,
+        "fats": 1.18,
+        "carbs": 0.0,
+        "sugars": 0.0,
+        "saturated_fat": 0.0,
+        "fiber": 0.0,
+        "salt": 4.41
+      },
+      {
+        "name": "Copos de avena",
+        "group": "cereals and potatoes",
+        "true": "D",
+        "predicted": "A",
+        "confidence": 0.959,
+        "kcal": 372.0,
+        "proteins": 13.5,
+        "fats": 7.0,
+        "carbs": 58.7,
+        "sugars": 0.7,
+        "saturated_fat": 1.3,
+        "fiber": null,
+        "salt": 2.0
+      },
+      {
+        "name": "Jamón Serrano",
+        "group": "fish meat eggs",
+        "true": "A",
+        "predicted": "E",
+        "confidence": 0.959,
+        "kcal": 215.0,
+        "proteins": 30.0,
+        "fats": 10.0,
+        "carbs": 1.0,
+        "sugars": 0.0,
+        "saturated_fat": 3.8,
+        "fiber": null,
+        "salt": 0.41
+      },
+      {
+        "name": "Pasta di semola di grano duro",
+        "group": "cereals and potatoes",
+        "true": "E",
+        "predicted": "A",
+        "confidence": 0.954,
+        "kcal": 353.0,
+        "proteins": 13.0,
+        "fats": 1.3,
+        "carbs": 71.0,
+        "sugars": 1.5,
+        "saturated_fat": 0.3,
+        "fiber": 41.0,
+        "salt": 4.01
+      },
+      {
+        "name": "Émincé de dinde",
+        "group": "fish meat eggs",
+        "true": "E",
+        "predicted": "A",
+        "confidence": 0.951,
+        "kcal": 107.0,
+        "proteins": 23.7,
+        "fats": 1.3,
+        "carbs": 0.0,
+        "sugars": 0.0,
+        "saturated_fat": 0.4,
+        "fiber": 0.0,
+        "salt": 23.7
+      },
+      {
+        "name": "CASABITO",
+        "group": "cereals and potatoes",
+        "true": "B",
+        "predicted": "E",
+        "confidence": 0.951,
+        "kcal": 366.67,
+        "proteins": 0.0,
+        "fats": 0.0,
+        "carbs": 91.67,
+        "sugars": 8.33,
+        "saturated_fat": 0.0,
+        "fiber": 8.33,
+        "salt": 0.0
+      },
+      {
+        "name": "Reggia Sigarette Ziti N.30 GR 500",
+        "group": "cereals and potatoes",
+        "true": "D",
+        "predicted": "A",
+        "confidence": 0.947,
+        "kcal": 360.0,
+        "proteins": 12.5,
+        "fats": 1.3,
+        "carbs": 73.0,
+        "sugars": 3.0,
+        "saturated_fat": 0.2,
+        "fiber": null,
+        "salt": 2.9
+      },
+      {
+        "name": "Viande séchée de boeuf",
+        "group": "fish meat eggs",
+        "true": "A",
+        "predicted": "E",
+        "confidence": 0.946,
+        "kcal": 210.0,
+        "proteins": 38.0,
+        "fats": 6.0,
+        "carbs": 1.0,
+        "sugars": 0.0,
+        "saturated_fat": 0.0,
+        "fiber": 0.0,
+        "salt": 0.0
+      },
+      {
+        "name": "Jugoso a la sartén ajillo al toque de perejil",
+        "group": null,
+        "true": "A",
+        "predicted": "E",
+        "confidence": 0.945,
+        "kcal": 193.0,
+        "proteins": 39.1,
+        "fats": 3.4,
+        "carbs": 1.5,
+        "sugars": 0.4,
+        "saturated_fat": 1.3,
+        "fiber": 11.0,
+        "salt": 1.22
+      },
+      {
+        "name": "Foies de poulet",
+        "group": "fish meat eggs",
+        "true": "A",
+        "predicted": "E",
+        "confidence": 0.942,
+        "kcal": 485.0,
+        "proteins": 17.0,
+        "fats": 46.0,
+        "carbs": 0.8,
+        "sugars": 0.8,
+        "saturated_fat": 1.7,
+        "fiber": 0.3,
+        "salt": 0.2
+      }
+    ]
+  },
+  "label": {
+    "error_distance_share": {
+      "0": 0.8913,
+      "1": 0.0781,
+      "2": 0.0254,
+      "3": 0.0037,
+      "4": 0.0014
+    },
+    "direction": {
+      "too_healthy": 0.0625,
+      "too_unhealthy": 0.0462
+    },
+    "coverage_table": [
+      {
+        "min_confidence": 0.0,
+        "coverage": 1.0,
+        "accuracy": 0.8913,
+        "within_one": 0.9695
+      },
+      {
+        "min_confidence": 0.5,
+        "coverage": 0.9665,
+        "accuracy": 0.9073,
+        "within_one": 0.9772
+      },
+      {
+        "min_confidence": 0.6,
+        "coverage": 0.9126,
+        "accuracy": 0.9284,
+        "within_one": 0.9823
+      },
+      {
+        "min_confidence": 0.7,
+        "coverage": 0.8558,
+        "accuracy": 0.9462,
+        "within_one": 0.987
+      },
+      {
+        "min_confidence": 0.8,
+        "coverage": 0.7879,
+        "accuracy": 0.9624,
+        "within_one": 0.991
+      },
+      {
+        "min_confidence": 0.9,
+        "coverage": 0.6839,
+        "accuracy": 0.9775,
+        "within_one": 0.9946
+      }
+    ],
+    "coverage_table_val": [
+      {
+        "min_confidence": 0.0,
+        "coverage": 1.0,
+        "accuracy": 0.8923,
+        "within_one": 0.9699
+      },
+      {
+        "min_confidence": 0.5,
+        "coverage": 0.9669,
+        "accuracy": 0.9083,
+        "within_one": 0.9777
+      },
+      {
+        "min_confidence": 0.6,
+        "coverage": 0.9113,
+        "accuracy": 0.93,
+        "within_one": 0.9834
+      },
+      {
+        "min_confidence": 0.7,
+        "coverage": 0.8539,
+        "accuracy": 0.9477,
+        "within_one": 0.9876
+      },
+      {
+        "min_confidence": 0.8,
+        "coverage": 0.787,
+        "accuracy": 0.9635,
+        "within_one": 0.9915
+      },
+      {
+        "min_confidence": 0.9,
+        "coverage": 0.6844,
+        "accuracy": 0.9785,
+        "within_one": 0.9949
+      }
+    ],
+    "reliability": {
+      "bins": [
+        {
+          "confidence": 0.277930349111557,
+          "accuracy": 0.23711340206185566,
+          "share": 0.0006461368344624074
+        },
+        {
+          "confidence": 0.36260440945625305,
+          "accuracy": 0.35514018691588783,
+          "share": 0.00784023767177581
+        },
+        {
+          "confidence": 0.4583902060985565,
+          "accuracy": 0.46026666666666666,
+          "share": 0.024979516796227095
+        },
+        {
+          "confidence": 0.5498310327529907,
+          "accuracy": 0.54924008402323,
+          "share": 0.053909127848497565
+        },
+        {
+          "confidence": 0.6510872840881348,
+          "accuracy": 0.6599437148217636,
+          "share": 0.05680675179685991
+        },
+        {
+          "confidence": 0.752053439617157,
+          "accuracy": 0.7584313725490196,
+          "share": 0.0679442856857377
+        },
+        {
+          "confidence": 0.8553491234779358,
+          "accuracy": 0.8631673396141768,
+          "share": 0.10393477348574169
+        },
+        {
+          "confidence": 0.9810625314712524,
+          "accuracy": 0.9775213050888727,
+          "share": 0.6839391698806978
+        }
+      ],
+      "ece": 0.0043
+    },
+    "ukraine": {
+      "rows": 285,
+      "accuracy": 0.8947,
+      "balanced_accuracy": 0.8848,
+      "macro_f1": 0.871,
+      "weighted_f1": 0.8958,
+      "qwk": 0.9472,
+      "mae_grades": 0.1228,
+      "within_one": 0.9895
+    },
+    "confident_gross_errors": [
+      {
+        "name": "Kaffeekränze",
+        "group": "sugary snacks",
+        "true": "A",
+        "predicted": "E",
+        "confidence": 1.0,
+        "kcal": 485.0,
+        "proteins": 7.9,
+        "fats": 20.0,
+        "carbs": 66.0,
+        "sugars": 29.0,
+        "saturated_fat": 9.9,
+        "fiber": 0.0,
+        "salt": 0.45
+      },
+      {
+        "name": "Sauce pour nem",
+        "group": "fat and sauces",
+        "true": "A",
+        "predicted": "E",
+        "confidence": 1.0,
+        "kcal": 200.0,
+        "proteins": 2.0,
+        "fats": 0.0,
+        "carbs": 48.0,
+        "sugars": 48.0,
+        "saturated_fat": 0.0,
+        "fiber": null,
+        "salt": 6.2
+      },
+      {
+        "name": "ISOSTAR HYDRATE & PERFORM",
+        "group": "beverages",
+        "true": "B",
+        "predicted": "E",
+        "confidence": 1.0,
+        "kcal": 390.0,
+        "proteins": 0.0,
+        "fats": 0.0,
+        "carbs": 95.0,
+        "sugars": 70.0,
+        "saturated_fat": 0.0,
+        "fiber": 0.0,
+        "salt": 1.55
+      },
+      {
+        "name": "Chocolat milka",
+        "group": "beverages",
+        "true": "A",
+        "predicted": "E",
+        "confidence": 1.0,
+        "kcal": 527.0,
+        "proteins": 5.4,
+        "fats": 30.0,
+        "carbs": 58.0,
+        "sugars": 57.0,
+        "saturated_fat": 18.0,
+        "fiber": null,
+        "salt": 0.44
+      },
+      {
+        "name": "Feiner Rührkuchen Stracciatella",
+        "group": "sugary snacks",
+        "true": "A",
+        "predicted": "E",
+        "confidence": 1.0,
+        "kcal": 450.0,
+        "proteins": 5.6,
+        "fats": 25.0,
+        "carbs": 52.0,
+        "sugars": 28.0,
+        "saturated_fat": 6.6,
+        "fiber": 1.3,
+        "salt": 0.63
+      },
+      {
+        "name": "Eti Schokolade mit Pistazien",
+        "group": "sugary snacks",
+        "true": "A",
+        "predicted": "E",
+        "confidence": 1.0,
+        "kcal": 531.56,
+        "proteins": 9.84,
+        "fats": 35.25,
+        "carbs": 41.88,
+        "sugars": 39.0,
+        "saturated_fat": 18.75,
+        "fiber": 0.09,
+        "salt": 0.47
+      },
+      {
+        "name": "Piece montee creole",
+        "group": null,
+        "true": "A",
+        "predicted": "E",
+        "confidence": 1.0,
+        "kcal": 401.0,
+        "proteins": 5.8,
+        "fats": 24.0,
+        "carbs": 40.0,
+        "sugars": 20.0,
+        "saturated_fat": 15.0,
+        "fiber": null,
+        "salt": 0.68
+      },
+      {
+        "name": "Água Mineral Natural Gasocarbónica",
+        "group": "beverages",
+        "true": "A",
+        "predicted": "E",
+        "confidence": 0.999,
+        "kcal": 331.0,
+        "proteins": 4.9,
+        "fats": 21.0,
+        "carbs": 30.0,
+        "sugars": 29.0,
+        "saturated_fat": 13.0,
+        "fiber": null,
+        "salt": 0.15
+      },
+      {
+        "name": "Tapenade aux olives noires",
+        "group": "salty snacks",
+        "true": "A",
+        "predicted": "E",
+        "confidence": 0.999,
+        "kcal": 283.0,
+        "proteins": 1.9,
+        "fats": 28.0,
+        "carbs": 4.1,
+        "sugars": 0.6,
+        "saturated_fat": 4.0,
+        "fiber": null,
+        "salt": 4.3
+      },
+      {
+        "name": "CHIPS saveur sauce andalouse",
+        "group": "fat and sauces",
+        "true": "A",
+        "predicted": "D",
+        "confidence": 0.999,
+        "kcal": 526.67,
+        "proteins": 6.0,
+        "fats": 31.0,
+        "carbs": 53.0,
+        "sugars": 3.67,
+        "saturated_fat": 2.67,
+        "fiber": 0.0,
+        "salt": 1.3
+      },
+      {
+        "name": "moelleux citron Bio sans allergènes",
+        "group": "sugary snacks",
+        "true": "A",
+        "predicted": "D",
+        "confidence": 0.999,
+        "kcal": 400.0,
+        "proteins": 2.59,
+        "fats": 19.26,
+        "carbs": 51.85,
+        "sugars": 26.67,
+        "saturated_fat": 2.22,
+        "fiber": 4.44,
+        "salt": 0.56
+      },
+      {
+        "name": "High protein cream",
+        "group": "milk and dairy products",
+        "true": "D",
+        "predicted": "A",
+        "confidence": 0.998,
+        "kcal": 77.0,
+        "proteins": 10.0,
+        "fats": 1.4,
+        "carbs": 5.9,
+        "sugars": 4.4,
+        "saturated_fat": 1.0,
+        "fiber": 0.0,
+        "salt": 0.19
+      },
+      {
+        "name": "Magret de Canard tranché à la fleur de sel",
+        "group": "fish meat eggs",
+        "true": "A",
+        "predicted": "D",
+        "confidence": 0.998,
+        "kcal": 267.0,
+        "proteins": 13.0,
+        "fats": 23.0,
+        "carbs": 1.9,
+        "sugars": 0.7,
+        "saturated_fat": 8.8,
+        "fiber": null,
+        "salt": 1.2
+      },
+      {
+        "name": "Silk ultra unsweetened",
+        "group": "beverages",
+        "true": "D",
+        "predicted": "A",
+        "confidence": 0.997,
+        "kcal": 180.0,
+        "proteins": 20.0,
+        "fats": 9.0,
+        "carbs": 5.0,
+        "sugars": 1.0,
+        "saturated_fat": 1.0,
+        "fiber": 2.0,
+        "salt": 0.71
+      },
+      {
+        "name": "Amora Ketchup Hot Epice Piment Flacon Souple 450g",
+        "group": "fat and sauces",
+        "true": "A",
+        "predicted": "D",
+        "confidence": 0.997,
+        "kcal": 109.0,
+        "proteins": 1.3,
+        "fats": 0.5,
+        "carbs": 25.0,
+        "sugars": 21.0,
+        "saturated_fat": 0.1,
+        "fiber": null,
+        "salt": 1.8
+      }
+    ]
+  }
+}

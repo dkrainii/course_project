@@ -1,4 +1,4 @@
-"""Build usda_micros.py: micronutrients for the built-in foods from USDA FoodData Central.
+"""Build usda_micros.py: micronutrients and label fields for the built-in foods from USDA FoodData Central.
 
 Source: FoodData Central, SR Legacy (April 2018), public domain (CC0).
     https://fdc.nal.usda.gov/fdc-datasets/FoodData_Central_sr_legacy_food_csv_2018-04.zip
@@ -9,6 +9,11 @@ Usage (from the project root, with the zip extracted anywhere):
 Every built-in food (app.PRODUCT_SEED + seed_foods.GENERIC_FOODS) is mapped by hand to one SR
 Legacy record (FDC_IDS), picked by description and checked against our kcal per 100 g. Foods USDA
 does not describe were dropped from the catalogue (seed_foods.RETIRED_FOODS) rather than guessed.
+
+The label fields (sugars, saturated fat, fibre, salt) feed the Nutri-Score model, which needs them
+all, so the few that SR Legacy leaves out are filled from LABEL_ESTIMATES: a close USDA record
+scaled to our carbs, or the median of the same food in Open Food Facts. Each estimate names its
+source and is listed in usda_micros.LABEL_ESTIMATED.
 """
 from __future__ import annotations
 
@@ -35,6 +40,25 @@ NUTRIENT_IDS = {
 VITAMIN_D_UG = 1114       # used when only µg is reported (1 µg = 40 IU)
 # Omega-3 (g) = ALA + EPA + DPA + DHA; ALA is often reported only as undifferentiated 18:3.
 ALA, ALA_18_3, EPA, DPA, DHA = 1404, 1270, 1278, 1280, 1272
+
+# Label field → SR Legacy nutrient id (g per 100 g). Salt = sodium (mg) / 1000 × 2.5.
+LABEL_IDS = {"sugars": 2000, "saturated_fat": 1258, "fiber": 1079}
+SODIUM = 1093
+SALT_PER_SODIUM = 2.5
+
+# Values SR Legacy does not report for our record: field → (value per 100 g, source).
+LABEL_ESTIMATES: dict[str, dict[str, tuple[float, str]]] = {
+    "French fries": {"sugars": (0.4, "USDA 170118 (oven-heated fries), scaled to our carbs")},
+    "Pancakes": {"sugars": (6.2, "USDA 172771 (plain pancakes, frozen), scaled to our carbs"),
+                 "fiber": (0.8, "USDA 172771 (plain pancakes, frozen), scaled to our carbs")},
+    "Mackerel, cooked": {"sugars": (0.0, "USDA 175119 (Atlantic mackerel, raw): no carbohydrate")},
+    "Shrimp, cooked": {"sugars": (0.0, "USDA 171971 (shrimp, cooked, moist heat)"),
+                       "fiber": (0.0, "USDA 171971 (shrimp, cooked, moist heat)")},
+    "Tofu, firm": {"sugars": (0.6, "USDA 172448 (firm tofu, nigari), scaled to our carbs")},
+    "Tempeh": {"sugars": (0.7, "Open Food Facts: median of 126 tempeh products"),
+               "fiber": (6.5, "Open Food Facts: median of 126 tempeh products")},
+    "Chia seeds": {"sugars": (0.0, "Open Food Facts: median of 194 chia seed products")},
+}
 
 FDC_IDS: dict[str, int] = {
     # app.PRODUCT_SEED
@@ -111,7 +135,24 @@ def _round(value: float) -> float:
     return round(value, 3 if value < 1 else 2)
 
 
-def build(sr_dir: str) -> dict[str, tuple[int, str, dict[str, float]]]:
+def label_fields(name: str, values: dict[int, float]) -> tuple[dict[str, float], dict[str, str]]:
+    """The four label fields of one food, and the sources of the estimated ones."""
+    label = {field: values[nid] for field, nid in LABEL_IDS.items() if nid in values}
+    if SODIUM in values:
+        label["salt"] = values[SODIUM] / 1000 * SALT_PER_SODIUM
+    sources = {}
+    for field, (value, source) in LABEL_ESTIMATES.get(name, {}).items():
+        if field in label:
+            raise SystemExit(f"{name}: USDA reports {field}; drop its estimate")
+        label[field], sources[field] = value, source
+    missing = {*LABEL_IDS, "salt"} - label.keys()
+    if missing:
+        raise SystemExit(f"{name}: no USDA value for {sorted(missing)}; add it to LABEL_ESTIMATES")
+    return {field: round(label[field], 2) for field in (*LABEL_IDS, "salt")}, sources
+
+
+def build(sr_dir: str) -> tuple[dict, dict, dict]:
+    """Micronutrients, label fields and estimate sources per food name."""
     wanted = {str(i) for i in FDC_IDS.values()}
     descriptions: dict[str, str] = {}
     with open(os.path.join(sr_dir, "food.csv"), encoding="utf-8") as f:
@@ -128,7 +169,7 @@ def build(sr_dir: str) -> dict[str, tuple[int, str, dict[str, float]]]:
     if missing:
         raise SystemExit(f"FDC ids not found in {sr_dir}: {sorted(missing)}")
 
-    out = {}
+    out, labels, estimated = {}, {}, {}
     for name, fdc_id in FDC_IDS.items():
         values = amounts.get(str(fdc_id), {})
         micros = {ours: values[nid] for ours, nid in NUTRIENT_IDS.items() if nid in values}
@@ -139,22 +180,32 @@ def build(sr_dir: str) -> dict[str, tuple[int, str, dict[str, float]]]:
         if omega:
             micros["Omega-3"] = sum(omega)
         out[name] = (fdc_id, descriptions[str(fdc_id)], {k: _round(v) for k, v in micros.items()})
-    return out
+        labels[name], sources = label_fields(name, values)
+        if sources:
+            estimated[name] = sources
+    return out, labels, estimated
 
 
-def write(data: dict[str, tuple[int, str, dict[str, float]]]) -> None:
+def write(data: dict, labels: dict, estimated: dict) -> None:
     lines = [
-        '"""Micronutrients per 100 g for the built-in foods, from USDA FoodData Central (SR Legacy, 2018-04).',
+        '"""Micronutrients and label fields per 100 g for the built-in foods, from USDA FoodData Central',
+        "(SR Legacy, 2018-04).",
         "",
         "Public domain (CC0). Generated by tools/build_usda_micros.py — do not edit by hand.",
-        "Maps our food name → (FDC id, USDA description, {nutrient: amount}); a nutrient USDA does not",
-        "report for that food is absent, not zero.",
+        "USDA_MICROS maps our food name → (FDC id, USDA description, {nutrient: amount}); a nutrient USDA",
+        "does not report for that food is absent, not zero.",
+        "USDA_LABEL maps our food name → sugars, saturated fat, fibre and salt (g), all known: the few",
+        "values USDA does not report are estimates, listed with their source in LABEL_ESTIMATED.",
         '"""',
         "",
         "USDA_MICROS: dict[str, tuple[int, str, dict[str, float]]] = {",
     ]
     for name, (fdc_id, desc, micros) in data.items():
         lines.append(f"    {name!r}: ({fdc_id}, {desc!r}, {micros!r}),")
+    lines += ["}", "", "USDA_LABEL: dict[str, dict[str, float]] = {"]
+    lines += [f"    {name!r}: {label!r}," for name, label in labels.items()]
+    lines += ["}", "", "LABEL_ESTIMATED: dict[str, dict[str, str]] = {"]
+    lines += [f"    {name!r}: {sources!r}," for name, sources in estimated.items()]
     lines.append("}")
     OUTPUT.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
@@ -162,6 +213,7 @@ def write(data: dict[str, tuple[int, str, dict[str, float]]]) -> None:
 if __name__ == "__main__":
     if len(sys.argv) != 2:
         raise SystemExit(__doc__)
-    result = build(sys.argv[1])
-    write(result)
-    print(f"Wrote {len(result)} foods to {OUTPUT.name}")
+    micros, labels, estimated = build(sys.argv[1])
+    write(micros, labels, estimated)
+    print(f"Wrote {len(micros)} foods to {OUTPUT.name}; "
+          f"{sum(map(len, estimated.values()))} label values estimated for {len(estimated)} foods")

@@ -16,6 +16,8 @@ from __future__ import annotations
 from typing import Callable, Protocol
 
 GRADES = ("a", "b", "c", "d", "e")
+# Optional label fields of a Product (g per 100 g) that the food-score model can use.
+LABEL_FIELDS = ("sugars", "saturated_fat", "fiber", "salt")
 GRADE_SOURCE_OFF = "off"      # grade published by Open Food Facts
 GRADE_SOURCE_MODEL = "model"  # grade predicted by the Kolos food-score model
 
@@ -31,8 +33,10 @@ class _Nutrition(Protocol):
     carbs: float
 
 
-ScoreModel = Callable[[dict[str, float]], str | None]
-"""features per 100 g → grade "a".."e" (or None when the model is unsure)."""
+ScoreModel = Callable[[dict[str, float | None]], str | None]
+"""features per 100 g → grade "a".."e" (or None when the model is unsure).
+
+Keys: kcal, proteins, fats, carbs (always numbers) and LABEL_FIELDS (None when unknown)."""
 
 PhotoModel = Callable[[bytes, int], list[tuple[str, float]]]
 """(image bytes, top k) → [(class label, probability), …] sorted by probability."""
@@ -64,14 +68,18 @@ def normalize_grade(value: object) -> str | None:
     return grade if grade in GRADES else None
 
 
-def nutrition_features(product: _Nutrition) -> dict[str, float]:
-    """Model input: nutrition per 100 g (the training step may add more fields)."""
-    return {
+def nutrition_features(product: _Nutrition) -> dict[str, float | None]:
+    """Model input: nutrition per 100 g; label fields the product does not have are None."""
+    features: dict[str, float | None] = {
         "kcal": float(product.calories_per_100g or 0),
         "proteins": float(product.proteins or 0),
         "fats": float(product.fats or 0),
         "carbs": float(product.carbs or 0),
     }
+    for field in LABEL_FIELDS:
+        value = getattr(product, field, None)
+        features[field] = None if value is None else float(value)
+    return features
 
 
 def predict_grade(product: _Nutrition) -> str | None:

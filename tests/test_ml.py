@@ -61,7 +61,8 @@ def test_payload_uses_stored_grade_then_model(app):
         seen = []
         ml_inference.register_score_model(lambda features: seen.append(features) or "E")
         assert (product_payload(plain)["grade"], product_payload(plain)["grade_src"]) == ("e", "model")
-        assert seen[0] == {"kcal": 480.0, "proteins": 5.0, "fats": 5.0, "carbs": 5.0}
+        assert seen[0] == {"kcal": 480.0, "proteins": 5.0, "fats": 5.0, "carbs": 5.0,
+                           "sugars": None, "saturated_fat": None, "fiber": None, "salt": None}
         assert product_payload(rated)["grade"] == "a"  # Open Food Facts wins over the model
 
 
@@ -95,6 +96,100 @@ def test_dashboard_shows_diet_quality_instead_of_forecast(app, client):
     assert "Diet quality" in html and 'id="qualityChart"' in html
     assert "Weight forecast" not in html and "weightChart" not in html
     assert 'class="grade-chip grade-a"' in html  # the logged food carries its grade
+
+
+# --- nutrition label fields ---------------------------------------------------------
+
+def test_off_label_fields_are_parsed_and_stored(app):
+    nutr = {"energy-kcal_100g": 480, "proteins_100g": 6, "fat_100g": 22, "carbohydrates_100g": 62,
+            "sugars_100g": 35, "saturated-fat_100g": 12.5, "sodium_100g": 0.2}
+    raw = {"code": "4820000000028", "product_name": "Cookies", "nutriments": nutr}
+    data = food_db.parse_off_product(raw)
+    assert (data["sugars"], data["saturated_fat"], data["fiber"], data["salt"]) == (35, 12.5, None, 0.5)
+    assert food_db.parse_off_product({**raw, "nutriments": {**nutr, "salt_100g": 0.4}})["salt"] == 0.4
+    with app.app_context():
+        product = food_db.upsert_off_product(data)
+        db.session.commit()
+        features = ml_inference.nutrition_features(product)
+        assert (features["sugars"], features["saturated_fat"], features["fiber"], features["salt"]) == (35, 12.5, None, 0.5)
+
+
+def test_custom_food_keeps_optional_label_fields(app, client):
+    with app.app_context():
+        create_user("c@user.test")
+    login(client, "c@user.test")
+    form = {"name": "Granola", "calories_per_100g": "450", "proteins": "10", "fats": "18", "carbs": "60"}
+    client.post("/products/new", data={**form, "sugars": "20", "saturated_fat": "3", "fiber": "", "salt": "0.3"})
+    client.post("/products/new", data={**form, "name": "Bad", "sugars": "70"})          # sugars > carbs
+    client.post("/products/new", data={**form, "name": "Worse", "saturated_fat": "-1"})  # out of range
+    with app.app_context():
+        granola = Product.query.filter_by(name="Granola").one()
+        assert (float(granola.sugars), float(granola.saturated_fat), granola.fiber, float(granola.salt)) == (20, 3, None, 0.3)
+        assert Product.query.filter(Product.name.in_(["Bad", "Worse"])).count() == 0
+
+
+# --- the exported Nutri-Score model --------------------------------------------------
+
+def _export_tiny_model(directory, min_confidence=0.0):
+    """A tiny model in the format of ml/nutriscore/export.py: grade E iff sugars ≥ 20 / kcal ≥ 400."""
+    import gzip
+    import json
+
+    lgb = pytest.importorskip("lightgbm")
+    np = pytest.importorskip("numpy")
+    rng = np.random.default_rng(0)
+    label = ["kcal", "proteins", "fats", "carbs", "sugars", "saturated_fat", "fiber", "salt"]
+    specs = {"label": (label, 4, 20), "macros": (label[:4], 0, 400)}
+    meta = {"format_version": 1, "grades": list("abcde"), "models": {}}
+    for name, (features, column, cut) in specs.items():
+        X = rng.uniform(0, 500 if column == 0 else 50, size=(400, len(features)))
+        y = np.where(X[:, column] >= cut, 4, 0)
+        booster = lgb.train({"objective": "multiclass", "num_class": 5, "verbose": -1, "min_data_in_leaf": 5},
+                            lgb.Dataset(X, y), num_boost_round=20)
+        with gzip.open(directory / f"{name}.txt.gz", "wt", encoding="utf-8") as fh:
+            fh.write(booster.model_to_string())
+        meta["models"][name] = {"file": f"{name}.txt.gz", "features": features,
+                                "required": [f for f in features if f != "fiber"],
+                                "min_confidence": min_confidence if name == "macros" else 0.0}
+    (directory / "meta.json").write_text(json.dumps(meta), encoding="utf-8")
+
+
+def test_score_model_uses_label_model_then_confident_macros(app, tmp_path):
+    import score_model
+
+    _export_tiny_model(tmp_path)
+    app.config["SCORE_MODEL_DIR"] = tmp_path
+    assert score_model.load_score_model(app) and ml_inference.score_model_ready()
+    with app.test_request_context():
+        sweet = _product("Candy", kcal=380, p=1, f=1, c=90)
+        sweet.sugars, sweet.saturated_fat, sweet.salt = 80, 0.5, 0.1   # fibre unknown: still the label model
+        plain = _product("Bread", kcal=250, p=8, f=2, c=48)
+        plain.sugars, plain.saturated_fat, plain.salt = 3, 0.4, 1.0
+        rich = _product("Lard", kcal=900, p=0, f=99, c=0)                  # macros only
+        assert ml_inference.product_grade(sweet) == ("e", "model")
+        assert ml_inference.product_grade(plain) == ("a", "model")
+        assert ml_inference.product_grade(rich) == ("e", "model")
+        assert product_payload(rich)["grade_src"] == "model"
+
+
+def test_unsure_macro_model_gives_no_grade(app, tmp_path):
+    import score_model
+
+    _export_tiny_model(tmp_path, min_confidence=1.01)  # nothing is ever confident enough
+    app.config["SCORE_MODEL_DIR"] = tmp_path
+    assert score_model.load_score_model(app)
+    with app.test_request_context():
+        assert ml_inference.product_grade(_product("Lard", kcal=900, p=0, f=99, c=0)) == (None, None)
+
+
+def test_app_runs_without_exported_model(app, tmp_path):
+    import score_model
+
+    app.config["SCORE_MODEL_DIR"] = tmp_path / "missing"
+    assert score_model.load_score_model(app) is False
+    app.config["SCORE_MODEL_DIR"] = None
+    assert score_model.load_score_model(app) is False
+    assert not ml_inference.score_model_ready()
 
 
 # --- photo recognition -------------------------------------------------------------

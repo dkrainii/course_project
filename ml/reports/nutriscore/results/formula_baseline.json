@@ -1,0 +1,219 @@
+{
+  "validation_against_off": {
+    "rows_checked": 179034,
+    "label_kj": {
+      "score_exact_match": 0.9283,
+      "score_within_1": 0.9526,
+      "grade_match": 0.9637
+    },
+    "kj_from_kcal": {
+      "score_exact_match": 0.864,
+      "score_within_1": 0.9495,
+      "grade_match": 0.9534
+    },
+    "energy_points_changed_by_conversion": 0.0715,
+    "score_diff_distribution_label_kj": {
+      "-5": 832,
+      "-4": 241,
+      "-3": 474,
+      "-2": 1234,
+      "-1": 2721,
+      "0": 166205,
+      "1": 1616,
+      "2": 1240,
+      "3": 1045,
+      "4": 781,
+      "5": 2645
+    },
+    "salt_exactly_on_threshold": {
+      "share_of_rows": 0.0866,
+      "exact_on_threshold": 0.9145,
+      "exact_elsewhere": 0.9297
+    },
+    "by_subgroup_label_kj": {
+      "Biscuits and cakes": {
+        "rows": 31347,
+        "exact": 0.9907,
+        "mean_diff": 0.008
+      },
+      "One-dish meals": {
+        "rows": 21135,
+        "exact": 0.9285,
+        "mean_diff": -0.097
+      },
+      "Bread": {
+        "rows": 19838,
+        "exact": 0.9818,
+        "mean_diff": -0.017
+      },
+      "Sweets": {
+        "rows": 19472,
+        "exact": 0.9837,
+        "mean_diff": 0.128
+      },
+      "Cereals": {
+        "rows": 18361,
+        "exact": 0.7736,
+        "mean_diff": 0.573
+      },
+      "Vegetables": {
+        "rows": 12961,
+        "exact": 0.9334,
+        "mean_diff": -0.142
+      },
+      "Breakfast cereals": {
+        "rows": 11405,
+        "exact": 0.9681,
+        "mean_diff": 0.068
+      },
+      "Chocolate products": {
+        "rows": 10971,
+        "exact": 0.9941,
+        "mean_diff": -0.003
+      },
+      "Legumes": {
+        "rows": 5967,
+        "exact": 0.3588,
+        "mean_diff": 3.148
+      },
+      "Potatoes": {
+        "rows": 5783,
+        "exact": 0.9896,
+        "mean_diff": -0.003
+      },
+      "Fruits": {
+        "rows": 5655,
+        "exact": 0.9694,
+        "mean_diff": -0.088
+      },
+      "Pizza pies and quiches": {
+        "rows": 4753,
+        "exact": 0.9451,
+        "mean_diff": -0.071
+      },
+      "Dried fruits": {
+        "rows": 3817,
+        "exact": 0.9088,
+        "mean_diff": 0.436
+      },
+      "Sandwiches": {
+        "rows": 2628,
+        "exact": 0.9292,
+        "mean_diff": -0.105
+      },
+      "Pastries": {
+        "rows": 2623,
+        "exact": 0.9935,
+        "mean_diff": -0.001
+      },
+      "Soups": {
+        "rows": 2318,
+        "exact": 0.9884,
+        "mean_diff": -0.021
+      }
+    }
+  },
+  "test": {
+    "accuracy": 0.8159,
+    "balanced_accuracy": 0.7871,
+    "macro_f1": 0.784,
+    "weighted_f1": 0.8173,
+    "qwk": 0.8752,
+    "mae_grades": 0.2641,
+    "within_one": 0.9317,
+    "per_class": {
+      "a": {
+        "precision": 0.7757,
+        "recall": 0.7632,
+        "support": 19200,
+        "f1": 0.7694
+      },
+      "b": {
+        "precision": 0.5699,
+        "recall": 0.6458,
+        "support": 14872,
+        "f1": 0.6055
+      },
+      "c": {
+        "precision": 0.7951,
+        "recall": 0.7836,
+        "support": 34258,
+        "f1": 0.7893
+      },
+      "d": {
+        "precision": 0.8846,
+        "recall": 0.8372,
+        "support": 39293,
+        "f1": 0.8602
+      },
+      "e": {
+        "precision": 0.8862,
+        "recall": 0.9056,
+        "support": 42500,
+        "f1": 0.8958
+      }
+    },
+    "confusion": [
+      [
+        14654,
+        1963,
+        2349,
+        220,
+        14
+      ],
+      [
+        2677,
+        9604,
+        1603,
+        722,
+        266
+      ],
+      [
+        1415,
+        2864,
+        26844,
+        2658,
+        477
+      ],
+      [
+        126,
+        1343,
+        741,
+        32896,
+        4187
+      ],
+      [
+        19,
+        1077,
+        2223,
+        693,
+        38488
+      ]
+    ]
+  },
+  "test_ci95": {
+    "accuracy": [
+      0.814,
+      0.8177
+    ],
+    "macro_f1": [
+      0.7818,
+      0.7863
+    ],
+    "qwk": [
+      0.8732,
+      0.8772
+    ]
+  },
+  "test_by_group": {
+    "beverages": 0.0929,
+    "cereals and potatoes": 0.8963,
+    "composite foods": 0.9374,
+    "fat and sauces": 0.8008,
+    "fish meat eggs": 0.9582,
+    "fruits and vegetables": 0.6159,
+    "milk and dairy products": 0.6526,
+    "salty snacks": 0.7624,
+    "sugary snacks": 0.9769
+  }
+}

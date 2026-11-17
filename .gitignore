@@ -13,3 +13,14 @@ instance/
 messages.pot
 # Playwright MCP screenshots and snapshots
 .playwright-mcp/
+
+# ML training: datasets, caches and trained weights stay local (see ml/README.md)
+ml/data/
+ml/models/
+ml/**/catboost_info/
+*.onnx
+*.joblib
+*.pkl
+*.pt
+*.pth
+.ipynb_checkpoints/

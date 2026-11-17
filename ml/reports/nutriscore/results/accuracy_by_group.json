@@ -1,0 +1,68 @@
+{
+  "alcoholic beverages": {
+    "rows": 7.0,
+    "LightGBM · macros": 0.4286,
+    "LightGBM · label": 0.5714,
+    "Formula · label": 0.0
+  },
+  "beverages": {
+    "rows": 9428.0,
+    "LightGBM · macros": 0.5447,
+    "LightGBM · label": 0.6142,
+    "Formula · label": 0.0929
+  },
+  "cereals and potatoes": {
+    "rows": 17919.0,
+    "LightGBM · macros": 0.5664,
+    "LightGBM · label": 0.9208,
+    "Formula · label": 0.8963
+  },
+  "composite foods": {
+    "rows": 11590.0,
+    "LightGBM · macros": 0.6112,
+    "LightGBM · label": 0.9244,
+    "Formula · label": 0.9374
+  },
+  "fat and sauces": {
+    "rows": 10479.0,
+    "LightGBM · macros": 0.5222,
+    "LightGBM · label": 0.8785,
+    "Formula · label": 0.8008
+  },
+  "fish meat eggs": {
+    "rows": 16090.0,
+    "LightGBM · macros": 0.5894,
+    "LightGBM · label": 0.962,
+    "Formula · label": 0.9582
+  },
+  "fruits and vegetables": {
+    "rows": 8102.0,
+    "LightGBM · macros": 0.548,
+    "LightGBM · label": 0.7473,
+    "Formula · label": 0.6159
+  },
+  "milk and dairy products": {
+    "rows": 15575.0,
+    "LightGBM · macros": 0.7501,
+    "LightGBM · label": 0.9216,
+    "Formula · label": 0.6526
+  },
+  "salty snacks": {
+    "rows": 7341.0,
+    "LightGBM · macros": 0.4863,
+    "LightGBM · label": 0.888,
+    "Formula · label": 0.7624
+  },
+  "sugary snacks": {
+    "rows": 27258.0,
+    "LightGBM · macros": 0.7992,
+    "LightGBM · label": 0.9731,
+    "Formula · label": 0.9769
+  },
+  "(no group)": {
+    "rows": 26334.0,
+    "LightGBM · macros": 0.5439,
+    "LightGBM · label": 0.8607,
+    "Formula · label": 0.8923
+  }
+}

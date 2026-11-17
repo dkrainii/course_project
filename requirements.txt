@@ -8,6 +8,9 @@ click>=8.1.0
 flask-babel>=4.0.0
 
 segno>=1.6
+# Optional: the Nutri-Score model (score_model.py). Without it only Open Food Facts grades are shown.
+lightgbm>=4.0
+numpy>=1.24
 python-dotenv>=1.0
 
 # tests
