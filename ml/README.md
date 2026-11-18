@@ -37,6 +37,30 @@ The web app (`score_model.py`) loads the exported models at start-up if they are
 Food Facts publishes. The exported files are not in git (`instance/` is ignored): run step 7
 after cloning, or copy the folder.
 
+## Dish recognition from a photo (`foodphoto/`, in progress)
+
+Transfer learning of ImageNet-pretrained CNNs (EfficientNet-B0, MobileNetV3-Large) on Food-101
+(101 classes) plus Ukrainian dishes collected from Wikimedia Commons (free licences; authors and
+licences in `reports/foodphoto/ua_sources.csv`). Training runs on a Google Colab GPU; collection,
+analysis and export run locally.
+
+```bash
+python -m ml.foodphoto.commons --list          # 1. photos per Ukrainian dish on Commons
+python -m ml.foodphoto.commons                 #    download them → ml/data/foodphoto/ua/
+python -m ml.foodphoto.commons --sheets        #    contact sheets for the manual review → review.json
+python -m ml.foodphoto.commons --apply-review  #    drop rejected photos
+python -m ml.foodphoto.pack                    #    ua_photos.zip → upload to My Drive/Kolos/foodphoto/
+# Colab: open ml/foodphoto/colab_train.ipynb, T4 GPU, Run all
+#   2. prepare.py: Food-101 download, resize, fixed train/val/test split
+#   3. train.py: the four runs (resumable; checkpoints on Google Drive)
+```
+
+`python -m ml.foodphoto.train --run effb0_finetune --smoke` checks the whole path on a few
+images on any machine. Own photos (`ml/data/foodphoto/ua_own/<dish>/`) go only to a separate
+test set.
+
+## Common
+
 Run the commands from the repository root. Every step is deterministic (`config.SEED`); every
 number quoted in the report is written to `reports/nutriscore/results/`, every figure to
 `reports/nutriscore/figures/`. `python -m ml.nutriscore.train --quick` is a smoke test with two
