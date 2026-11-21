@@ -200,6 +200,9 @@ def train(name: str, smoke: bool = False, workers: int = 2, device_name: str | N
             rows[split] = [r for r in rows[split] if r["label"] in classes]
     if smoke:
         rows = {s: subsample(r, 4 if s == "train" else 2) for s, r in rows.items()}
+    saved = out / "classes.json"
+    if (out / "last.pt").exists() and saved.exists() and json.loads(saved.read_text(encoding="utf-8")) != classes:
+        raise SystemExit(f"[train] {out} was trained on other classes: delete that folder to start the run again")
     (out / "classes.json").write_text(json.dumps(classes, ensure_ascii=False, indent=1), encoding="utf-8")
 
     train_set = ImageList(rows["train"], classes, train_transform())

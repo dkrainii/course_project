@@ -102,6 +102,9 @@ def prepare(download: bool = True, workers: int | None = None) -> list[dict]:
     rows += folder_rows(config.UA_OWN_DIR, "own", fixed_split="test")
     if not rows:
         raise SystemExit(f"No images found under {config.DATA_DIR}")
+    if not any(r["source"] == "ua" for r in rows):
+        # The first Colab run trained on Food-101 alone because ua_photos.zip was not unpacked.
+        raise SystemExit(f"No Ukrainian photos in {config.UA_DIR}: unpack ua_photos.zip there first")
 
     workers = workers or os.cpu_count() or 2
     print(f"[prepare] resizing {len(rows):,} images with {workers} workers…", flush=True)
