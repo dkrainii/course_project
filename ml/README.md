@@ -51,7 +51,8 @@ python -m ml.foodphoto.commons --sheets        #    contact sheets for the manua
 python -m ml.foodphoto.commons --apply-review  #    drop rejected photos
 python -m ml.foodphoto.pack                    #    ua_photos.zip → upload to My Drive/Kolos/foodphoto/
 # Colab: open ml/foodphoto/colab_train.ipynb, T4 GPU, Run all
-#   2. prepare.py: Food-101 download, resize, fixed train/val/test split
+#   2. colab_data.py → prepare.py: Food-101 download, resize, fixed train/val/test split
+#      (cached on Drive as prepared.tar)
 #   3. train.py: the four runs (resumable; checkpoints on Google Drive)
 ```
 

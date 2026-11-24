@@ -48,30 +48,11 @@ print(sorted(os.listdir(DRIVE)))"""),
 !git log --oneline -1"""),
     ("code", """# 4. Data. First session: download Food-101 (~5 GB), resize everything, cache the result on
 #    Drive (~2 GB). Later sessions only unpack the cache (~2 min).
-#    Stops with an error if ua_photos.zip is missing; a cache without Ukrainian photos is rebuilt.
-import csv, os, subprocess
-from collections import Counter
-cache, data, photos = f'{DRIVE}/prepared.tar', '/content/data', f'{DRIVE}/ua_photos.zip'
-assert os.path.exists(photos), f'Upload ua_photos.zip to {DRIVE} first'
-
-def sources():
-    if not os.path.exists(f'{data}/index.csv'):
-        return Counter()
-    with open(f'{data}/index.csv', encoding='utf-8') as fh:
-        return Counter(row['source'] for row in csv.DictReader(fh))
-
-os.makedirs(data, exist_ok=True)
-if os.path.exists(cache) and not sources():
-    subprocess.run(['tar', '-xf', cache, '-C', data], check=True)
-if not sources()['ua']:
-    if os.path.exists(cache):
-        print('Cached data has no Ukrainian photos: rebuilding it')
-        os.remove(cache)
-    subprocess.run(['unzip', '-q', '-o', photos, '-d', data], check=True)
-    subprocess.run(['python', '-m', 'ml.foodphoto.prepare', '--workers', '4'], check=True)
-    subprocess.run(['tar', '-cf', cache, '-C', data, 'resized', 'index.csv'], check=True)
-print(sources())
-assert sources()['ua'] > 0"""),
+#    The last line must list 'ua': 879; otherwise read the message above it.
+#    Runs in the notebook process, so an error stops "Run all" here.
+from pathlib import Path
+from ml.foodphoto import colab_data
+colab_data.main(Path(DRIVE), workers=4)"""),
     ("markdown", """## Training
 
 Each run takes roughly 40–70 minutes on a T4. Run them in this order; if the session ends,
