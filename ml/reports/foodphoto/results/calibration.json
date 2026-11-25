@@ -1,0 +1,211 @@
+{
+ "ece": 0.1012,
+ "mean_confidence": 0.7686,
+ "accuracy": 0.8698,
+ "bins": [
+  {
+   "from": 0.067,
+   "to": 0.133,
+   "n": 101,
+   "confidence": 0.1124,
+   "accuracy": 0.2079
+  },
+  {
+   "from": 0.133,
+   "to": 0.2,
+   "n": 351,
+   "confidence": 0.1694,
+   "accuracy": 0.2877
+  },
+  {
+   "from": 0.2,
+   "to": 0.267,
+   "n": 590,
+   "confidence": 0.2356,
+   "accuracy": 0.3847
+  },
+  {
+   "from": 0.267,
+   "to": 0.333,
+   "n": 729,
+   "confidence": 0.3006,
+   "accuracy": 0.4513
+  },
+  {
+   "from": 0.333,
+   "to": 0.4,
+   "n": 810,
+   "confidence": 0.3672,
+   "accuracy": 0.521
+  },
+  {
+   "from": 0.4,
+   "to": 0.467,
+   "n": 912,
+   "confidence": 0.434,
+   "accuracy": 0.5921
+  },
+  {
+   "from": 0.467,
+   "to": 0.533,
+   "n": 987,
+   "confidence": 0.5008,
+   "accuracy": 0.6505
+  },
+  {
+   "from": 0.533,
+   "to": 0.6,
+   "n": 983,
+   "confidence": 0.5679,
+   "accuracy": 0.7426
+  },
+  {
+   "from": 0.6,
+   "to": 0.667,
+   "n": 1124,
+   "confidence": 0.6332,
+   "accuracy": 0.7972
+  },
+  {
+   "from": 0.667,
+   "to": 0.733,
+   "n": 1376,
+   "confidence": 0.7009,
+   "accuracy": 0.867
+  },
+  {
+   "from": 0.733,
+   "to": 0.8,
+   "n": 2016,
+   "confidence": 0.769,
+   "accuracy": 0.9251
+  },
+  {
+   "from": 0.8,
+   "to": 0.867,
+   "n": 3185,
+   "confidence": 0.8366,
+   "accuracy": 0.9567
+  },
+  {
+   "from": 0.867,
+   "to": 0.933,
+   "n": 5684,
+   "confidence": 0.9032,
+   "accuracy": 0.9806
+  },
+  {
+   "from": 0.933,
+   "to": 1.0,
+   "n": 6586,
+   "confidence": 0.9639,
+   "accuracy": 0.9923
+  }
+ ],
+ "thresholds": [
+  {
+   "threshold": 0.0,
+   "food101": {
+    "coverage": 1.0,
+    "accuracy": 0.8697,
+    "top3_rest": null
+   },
+   "ua": {
+    "coverage": 1.0,
+    "accuracy": 0.8859,
+    "top3_rest": null
+   }
+  },
+  {
+   "threshold": 0.3,
+   "food101": {
+    "coverage": 0.945,
+    "accuracy": 0.8995,
+    "top3_rest": 0.689
+   },
+   "ua": {
+    "coverage": 0.9293,
+    "accuracy": 0.9298,
+    "top3_rest": 0.8462
+   }
+  },
+  {
+   "threshold": 0.4,
+   "food101": {
+    "coverage": 0.8985,
+    "accuracy": 0.9198,
+    "top3_rest": 0.7526
+   },
+   "ua": {
+    "coverage": 0.9022,
+    "accuracy": 0.9337,
+    "top3_rest": 0.8333
+   }
+  },
+  {
+   "threshold": 0.5,
+   "food101": {
+    "coverage": 0.844,
+    "accuracy": 0.9402,
+    "top3_rest": 0.8028
+   },
+   "ua": {
+    "coverage": 0.8478,
+    "accuracy": 0.9423,
+    "top3_rest": 0.8214
+   }
+  },
+  {
+   "threshold": 0.6,
+   "food101": {
+    "coverage": 0.7853,
+    "accuracy": 0.9569,
+    "top3_rest": 0.8355
+   },
+   "ua": {
+    "coverage": 0.7772,
+    "accuracy": 0.951,
+    "top3_rest": 0.878
+   }
+  },
+  {
+   "threshold": 0.7,
+   "food101": {
+    "coverage": 0.7148,
+    "accuracy": 0.971,
+    "top3_rest": 0.8646
+   },
+   "ua": {
+    "coverage": 0.7391,
+    "accuracy": 0.9559,
+    "top3_rest": 0.875
+   }
+  },
+  {
+   "threshold": 0.8,
+   "food101": {
+    "coverage": 0.6075,
+    "accuracy": 0.9808,
+    "top3_rest": 0.8958
+   },
+   "ua": {
+    "coverage": 0.6304,
+    "accuracy": 0.9655,
+    "top3_rest": 0.8971
+   }
+  },
+  {
+   "threshold": 0.9,
+   "food101": {
+    "coverage": 0.3862,
+    "accuracy": 0.9888,
+    "top3_rest": 0.9306
+   },
+   "ua": {
+    "coverage": 0.5,
+    "accuracy": 0.9891,
+    "top3_rest": 0.9239
+   }
+  }
+ ]
+}

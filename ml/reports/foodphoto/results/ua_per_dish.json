@@ -1,0 +1,1300 @@
+{
+ "effb0_finetune": [
+  {
+   "dish": "borscht",
+   "n_test": 31,
+   "recall": 1.0,
+   "precision": 0.7381,
+   "top5": 1.0,
+   "false_positives": 11,
+   "taken_for": [],
+   "false_positive_from": [
+    [
+     "chicken_curry",
+     7
+    ],
+    [
+     "french_onion_soup",
+     3
+    ],
+    [
+     "chocolate_mousse",
+     1
+    ]
+   ]
+  },
+  {
+   "dish": "deruny",
+   "n_test": 39,
+   "recall": 0.8974,
+   "precision": 0.5645,
+   "top5": 0.9487,
+   "false_positives": 27,
+   "taken_for": [
+    [
+     "pancakes",
+     2
+    ],
+    [
+     "french_toast",
+     1
+    ],
+    [
+     "pork_chop",
+     1
+    ]
+   ],
+   "false_positive_from": [
+    [
+     "crab_cakes",
+     5
+    ],
+    [
+     "omelette",
+     4
+    ],
+    [
+     "falafel",
+     3
+    ],
+    [
+     "garlic_bread",
+     3
+    ],
+    [
+     "french_toast",
+     2
+    ]
+   ]
+  },
+  {
+   "dish": "holubtsi",
+   "n_test": 30,
+   "recall": 0.8667,
+   "precision": 0.5098,
+   "top5": 1.0,
+   "false_positives": 25,
+   "taken_for": [
+    [
+     "baklava",
+     2
+    ],
+    [
+     "spring_rolls",
+     1
+    ],
+    [
+     "foie_gras",
+     1
+    ]
+   ],
+   "false_positive_from": [
+    [
+     "dumplings",
+     2
+    ],
+    [
+     "grilled_salmon",
+     2
+    ],
+    [
+     "omelette",
+     2
+    ],
+    [
+     "beef_carpaccio",
+     1
+    ],
+    [
+     "bread_pudding",
+     1
+    ]
+   ]
+  },
+  {
+   "dish": "olivier_salad",
+   "n_test": 20,
+   "recall": 0.7,
+   "precision": 0.56,
+   "top5": 0.95,
+   "false_positives": 11,
+   "taken_for": [
+    [
+     "omelette",
+     1
+    ],
+    [
+     "pizza",
+     1
+    ],
+    [
+     "risotto",
+     1
+    ],
+    [
+     "hummus",
+     1
+    ],
+    [
+     "lobster_roll_sandwich",
+     1
+    ],
+    [
+     "strawberry_shortcake",
+     1
+    ]
+   ],
+   "false_positive_from": [
+    [
+     "ceviche",
+     2
+    ],
+    [
+     "risotto",
+     2
+    ],
+    [
+     "omelette",
+     1
+    ],
+    [
+     "bread_pudding",
+     1
+    ],
+    [
+     "chicken_quesadilla",
+     1
+    ]
+   ]
+  },
+  {
+   "dish": "paska",
+   "n_test": 14,
+   "recall": 0.8571,
+   "precision": 0.6667,
+   "top5": 1.0,
+   "false_positives": 6,
+   "taken_for": [
+    [
+     "apple_pie",
+     1
+    ],
+    [
+     "donuts",
+     1
+    ]
+   ],
+   "false_positive_from": [
+    [
+     "beet_salad",
+     1
+    ],
+    [
+     "pancakes",
+     1
+    ],
+    [
+     "french_toast",
+     1
+    ],
+    [
+     "carrot_cake",
+     1
+    ],
+    [
+     "chocolate_cake",
+     1
+    ]
+   ]
+  },
+  {
+   "dish": "shashlik",
+   "n_test": 39,
+   "recall": 0.8974,
+   "precision": 0.7,
+   "top5": 0.9744,
+   "false_positives": 15,
+   "taken_for": [
+    [
+     "poutine",
+     1
+    ],
+    [
+     "bruschetta",
+     1
+    ],
+    [
+     "sushi",
+     1
+    ],
+    [
+     "donuts",
+     1
+    ]
+   ],
+   "false_positive_from": [
+    [
+     "fried_calamari",
+     2
+    ],
+    [
+     "chicken_curry",
+     2
+    ],
+    [
+     "steak",
+     2
+    ],
+    [
+     "baby_back_ribs",
+     1
+    ],
+    [
+     "falafel",
+     1
+    ]
+   ]
+  },
+  {
+   "dish": "varenyky",
+   "n_test": 11,
+   "recall": 0.9091,
+   "precision": 0.5882,
+   "top5": 0.9091,
+   "false_positives": 7,
+   "taken_for": [
+    [
+     "fish_and_chips",
+     1
+    ]
+   ],
+   "false_positive_from": [
+    [
+     "dumplings",
+     3
+    ],
+    [
+     "macaroni_and_cheese",
+     2
+    ],
+    [
+     "breakfast_burrito",
+     1
+    ],
+    [
+     "gnocchi",
+     1
+    ]
+   ]
+  }
+ ],
+ "mnv3_finetune": [
+  {
+   "dish": "borscht",
+   "n_test": 31,
+   "recall": 0.9355,
+   "precision": 0.6905,
+   "top5": 1.0,
+   "false_positives": 13,
+   "taken_for": [
+    [
+     "chicken_curry",
+     1
+    ],
+    [
+     "hot_and_sour_soup",
+     1
+    ]
+   ],
+   "false_positive_from": [
+    [
+     "chicken_curry",
+     7
+    ],
+    [
+     "french_onion_soup",
+     3
+    ],
+    [
+     "chocolate_mousse",
+     2
+    ],
+    [
+     "panna_cotta",
+     1
+    ]
+   ]
+  },
+  {
+   "dish": "deruny",
+   "n_test": 39,
+   "recall": 0.8974,
+   "precision": 0.5303,
+   "top5": 0.9487,
+   "false_positives": 31,
+   "taken_for": [
+    [
+     "pancakes",
+     1
+    ],
+    [
+     "french_toast",
+     1
+    ],
+    [
+     "omelette",
+     1
+    ],
+    [
+     "pork_chop",
+     1
+    ]
+   ],
+   "false_positive_from": [
+    [
+     "crab_cakes",
+     7
+    ],
+    [
+     "falafel",
+     3
+    ],
+    [
+     "garlic_bread",
+     3
+    ],
+    [
+     "apple_pie",
+     2
+    ],
+    [
+     "macaroni_and_cheese",
+     2
+    ]
+   ]
+  },
+  {
+   "dish": "holubtsi",
+   "n_test": 30,
+   "recall": 0.7667,
+   "precision": 0.4792,
+   "top5": 0.9667,
+   "false_positives": 25,
+   "taken_for": [
+    [
+     "baklava",
+     2
+    ],
+    [
+     "apple_pie",
+     1
+    ],
+    [
+     "bread_pudding",
+     1
+    ],
+    [
+     "breakfast_burrito",
+     1
+    ],
+    [
+     "gyoza",
+     1
+    ],
+    [
+     "spring_rolls",
+     1
+    ]
+   ],
+   "false_positive_from": [
+    [
+     "gyoza",
+     3
+    ],
+    [
+     "breakfast_burrito",
+     2
+    ],
+    [
+     "dumplings",
+     2
+    ],
+    [
+     "peking_duck",
+     2
+    ],
+    [
+     "bread_pudding",
+     1
+    ]
+   ]
+  },
+  {
+   "dish": "olivier_salad",
+   "n_test": 20,
+   "recall": 0.7,
+   "precision": 0.7368,
+   "top5": 1.0,
+   "false_positives": 5,
+   "taken_for": [
+    [
+     "omelette",
+     1
+    ],
+    [
+     "pizza",
+     1
+    ],
+    [
+     "gnocchi",
+     1
+    ],
+    [
+     "hummus",
+     1
+    ],
+    [
+     "lobster_roll_sandwich",
+     1
+    ],
+    [
+     "donuts",
+     1
+    ]
+   ],
+   "false_positive_from": [
+    [
+     "bread_pudding",
+     1
+    ],
+    [
+     "ceviche",
+     1
+    ],
+    [
+     "risotto",
+     1
+    ],
+    [
+     "hot_dog",
+     1
+    ],
+    [
+     "crab_cakes",
+     1
+    ]
+   ]
+  },
+  {
+   "dish": "paska",
+   "n_test": 14,
+   "recall": 0.6429,
+   "precision": 0.6,
+   "top5": 0.9286,
+   "false_positives": 6,
+   "taken_for": [
+    [
+     "donuts",
+     3
+    ],
+    [
+     "apple_pie",
+     1
+    ],
+    [
+     "ice_cream",
+     1
+    ]
+   ],
+   "false_positive_from": [
+    [
+     "donuts",
+     3
+    ],
+    [
+     "cup_cakes",
+     2
+    ],
+    [
+     "ice_cream",
+     1
+    ]
+   ]
+  },
+  {
+   "dish": "shashlik",
+   "n_test": 39,
+   "recall": 0.8462,
+   "precision": 0.6735,
+   "top5": 0.9744,
+   "false_positives": 16,
+   "taken_for": [
+    [
+     "holubtsi",
+     1
+    ],
+    [
+     "bruschetta",
+     1
+    ],
+    [
+     "prime_rib",
+     1
+    ],
+    [
+     "chicken_wings",
+     1
+    ],
+    [
+     "donuts",
+     1
+    ],
+    [
+     "sushi",
+     1
+    ]
+   ],
+   "false_positive_from": [
+    [
+     "carrot_cake",
+     2
+    ],
+    [
+     "steak",
+     2
+    ],
+    [
+     "apple_pie",
+     1
+    ],
+    [
+     "baklava",
+     1
+    ],
+    [
+     "beef_carpaccio",
+     1
+    ]
+   ]
+  },
+  {
+   "dish": "varenyky",
+   "n_test": 11,
+   "recall": 0.8182,
+   "precision": 0.6923,
+   "top5": 0.9091,
+   "false_positives": 4,
+   "taken_for": [
+    [
+     "french_fries",
+     1
+    ],
+    [
+     "holubtsi",
+     1
+    ]
+   ],
+   "false_positive_from": [
+    [
+     "dumplings",
+     3
+    ],
+    [
+     "ravioli",
+     1
+    ]
+   ]
+  }
+ ],
+ "effb0_nobalance": [
+  {
+   "dish": "borscht",
+   "n_test": 31,
+   "recall": 0.9032,
+   "precision": 0.7778,
+   "top5": 1.0,
+   "false_positives": 8,
+   "taken_for": [
+    [
+     "panna_cotta",
+     1
+    ],
+    [
+     "chicken_curry",
+     1
+    ],
+    [
+     "hot_and_sour_soup",
+     1
+    ]
+   ],
+   "false_positive_from": [
+    [
+     "chicken_curry",
+     5
+    ],
+    [
+     "french_onion_soup",
+     2
+    ],
+    [
+     "hot_and_sour_soup",
+     1
+    ]
+   ]
+  },
+  {
+   "dish": "deruny",
+   "n_test": 39,
+   "recall": 0.8462,
+   "precision": 0.7174,
+   "top5": 0.9231,
+   "false_positives": 13,
+   "taken_for": [
+    [
+     "crab_cakes",
+     2
+    ],
+    [
+     "pancakes",
+     2
+    ],
+    [
+     "huevos_rancheros",
+     1
+    ],
+    [
+     "fish_and_chips",
+     1
+    ]
+   ],
+   "false_positive_from": [
+    [
+     "omelette",
+     2
+    ],
+    [
+     "crab_cakes",
+     2
+    ],
+    [
+     "apple_pie",
+     1
+    ],
+    [
+     "mussels",
+     1
+    ],
+    [
+     "falafel",
+     1
+    ]
+   ]
+  },
+  {
+   "dish": "holubtsi",
+   "n_test": 30,
+   "recall": 0.8333,
+   "precision": 0.8333,
+   "top5": 0.9667,
+   "false_positives": 5,
+   "taken_for": [
+    [
+     "baklava",
+     2
+    ],
+    [
+     "apple_pie",
+     1
+    ],
+    [
+     "french_onion_soup",
+     1
+    ],
+    [
+     "spring_rolls",
+     1
+    ]
+   ],
+   "false_positive_from": [
+    [
+     "dumplings",
+     1
+    ],
+    [
+     "oysters",
+     1
+    ],
+    [
+     "breakfast_burrito",
+     1
+    ],
+    [
+     "pizza",
+     1
+    ],
+    [
+     "lobster_roll_sandwich",
+     1
+    ]
+   ]
+  },
+  {
+   "dish": "olivier_salad",
+   "n_test": 20,
+   "recall": 0.65,
+   "precision": 0.8667,
+   "top5": 1.0,
+   "false_positives": 2,
+   "taken_for": [
+    [
+     "omelette",
+     2
+    ],
+    [
+     "hummus",
+     1
+    ],
+    [
+     "ice_cream",
+     1
+    ],
+    [
+     "lobster_roll_sandwich",
+     1
+    ],
+    [
+     "strawberry_shortcake",
+     1
+    ],
+    [
+     "sushi",
+     1
+    ]
+   ],
+   "false_positive_from": [
+    [
+     "bread_pudding",
+     1
+    ],
+    [
+     "risotto",
+     1
+    ]
+   ]
+  },
+  {
+   "dish": "paska",
+   "n_test": 14,
+   "recall": 0.7857,
+   "precision": 0.6471,
+   "top5": 1.0,
+   "false_positives": 6,
+   "taken_for": [
+    [
+     "apple_pie",
+     1
+    ],
+    [
+     "ice_cream",
+     1
+    ],
+    [
+     "donuts",
+     1
+    ]
+   ],
+   "false_positive_from": [
+    [
+     "cup_cakes",
+     2
+    ],
+    [
+     "apple_pie",
+     1
+    ],
+    [
+     "bread_pudding",
+     1
+    ],
+    [
+     "french_toast",
+     1
+    ],
+    [
+     "chocolate_cake",
+     1
+    ]
+   ]
+  },
+  {
+   "dish": "shashlik",
+   "n_test": 39,
+   "recall": 0.8462,
+   "precision": 0.9167,
+   "top5": 0.9744,
+   "false_positives": 3,
+   "taken_for": [
+    [
+     "filet_mignon",
+     1
+    ],
+    [
+     "peking_duck",
+     1
+    ],
+    [
+     "poutine",
+     1
+    ],
+    [
+     "chicken_wings",
+     1
+    ],
+    [
+     "donuts",
+     1
+    ],
+    [
+     "sushi",
+     1
+    ]
+   ],
+   "false_positive_from": [
+    [
+     "sushi",
+     2
+    ],
+    [
+     "fried_calamari",
+     1
+    ]
+   ]
+  },
+  {
+   "dish": "varenyky",
+   "n_test": 11,
+   "recall": 0.7273,
+   "precision": 1.0,
+   "top5": 0.9091,
+   "false_positives": 0,
+   "taken_for": [
+    [
+     "dumplings",
+     1
+    ],
+    [
+     "fish_and_chips",
+     1
+    ],
+    [
+     "gnocchi",
+     1
+    ]
+   ],
+   "false_positive_from": []
+  }
+ ],
+ "effb0_probe": [
+  {
+   "dish": "borscht",
+   "n_test": 31,
+   "recall": 0.8387,
+   "precision": 0.6842,
+   "top5": 1.0,
+   "false_positives": 12,
+   "taken_for": [
+    [
+     "hot_and_sour_soup",
+     2
+    ],
+    [
+     "mussels",
+     1
+    ],
+    [
+     "french_onion_soup",
+     1
+    ],
+    [
+     "ramen",
+     1
+    ]
+   ],
+   "false_positive_from": [
+    [
+     "chicken_curry",
+     3
+    ],
+    [
+     "chocolate_mousse",
+     2
+    ],
+    [
+     "foie_gras",
+     1
+    ],
+    [
+     "panna_cotta",
+     1
+    ],
+    [
+     "peking_duck",
+     1
+    ]
+   ]
+  },
+  {
+   "dish": "deruny",
+   "n_test": 39,
+   "recall": 0.6154,
+   "precision": 0.5854,
+   "top5": 0.8974,
+   "false_positives": 17,
+   "taken_for": [
+    [
+     "pork_chop",
+     3
+    ],
+    [
+     "crab_cakes",
+     3
+    ],
+    [
+     "french_toast",
+     2
+    ],
+    [
+     "omelette",
+     1
+    ],
+    [
+     "onion_rings",
+     1
+    ],
+    [
+     "fried_rice",
+     1
+    ],
+    [
+     "garlic_bread",
+     1
+    ],
+    [
+     "gnocchi",
+     1
+    ],
+    [
+     "risotto",
+     1
+    ],
+    [
+     "scallops",
+     1
+    ]
+   ],
+   "false_positive_from": [
+    [
+     "omelette",
+     3
+    ],
+    [
+     "pork_chop",
+     3
+    ],
+    [
+     "falafel",
+     2
+    ],
+    [
+     "apple_pie",
+     1
+    ],
+    [
+     "baklava",
+     1
+    ]
+   ]
+  },
+  {
+   "dish": "holubtsi",
+   "n_test": 30,
+   "recall": 0.7,
+   "precision": 0.5122,
+   "top5": 0.8667,
+   "false_positives": 20,
+   "taken_for": [
+    [
+     "lasagna",
+     2
+    ],
+    [
+     "apple_pie",
+     1
+    ],
+    [
+     "baklava",
+     1
+    ],
+    [
+     "waffles",
+     1
+    ],
+    [
+     "chicken_quesadilla",
+     1
+    ],
+    [
+     "gyoza",
+     1
+    ],
+    [
+     "shrimp_and_grits",
+     1
+    ],
+    [
+     "lobster_roll_sandwich",
+     1
+    ]
+   ],
+   "false_positive_from": [
+    [
+     "hummus",
+     3
+    ],
+    [
+     "omelette",
+     2
+    ],
+    [
+     "huevos_rancheros",
+     2
+    ],
+    [
+     "apple_pie",
+     1
+    ],
+    [
+     "shrimp_and_grits",
+     1
+    ]
+   ]
+  },
+  {
+   "dish": "olivier_salad",
+   "n_test": 20,
+   "recall": 0.55,
+   "precision": 0.6875,
+   "top5": 0.7,
+   "false_positives": 5,
+   "taken_for": [
+    [
+     "baklava",
+     1
+    ],
+    [
+     "nachos",
+     1
+    ],
+    [
+     "tiramisu",
+     1
+    ],
+    [
+     "deruny",
+     1
+    ],
+    [
+     "pancakes",
+     1
+    ],
+    [
+     "greek_salad",
+     1
+    ],
+    [
+     "croque_madame",
+     1
+    ],
+    [
+     "lobster_roll_sandwich",
+     1
+    ],
+    [
+     "strawberry_shortcake",
+     1
+    ]
+   ],
+   "false_positive_from": [
+    [
+     "miso_soup",
+     1
+    ],
+    [
+     "omelette",
+     1
+    ],
+    [
+     "fried_rice",
+     1
+    ],
+    [
+     "greek_salad",
+     1
+    ],
+    [
+     "lobster_roll_sandwich",
+     1
+    ]
+   ]
+  },
+  {
+   "dish": "paska",
+   "n_test": 14,
+   "recall": 0.8571,
+   "precision": 0.6667,
+   "top5": 1.0,
+   "false_positives": 6,
+   "taken_for": [
+    [
+     "ice_cream",
+     1
+    ],
+    [
+     "donuts",
+     1
+    ]
+   ],
+   "false_positive_from": [
+    [
+     "donuts",
+     2
+    ],
+    [
+     "apple_pie",
+     1
+    ],
+    [
+     "cannoli",
+     1
+    ],
+    [
+     "carrot_cake",
+     1
+    ],
+    [
+     "lobster_roll_sandwich",
+     1
+    ]
+   ]
+  },
+  {
+   "dish": "shashlik",
+   "n_test": 39,
+   "recall": 0.7949,
+   "precision": 0.8611,
+   "top5": 0.9231,
+   "false_positives": 5,
+   "taken_for": [
+    [
+     "prime_rib",
+     2
+    ],
+    [
+     "takoyaki",
+     1
+    ],
+    [
+     "beet_salad",
+     1
+    ],
+    [
+     "holubtsi",
+     1
+    ],
+    [
+     "pork_chop",
+     1
+    ],
+    [
+     "chicken_quesadilla",
+     1
+    ],
+    [
+     "donuts",
+     1
+    ]
+   ],
+   "false_positive_from": [
+    [
+     "omelette",
+     1
+    ],
+    [
+     "bruschetta",
+     1
+    ],
+    [
+     "pork_chop",
+     1
+    ],
+    [
+     "cheesecake",
+     1
+    ],
+    [
+     "sushi",
+     1
+    ]
+   ]
+  },
+  {
+   "dish": "varenyky",
+   "n_test": 11,
+   "recall": 0.4545,
+   "precision": 0.5556,
+   "top5": 0.9091,
+   "false_positives": 4,
+   "taken_for": [
+    [
+     "dumplings",
+     1
+    ],
+    [
+     "waffles",
+     1
+    ],
+    [
+     "deruny",
+     1
+    ],
+    [
+     "bibimbap",
+     1
+    ],
+    [
+     "gnocchi",
+     1
+    ],
+    [
+     "ravioli",
+     1
+    ]
+   ],
+   "false_positive_from": [
+    [
+     "dumplings",
+     2
+    ],
+    [
+     "fried_rice",
+     1
+    ],
+    [
+     "samosa",
+     1
+    ]
+   ]
+  }
+ ]
+}

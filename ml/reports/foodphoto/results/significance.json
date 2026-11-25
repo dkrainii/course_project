@@ -1,0 +1,82 @@
+[
+ {
+  "a": "effb0_finetune",
+  "b": "effb0_probe",
+  "question": "повне донавчання проти лише класифікатора",
+  "subset": "food101",
+  "only_a_right": 4117,
+  "only_b_right": 614,
+  "diff": 0.1387,
+  "p_value": 0.0
+ },
+ {
+  "a": "effb0_finetune",
+  "b": "effb0_probe",
+  "question": "повне донавчання проти лише класифікатора",
+  "subset": "ua",
+  "only_a_right": 37,
+  "only_b_right": 4,
+  "diff": 0.1793,
+  "p_value": 1.03e-07
+ },
+ {
+  "a": "effb0_finetune",
+  "b": "mnv3_finetune",
+  "question": "EfficientNet-B0 проти MobileNetV3-Large",
+  "subset": "food101",
+  "only_a_right": 1268,
+  "only_b_right": 923,
+  "diff": 0.0137,
+  "p_value": 1.78e-13
+ },
+ {
+  "a": "effb0_finetune",
+  "b": "mnv3_finetune",
+  "question": "EfficientNet-B0 проти MobileNetV3-Large",
+  "subset": "ua",
+  "only_a_right": 13,
+  "only_b_right": 2,
+  "diff": 0.0598,
+  "p_value": 0.00739
+ },
+ {
+  "a": "effb0_finetune",
+  "b": "effb0_nobalance",
+  "question": "балансування класів увімкнене проти вимкненого",
+  "subset": "food101",
+  "only_a_right": 685,
+  "only_b_right": 800,
+  "diff": -0.0046,
+  "p_value": 0.00308
+ },
+ {
+  "a": "effb0_finetune",
+  "b": "effb0_nobalance",
+  "question": "балансування класів увімкнене проти вимкненого",
+  "subset": "ua",
+  "only_a_right": 16,
+  "only_b_right": 4,
+  "diff": 0.0652,
+  "p_value": 0.0118
+ },
+ {
+  "a": "effb0_finetune",
+  "b": "food101_only/effb0_finetune",
+  "question": "108 класів проти 101 (лише Food-101)",
+  "subset": "food101",
+  "only_a_right": 796,
+  "only_b_right": 830,
+  "diff": -0.0013,
+  "p_value": 0.413
+ },
+ {
+  "a": "mnv3_finetune",
+  "b": "food101_only/mnv3_finetune",
+  "question": "108 класів проти 101 (лише Food-101)",
+  "subset": "food101",
+  "only_a_right": 808,
+  "only_b_right": 910,
+  "diff": -0.004,
+  "p_value": 0.0148
+ }
+]

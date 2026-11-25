@@ -1,0 +1,149 @@
+[
+ {
+  "path": "ua/holubtsi/HK_SYP_Third_Street_晚餐_diner_聚會_gathering_food_n_mooncake_October_2020_SS2_04_e09996.jpg",
+  "true": "holubtsi",
+  "pred": "baklava",
+  "confidence": 0.942,
+  "true_rank": 3
+ },
+ {
+  "path": "ua/paska/Паска_пасxa_Закарпаття_e0dedc.jpg",
+  "true": "paska",
+  "pred": "apple_pie",
+  "confidence": 0.842,
+  "true_rank": 2
+ },
+ {
+  "path": "ua/shashlik/Chicken_Mtsvadi_and_Fried_Piglet_cc4a69.jpg",
+  "true": "shashlik",
+  "pred": "donuts",
+  "confidence": 0.83,
+  "true_rank": 2
+ },
+ {
+  "path": "ua/holubtsi/Golubtsi_-_traditional_Ukrainian_food_cuisine._Homemade_cabbage_rolls_in_a_tray_f0505a.jpg",
+  "true": "holubtsi",
+  "pred": "baklava",
+  "confidence": 0.821,
+  "true_rank": 2
+ },
+ {
+  "path": "ua/olivier_salad/Ensaladilla_española_0fe71a.jpg",
+  "true": "olivier_salad",
+  "pred": "lobster_roll_sandwich",
+  "confidence": 0.799,
+  "true_rank": 3
+ },
+ {
+  "path": "ua/shashlik/Food-dinner-grilled-shashlik_24244253091__7ec434.jpg",
+  "true": "shashlik",
+  "pred": "sushi",
+  "confidence": 0.718,
+  "true_rank": 9
+ },
+ {
+  "path": "ua/deruny/Vegan_Potato_Pancakes_and_Raspberry_Apple_Sauce_4165311996__f687f7.jpg",
+  "true": "deruny",
+  "pred": "pancakes",
+  "confidence": 0.684,
+  "true_rank": 15
+ },
+ {
+  "path": "ua/olivier_salad/Ensaladilla_rusa_861969.jpg",
+  "true": "olivier_salad",
+  "pred": "risotto",
+  "confidence": 0.583,
+  "true_rank": 2
+ },
+ {
+  "path": "ua/olivier_salad/Ensaladilla_de_patatas_verduras_olivas_y_mayonesa_4bbc8d.jpg",
+  "true": "olivier_salad",
+  "pred": "pizza",
+  "confidence": 0.53,
+  "true_rank": 2
+ },
+ {
+  "path": "ua/deruny/Vegan_Potato_Pancakes_and_Raspberry_Apple_Sauce_4164551281__d04ae5.jpg",
+  "true": "deruny",
+  "pred": "pancakes",
+  "confidence": 0.477,
+  "true_rank": 6
+ },
+ {
+  "path": "ua/olivier_salad/Salată_de_boeuf3_c05020.jpg",
+  "true": "olivier_salad",
+  "pred": "omelette",
+  "confidence": 0.403,
+  "true_rank": 7
+ },
+ {
+  "path": "ua/paska/Авд_паска_c57401.jpg",
+  "true": "paska",
+  "pred": "donuts",
+  "confidence": 0.357,
+  "true_rank": 4
+ },
+ {
+  "path": "ua/holubtsi/Golubtsi_in_a_restaurant_870b16.jpg",
+  "true": "holubtsi",
+  "pred": "spring_rolls",
+  "confidence": 0.293,
+  "true_rank": 2
+ },
+ {
+  "path": "ua/olivier_salad/Plato_con_Ensaladilla__aded81.jpg",
+  "true": "olivier_salad",
+  "pred": "hummus",
+  "confidence": 0.268,
+  "true_rank": 2
+ },
+ {
+  "path": "ua/deruny/Balaton_Restaurant_Kraków_2022_9ecf59.jpg",
+  "true": "deruny",
+  "pred": "pork_chop",
+  "confidence": 0.251,
+  "true_rank": 2
+ },
+ {
+  "path": "ua/holubtsi/Cabbage_rolls_in_oven_pan_fa21d2.jpg",
+  "true": "holubtsi",
+  "pred": "foie_gras",
+  "confidence": 0.243,
+  "true_rank": 4
+ },
+ {
+  "path": "ua/shashlik/Chicken_shashlik_Homemade__6bcf6a.jpg",
+  "true": "shashlik",
+  "pred": "bruschetta",
+  "confidence": 0.242,
+  "true_rank": 3
+ },
+ {
+  "path": "ua/shashlik/Lamb_shashlik_2231870513__4460cd.jpg",
+  "true": "shashlik",
+  "pred": "poutine",
+  "confidence": 0.22,
+  "true_rank": 2
+ },
+ {
+  "path": "ua/varenyky/День_независимости_Украины_2010_в_Донецке_013_7bdb02.jpg",
+  "true": "varenyky",
+  "pred": "fish_and_chips",
+  "confidence": 0.213,
+  "true_rank": 33
+ },
+ {
+  "path": "ua/deruny/020251122_175707_latkes_ad592a.jpg",
+  "true": "deruny",
+  "pred": "french_toast",
+  "confidence": 0.164,
+  "true_rank": 2
+ },
+ {
+  "path": "ua/olivier_salad/Ensaladilla_Rusa_-_Madrid_2013__6bdccc.jpg",
+  "true": "olivier_salad",
+  "pred": "strawberry_shortcake",
+  "confidence": 0.138,
+  "true_rank": 3
+ }
+]

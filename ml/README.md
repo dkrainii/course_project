@@ -37,7 +37,7 @@ The web app (`score_model.py`) loads the exported models at start-up if they are
 Food Facts publishes. The exported files are not in git (`instance/` is ignored): run step 7
 after cloning, or copy the folder.
 
-## Dish recognition from a photo (`foodphoto/`, in progress)
+## Dish recognition from a photo (`foodphoto/`)
 
 Transfer learning of ImageNet-pretrained CNNs (EfficientNet-B0, MobileNetV3-Large) on Food-101
 (101 classes) plus Ukrainian dishes collected from Wikimedia Commons (free licences; authors and
@@ -54,7 +54,11 @@ python -m ml.foodphoto.pack                    #    ua_photos.zip → upload to 
 #   2. colab_data.py → prepare.py: Food-101 download, resize, fixed train/val/test split
 #      (cached on Drive as prepared.tar)
 #   3. train.py: the four runs (resumable; checkpoints on Google Drive)
+# runs/ from Google Drive → ml/models/foodphoto/ (best.pt is enough, last.pt is not needed)
+python -m ml.foodphoto.analyze                 # 4. figures 01–11, results/*.json (CPU, ~1 min)
 ```
+
+The write-up (in Ukrainian, a section of the thesis) is `reports/foodphoto/README.md`.
 
 `python -m ml.foodphoto.train --run effb0_finetune --smoke` checks the whole path on a few
 images on any machine. Own photos (`ml/data/foodphoto/ua_own/<dish>/`) go only to a separate

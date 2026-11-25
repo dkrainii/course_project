@@ -1,0 +1,55 @@
+{
+ "ua": {
+  "borscht": {
+   "train": 101,
+   "val": 24,
+   "test": 31
+  },
+  "deruny": {
+   "train": 122,
+   "val": 31,
+   "test": 39
+  },
+  "holubtsi": {
+   "train": 90,
+   "val": 24,
+   "test": 30
+  },
+  "olivier_salad": {
+   "train": 60,
+   "val": 12,
+   "test": 20
+  },
+  "paska": {
+   "train": 54,
+   "val": 12,
+   "test": 14
+  },
+  "shashlik": {
+   "train": 94,
+   "val": 26,
+   "test": 39
+  },
+  "varenyky": {
+   "train": 36,
+   "val": 9,
+   "test": 11
+  }
+ },
+ "ua_total": {
+  "train": 557,
+  "val": 138,
+  "test": 184
+ },
+ "food101_classes": 101,
+ "food101_per_class": {
+  "train": 700,
+  "val": 50,
+  "test": 250
+ },
+ "food101_total": {
+  "train": 70700,
+  "val": 5050,
+  "test": 25250
+ }
+}

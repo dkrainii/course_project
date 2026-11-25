@@ -1,0 +1,608 @@
+[
+ {
+  "class": "steak",
+  "top1": 0.572,
+  "most_confused_with": "filet_mignon",
+  "confused_count": 34
+ },
+ {
+  "class": "apple_pie",
+  "top1": 0.64,
+  "most_confused_with": "bread_pudding",
+  "confused_count": 25
+ },
+ {
+  "class": "pork_chop",
+  "top1": 0.664,
+  "most_confused_with": "steak",
+  "confused_count": 25
+ },
+ {
+  "class": "chocolate_mousse",
+  "top1": 0.704,
+  "most_confused_with": "chocolate_cake",
+  "confused_count": 22
+ },
+ {
+  "class": "bread_pudding",
+  "top1": 0.712,
+  "most_confused_with": "french_toast",
+  "confused_count": 15
+ },
+ {
+  "class": "ravioli",
+  "top1": 0.716,
+  "most_confused_with": "gnocchi",
+  "confused_count": 13
+ },
+ {
+  "class": "tuna_tartare",
+  "top1": 0.724,
+  "most_confused_with": "beef_tartare",
+  "confused_count": 18
+ },
+ {
+  "class": "filet_mignon",
+  "top1": 0.728,
+  "most_confused_with": "steak",
+  "confused_count": 35
+ },
+ {
+  "class": "huevos_rancheros",
+  "top1": 0.732,
+  "most_confused_with": "omelette",
+  "confused_count": 10
+ },
+ {
+  "class": "ceviche",
+  "top1": 0.736,
+  "most_confused_with": "tuna_tartare",
+  "confused_count": 7
+ },
+ {
+  "class": "foie_gras",
+  "top1": 0.752,
+  "most_confused_with": "chocolate_mousse",
+  "confused_count": 5
+ },
+ {
+  "class": "beet_salad",
+  "top1": 0.76,
+  "most_confused_with": "foie_gras",
+  "confused_count": 7
+ },
+ {
+  "class": "chocolate_cake",
+  "top1": 0.764,
+  "most_confused_with": "chocolate_mousse",
+  "confused_count": 28
+ },
+ {
+  "class": "ice_cream",
+  "top1": 0.764,
+  "most_confused_with": "frozen_yogurt",
+  "confused_count": 12
+ },
+ {
+  "class": "omelette",
+  "top1": 0.772,
+  "most_confused_with": "huevos_rancheros",
+  "confused_count": 9
+ },
+ {
+  "class": "risotto",
+  "top1": 0.784,
+  "most_confused_with": "fried_rice",
+  "confused_count": 10
+ },
+ {
+  "class": "cheesecake",
+  "top1": 0.788,
+  "most_confused_with": "carrot_cake",
+  "confused_count": 6
+ },
+ {
+  "class": "chicken_curry",
+  "top1": 0.796,
+  "most_confused_with": "borscht",
+  "confused_count": 7
+ },
+ {
+  "class": "grilled_salmon",
+  "top1": 0.796,
+  "most_confused_with": "crab_cakes",
+  "confused_count": 5
+ },
+ {
+  "class": "bruschetta",
+  "top1": 0.8,
+  "most_confused_with": "caprese_salad",
+  "confused_count": 9
+ },
+ {
+  "class": "lasagna",
+  "top1": 0.808,
+  "most_confused_with": "french_onion_soup",
+  "confused_count": 8
+ },
+ {
+  "class": "breakfast_burrito",
+  "top1": 0.812,
+  "most_confused_with": "tacos",
+  "confused_count": 8
+ },
+ {
+  "class": "garlic_bread",
+  "top1": 0.812,
+  "most_confused_with": "grilled_cheese_sandwich",
+  "confused_count": 5
+ },
+ {
+  "class": "falafel",
+  "top1": 0.824,
+  "most_confused_with": "crab_cakes",
+  "confused_count": 13
+ },
+ {
+  "class": "scallops",
+  "top1": 0.824,
+  "most_confused_with": "foie_gras",
+  "confused_count": 3
+ },
+ {
+  "class": "crab_cakes",
+  "top1": 0.832,
+  "most_confused_with": "deruny",
+  "confused_count": 5
+ },
+ {
+  "class": "tiramisu",
+  "top1": 0.832,
+  "most_confused_with": "chocolate_cake",
+  "confused_count": 8
+ },
+ {
+  "class": "panna_cotta",
+  "top1": 0.844,
+  "most_confused_with": "tiramisu",
+  "confused_count": 5
+ },
+ {
+  "class": "beef_tartare",
+  "top1": 0.848,
+  "most_confused_with": "tuna_tartare",
+  "confused_count": 11
+ },
+ {
+  "class": "french_toast",
+  "top1": 0.848,
+  "most_confused_with": "bread_pudding",
+  "confused_count": 10
+ },
+ {
+  "class": "gnocchi",
+  "top1": 0.848,
+  "most_confused_with": "ravioli",
+  "confused_count": 6
+ },
+ {
+  "class": "grilled_cheese_sandwich",
+  "top1": 0.848,
+  "most_confused_with": "club_sandwich",
+  "confused_count": 6
+ },
+ {
+  "class": "hamburger",
+  "top1": 0.848,
+  "most_confused_with": "pulled_pork_sandwich",
+  "confused_count": 9
+ },
+ {
+  "class": "macaroni_and_cheese",
+  "top1": 0.848,
+  "most_confused_with": "risotto",
+  "confused_count": 6
+ },
+ {
+  "class": "paella",
+  "top1": 0.848,
+  "most_confused_with": "mussels",
+  "confused_count": 5
+ },
+ {
+  "class": "tacos",
+  "top1": 0.848,
+  "most_confused_with": "breakfast_burrito",
+  "confused_count": 5
+ },
+ {
+  "class": "hummus",
+  "top1": 0.852,
+  "most_confused_with": "gnocchi",
+  "confused_count": 3
+ },
+ {
+  "class": "spring_rolls",
+  "top1": 0.86,
+  "most_confused_with": "samosa",
+  "confused_count": 9
+ },
+ {
+  "class": "strawberry_shortcake",
+  "top1": 0.864,
+  "most_confused_with": "cheesecake",
+  "confused_count": 6
+ },
+ {
+  "class": "sushi",
+  "top1": 0.864,
+  "most_confused_with": "sashimi",
+  "confused_count": 12
+ },
+ {
+  "class": "nachos",
+  "top1": 0.868,
+  "most_confused_with": "tacos",
+  "confused_count": 9
+ },
+ {
+  "class": "carrot_cake",
+  "top1": 0.872,
+  "most_confused_with": "cheesecake",
+  "confused_count": 4
+ },
+ {
+  "class": "peking_duck",
+  "top1": 0.872,
+  "most_confused_with": "spring_rolls",
+  "confused_count": 5
+ },
+ {
+  "class": "shrimp_and_grits",
+  "top1": 0.872,
+  "most_confused_with": "risotto",
+  "confused_count": 5
+ },
+ {
+  "class": "prime_rib",
+  "top1": 0.876,
+  "most_confused_with": "steak",
+  "confused_count": 21
+ },
+ {
+  "class": "fried_calamari",
+  "top1": 0.88,
+  "most_confused_with": "onion_rings",
+  "confused_count": 10
+ },
+ {
+  "class": "samosa",
+  "top1": 0.88,
+  "most_confused_with": "breakfast_burrito",
+  "confused_count": 3
+ },
+ {
+  "class": "baby_back_ribs",
+  "top1": 0.884,
+  "most_confused_with": "steak",
+  "confused_count": 9
+ },
+ {
+  "class": "ramen",
+  "top1": 0.884,
+  "most_confused_with": "pho",
+  "confused_count": 11
+ },
+ {
+  "class": "chicken_quesadilla",
+  "top1": 0.888,
+  "most_confused_with": "breakfast_burrito",
+  "confused_count": 7
+ },
+ {
+  "class": "pulled_pork_sandwich",
+  "top1": 0.888,
+  "most_confused_with": "hamburger",
+  "confused_count": 6
+ },
+ {
+  "class": "greek_salad",
+  "top1": 0.892,
+  "most_confused_with": "caesar_salad",
+  "confused_count": 9
+ },
+ {
+  "class": "lobster_bisque",
+  "top1": 0.892,
+  "most_confused_with": "clam_chowder",
+  "confused_count": 11
+ },
+ {
+  "class": "hot_dog",
+  "top1": 0.896,
+  "most_confused_with": "grilled_cheese_sandwich",
+  "confused_count": 3
+ },
+ {
+  "class": "beef_carpaccio",
+  "top1": 0.904,
+  "most_confused_with": "beet_salad",
+  "confused_count": 3
+ },
+ {
+  "class": "french_onion_soup",
+  "top1": 0.904,
+  "most_confused_with": "macaroni_and_cheese",
+  "confused_count": 5
+ },
+ {
+  "class": "gyoza",
+  "top1": 0.904,
+  "most_confused_with": "dumplings",
+  "confused_count": 8
+ },
+ {
+  "class": "caprese_salad",
+  "top1": 0.908,
+  "most_confused_with": "bruschetta",
+  "confused_count": 6
+ },
+ {
+  "class": "club_sandwich",
+  "top1": 0.908,
+  "most_confused_with": "grilled_cheese_sandwich",
+  "confused_count": 14
+ },
+ {
+  "class": "dumplings",
+  "top1": 0.908,
+  "most_confused_with": "gyoza",
+  "confused_count": 11
+ },
+ {
+  "class": "fried_rice",
+  "top1": 0.908,
+  "most_confused_with": "paella",
+  "confused_count": 4
+ },
+ {
+  "class": "pancakes",
+  "top1": 0.908,
+  "most_confused_with": "french_toast",
+  "confused_count": 4
+ },
+ {
+  "class": "poutine",
+  "top1": 0.908,
+  "most_confused_with": "french_fries",
+  "confused_count": 8
+ },
+ {
+  "class": "baklava",
+  "top1": 0.912,
+  "most_confused_with": "apple_pie",
+  "confused_count": 9
+ },
+ {
+  "class": "beignets",
+  "top1": 0.912,
+  "most_confused_with": "donuts",
+  "confused_count": 8
+ },
+ {
+  "class": "cannoli",
+  "top1": 0.912,
+  "most_confused_with": "waffles",
+  "confused_count": 4
+ },
+ {
+  "class": "cheese_plate",
+  "top1": 0.916,
+  "most_confused_with": "ice_cream",
+  "confused_count": 3
+ },
+ {
+  "class": "red_velvet_cake",
+  "top1": 0.916,
+  "most_confused_with": "carrot_cake",
+  "confused_count": 6
+ },
+ {
+  "class": "waffles",
+  "top1": 0.92,
+  "most_confused_with": "french_toast",
+  "confused_count": 6
+ },
+ {
+  "class": "caesar_salad",
+  "top1": 0.924,
+  "most_confused_with": "greek_salad",
+  "confused_count": 5
+ },
+ {
+  "class": "cup_cakes",
+  "top1": 0.924,
+  "most_confused_with": "chocolate_cake",
+  "confused_count": 3
+ },
+ {
+  "class": "donuts",
+  "top1": 0.924,
+  "most_confused_with": "beignets",
+  "confused_count": 5
+ },
+ {
+  "class": "croque_madame",
+  "top1": 0.928,
+  "most_confused_with": "eggs_benedict",
+  "confused_count": 5
+ },
+ {
+  "class": "eggs_benedict",
+  "top1": 0.928,
+  "most_confused_with": "croque_madame",
+  "confused_count": 5
+ },
+ {
+  "class": "miso_soup",
+  "top1": 0.928,
+  "most_confused_with": "ramen",
+  "confused_count": 4
+ },
+ {
+  "class": "escargots",
+  "top1": 0.932,
+  "most_confused_with": "donuts",
+  "confused_count": 2
+ },
+ {
+  "class": "lobster_roll_sandwich",
+  "top1": 0.936,
+  "most_confused_with": "hot_dog",
+  "confused_count": 3
+ },
+ {
+  "class": "onion_rings",
+  "top1": 0.936,
+  "most_confused_with": "fried_calamari",
+  "confused_count": 3
+ },
+ {
+  "class": "churros",
+  "top1": 0.94,
+  "most_confused_with": "beignets",
+  "confused_count": 3
+ },
+ {
+  "class": "mussels",
+  "top1": 0.94,
+  "most_confused_with": "chicken_curry",
+  "confused_count": 2
+ },
+ {
+  "class": "pizza",
+  "top1": 0.94,
+  "most_confused_with": "lasagna",
+  "confused_count": 5
+ },
+ {
+  "class": "seaweed_salad",
+  "top1": 0.94,
+  "most_confused_with": "beef_carpaccio",
+  "confused_count": 3
+ },
+ {
+  "class": "bibimbap",
+  "top1": 0.944,
+  "most_confused_with": "croque_madame",
+  "confused_count": 2
+ },
+ {
+  "class": "creme_brulee",
+  "top1": 0.944,
+  "most_confused_with": "panna_cotta",
+  "confused_count": 3
+ },
+ {
+  "class": "fish_and_chips",
+  "top1": 0.944,
+  "most_confused_with": "chicken_wings",
+  "confused_count": 2
+ },
+ {
+  "class": "hot_and_sour_soup",
+  "top1": 0.944,
+  "most_confused_with": "miso_soup",
+  "confused_count": 3
+ },
+ {
+  "class": "clam_chowder",
+  "top1": 0.948,
+  "most_confused_with": "lobster_bisque",
+  "confused_count": 4
+ },
+ {
+  "class": "oysters",
+  "top1": 0.948,
+  "most_confused_with": "mussels",
+  "confused_count": 2
+ },
+ {
+  "class": "sashimi",
+  "top1": 0.948,
+  "most_confused_with": "sushi",
+  "confused_count": 6
+ },
+ {
+  "class": "deviled_eggs",
+  "top1": 0.952,
+  "most_confused_with": "escargots",
+  "confused_count": 2
+ },
+ {
+  "class": "spaghetti_carbonara",
+  "top1": 0.952,
+  "most_confused_with": "risotto",
+  "confused_count": 3
+ },
+ {
+  "class": "french_fries",
+  "top1": 0.956,
+  "most_confused_with": "fried_calamari",
+  "confused_count": 2
+ },
+ {
+  "class": "guacamole",
+  "top1": 0.956,
+  "most_confused_with": "nachos",
+  "confused_count": 3
+ },
+ {
+  "class": "chicken_wings",
+  "top1": 0.96,
+  "most_confused_with": "pork_chop",
+  "confused_count": 2
+ },
+ {
+  "class": "pad_thai",
+  "top1": 0.96,
+  "most_confused_with": "fried_rice",
+  "confused_count": 4
+ },
+ {
+  "class": "takoyaki",
+  "top1": 0.964,
+  "most_confused_with": "beignets",
+  "confused_count": 2
+ },
+ {
+  "class": "macarons",
+  "top1": 0.968,
+  "most_confused_with": "cup_cakes",
+  "confused_count": 4
+ },
+ {
+  "class": "spaghetti_bolognese",
+  "top1": 0.968,
+  "most_confused_with": "lasagna",
+  "confused_count": 4
+ },
+ {
+  "class": "pho",
+  "top1": 0.972,
+  "most_confused_with": "ramen",
+  "confused_count": 2
+ },
+ {
+  "class": "frozen_yogurt",
+  "top1": 0.984,
+  "most_confused_with": "cheese_plate",
+  "confused_count": 1
+ },
+ {
+  "class": "edamame",
+  "top1": 0.996,
+  "most_confused_with": "seaweed_salad",
+  "confused_count": 1
+ }
+]
