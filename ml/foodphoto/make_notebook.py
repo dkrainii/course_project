@@ -1,7 +1,8 @@
-"""Write colab_train.ipynb: the Google Colab notebook that runs steps 2–3 on a free GPU.
+"""Write the Google Colab notebooks that run the GPU steps on a free GPU:
+colab_train.ipynb (steps 2–3, training) and colab_clip.ipynb (step 3b, CLIP embeddings).
 
-The notebook only drives the scripts of this package, so local and Colab runs share one code
-path. Regenerate it after changing the cells below:
+The notebooks only drive the scripts of this package, so local and Colab runs share one code
+path. Regenerate them after changing the cells below:
 
     python -m ml.foodphoto.make_notebook
 """
@@ -12,7 +13,7 @@ from pathlib import Path
 
 REPO = "https://github.com/dkrainii/course_project.git"
 BRANCH = "phase-f2"
-OUT = Path(__file__).with_name("colab_train.ipynb")
+HERE = Path(__file__).parent
 
 CELLS: list[tuple[str, str]] = [
     ("markdown", """# Kolos: dish recognition — training on Google Colab
@@ -53,6 +54,10 @@ print(sorted(os.listdir(DRIVE)))"""),
 from pathlib import Path
 from ml.foodphoto import colab_data
 colab_data.main(Path(DRIVE), workers=4)"""),
+]
+SETUP = CELLS[1:]  # GPU, Drive, code, data: shared by both notebooks
+
+CELLS += [
     ("markdown", """## Training
 
 Each run takes roughly 40–70 minutes on a T4. Run them in this order; if the session ends,
@@ -72,9 +77,40 @@ for path in sorted(glob.glob(f'{DRIVE}/runs/*/metrics.json')):
 ]
 
 
-def build() -> dict:
+CLIP_CELLS: list[tuple[str, str]] = [
+    ("markdown", """# Kolos: dish recognition — CLIP embeddings on Google Colab
+
+Step 3b of `ml/foodphoto` (see `ml/README.md`): runs three CLIP image encoders over the same
+photos as the trained CNN and saves the vectors to Drive. The comparison itself runs locally
+(`python -m ml.foodphoto.clip_analyze`), without a GPU.
+
+**Before the run:** *Runtime → Change runtime type → T4 GPU.* The data cache made by the training
+notebook (`prepared.tar` on Drive) is reused, so step 4 takes a few minutes.
+
+**Every session:** *Runtime → Run all.* A finished part is skipped, so after a disconnect just run
+everything again.
+
+**At the end:** download `My Drive/Kolos/foodphoto/runs/clip_b32`, `clip_b16` and `clip_l14` and
+put them into `ml/models/foodphoto/` locally (~350 MB together)."""),
+    *SETUP,
+    ("code", """# 5. CLIP library (OpenAI weights are downloaded on first use).
+!pip install -q open_clip_torch==4.2.2"""),
+    ("code", """# 6. ViT-B/32: the smallest CLIP (~5 min).
+!python -m ml.foodphoto.clip_embed --model clip_b32 --workers 2"""),
+    ("code", """# 7. ViT-B/16 (~10 min).
+!python -m ml.foodphoto.clip_embed --model clip_b16 --workers 2"""),
+    ("code", """# 8. ViT-L/14: the largest (~25 min).
+!python -m ml.foodphoto.clip_embed --model clip_l14 --workers 2 --batch-size 128"""),
+    ("code", """# 9. What is on Drive (each model: text.npz, train.npz, val.npz, test.npz).
+import glob
+for path in sorted(glob.glob(f'{DRIVE}/runs/clip_*/*.npz')):
+    print(f'{os.path.getsize(path) / 1e6:7.1f} MB  {path}')"""),
+]
+
+
+def build(cells_spec: list[tuple[str, str]]) -> dict:
     cells = []
-    for kind, source in CELLS:
+    for kind, source in cells_spec:
         cell = {"cell_type": kind, "metadata": {}, "source": source.splitlines(keepends=True)}
         if kind == "code":
             cell.update(execution_count=None, outputs=[])
@@ -93,5 +129,6 @@ def build() -> dict:
 
 
 if __name__ == "__main__":
-    OUT.write_text(json.dumps(build(), indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
-    print(f"Wrote {OUT}")
+    for name, spec in (("colab_train.ipynb", CELLS), ("colab_clip.ipynb", CLIP_CELLS)):
+        (HERE / name).write_text(json.dumps(build(spec), indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
+        print(f"Wrote {HERE / name}")
