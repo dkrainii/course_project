@@ -58,7 +58,10 @@ python -m ml.foodphoto.pack                    #    ua_photos.zip → upload to 
 python -m ml.foodphoto.analyze                 # 4. figures 01–11, results/*.json (CPU, ~1 min)
 ```
 
-The write-up (in Ukrainian, a section of the thesis) is `reports/foodphoto/README.md`.
+The write-up (in Ukrainian, a section of the thesis) is `reports/foodphoto/README.md`; the same
+text as a Word file is `reports/foodphoto/foodphoto_report.docx`, built from it with
+`node tools/md2docx.js ml/reports/foodphoto/README.md ml/reports/foodphoto/foodphoto_report.docx`
+(needs `npm install docx`).
 
 `python -m ml.foodphoto.train --run effb0_finetune --smoke` checks the whole path on a few
 images on any machine. Own photos (`ml/data/foodphoto/ua_own/<dish>/`) go only to a separate

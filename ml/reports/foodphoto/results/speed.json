@@ -6,14 +6,14 @@
   "arch": "efficientnet_b0",
   "params_m": 4.15,
   "size_mb_fp32": 15.8,
-  "latency_ms_median": 30.9,
-  "latency_ms_p90": 31.8
+  "latency_ms_median": 27.9,
+  "latency_ms_p90": 30.2
  },
  "mnv3_finetune": {
   "arch": "mobilenet_v3_large",
   "params_m": 4.34,
   "size_mb_fp32": 16.6,
-  "latency_ms_median": 19.1,
-  "latency_ms_p90": 20.0
+  "latency_ms_median": 19.0,
+  "latency_ms_p90": 21.0
  }
 }

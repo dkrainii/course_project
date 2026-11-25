@@ -263,10 +263,10 @@ def speed() -> dict:
         x = torch.randn(1, 3, config.IMAGE_SIZE, config.IMAGE_SIZE)
         times = []
         with torch.inference_mode():
-            for i in range(60):
+            for i in range(220):  # 20 warm-up runs, then 200 timed ones
                 started = time.perf_counter()
                 model(x)
-                if i >= 10:
+                if i >= 20:
                     times.append(time.perf_counter() - started)
         params = sum(p.numel() for p in model.parameters())
         out[name] = {"arch": ckpt["arch"], "params_m": round(params / 1e6, 2),
