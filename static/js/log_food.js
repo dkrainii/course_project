@@ -393,7 +393,7 @@
     return new Promise((resolve, reject) => canvas.toBlob(b => (b ? resolve(b) : reject(new Error())), 'image/jpeg', 0.85));
   }
 
-  function candidateRow(c) {
+  function candidateRow(c, likely) {
     const item = document.createElement('div');
     item.setAttribute('role', 'listitem');
     const pct = Math.round(c.confidence * 100);
@@ -403,13 +403,22 @@
     const grade = document.createElement('span');
     const text = document.createElement('span');
     text.className = 'min-w-0 flex-1';
+    const title = document.createElement('span');
+    title.className = 'flex min-w-0 items-center gap-2';
     const name = document.createElement('span');
-    name.className = 'block truncate text-[15px] font-medium';
-    name.textContent = c.product ? c.product.label : c.label;
+    name.className = 'min-w-0 truncate text-[15px] font-medium';
+    name.textContent = c.product ? c.product.label : (c.name || c.label);
+    title.appendChild(name);
+    if (likely) {  // the model is confident: this is most probably the dish
+      const chip = document.createElement('span');
+      chip.className = 'shrink-0 whitespace-nowrap rounded-full bg-violet-500/15 px-2 py-0.5 text-[11px] font-semibold text-violet-700 dark:text-violet-300';
+      chip.textContent = App.t('Most likely');
+      title.appendChild(chip);
+    }
     const sub = document.createElement('span');
     sub.className = 'block text-[13px] text-fg-muted';
     sub.textContent = c.product ? meta(c.product) : App.t('Not in the food list yet. Try search.');
-    text.append(name, sub);
+    text.append(title, sub);
     const conf = document.createElement('span');
     conf.className = 'flex w-16 shrink-0 flex-col items-end gap-1';
     conf.innerHTML = '<span class="text-[13px] font-semibold tabular-nums"></span>'
@@ -448,8 +457,9 @@
       if (!res.ok) throw new Error(json.error || App.t('Could not recognise this photo.'));
       const candidates = (json.candidates || []).map(c => ({ ...c, product: c.product && remember(c.product) }));
       if (!candidates.length) { photoStatus.textContent = App.t('No food found on this photo. Try another angle.'); return; }
-      photoStatus.textContent = '';
-      photoList.replaceChildren(...candidates.map(candidateRow));
+      const first = candidates[0].product ? candidates[0].product.label : (candidates[0].name || candidates[0].label);
+      photoStatus.textContent = json.likely ? App.t('Most likely: {name}', { name: first }) : '';
+      photoList.replaceChildren(...candidates.map((c, i) => candidateRow(c, json.likely && i === 0)));
       photoResults.hidden = false;
     } catch (err) {
       photoStatus.textContent = navigator.onLine

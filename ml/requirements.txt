@@ -14,3 +14,5 @@ joblib==1.5.2
 torch==2.11.0
 torchvision==0.26.0
 pillow==10.3.0
+onnx==1.23.2          # export.py
+onnxruntime==1.32.0   # export.py check; the web app uses it too

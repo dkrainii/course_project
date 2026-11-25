@@ -63,6 +63,12 @@ def photo_model_ready() -> bool:
     return _photo_model is not None
 
 
+def photo_confidence_threshold() -> float:
+    """From this probability on, the first suggestion is shown as the likely answer (the
+    exported model carries it in `confident`; 1.0 when unknown: never)."""
+    return float(getattr(_photo_model, "confident", 1.0))
+
+
 def normalize_grade(value: object) -> str | None:
     grade = str(value or "").strip().lower()
     return grade if grade in GRADES else None
@@ -89,7 +95,8 @@ def predict_grade(product: _Nutrition) -> str | None:
 
 
 def recognize_photo(image: bytes, top_k: int = PHOTO_TOP_K) -> list[dict]:
-    """Top-k dish classes for a photo; raises RuntimeError when no photo model is registered."""
+    """Top-k dish classes for a photo; raises RuntimeError when no photo model is registered and
+    ValueError when the bytes are not an image the model can read."""
     if _photo_model is None:
         raise RuntimeError("photo model is not available")
     return [

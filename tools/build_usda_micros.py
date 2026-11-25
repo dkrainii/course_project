@@ -1,14 +1,21 @@
 """Build usda_micros.py: micronutrients and label fields for the built-in foods from USDA FoodData Central.
 
-Source: FoodData Central, SR Legacy (April 2018), public domain (CC0).
+Sources, both public domain (CC0):
+* SR Legacy (April 2018) — foods and ingredients:
     https://fdc.nal.usda.gov/fdc-datasets/FoodData_Central_sr_legacy_food_csv_2018-04.zip
+* FNDDS (Survey Foods, October 2024) — prepared dishes, for the dishes the photo model
+  recognises (seed_foods.PHOTO_FOODS):
+    https://fdc.nal.usda.gov/fdc-datasets/FoodData_Central_survey_food_csv_2024-10-31.zip
 
-Usage (from the project root, with the zip extracted anywhere):
-    python tools/build_usda_micros.py path/to/FoodData_Central_sr_legacy_food_csv_2018-04
+Usage (from the project root, with both zips extracted anywhere):
+    python tools/build_usda_micros.py path/to/FoodData_Central_sr_legacy_food_csv_2018-04 \
+                                      path/to/FoodData_Central_survey_food_csv_2024-10-31
 
-Every built-in food (app.PRODUCT_SEED + seed_foods.GENERIC_FOODS) is mapped by hand to one SR
-Legacy record (FDC_IDS), picked by description and checked against our kcal per 100 g. Foods USDA
-does not describe were dropped from the catalogue (seed_foods.RETIRED_FOODS) rather than guessed.
+Every built-in food (app.PRODUCT_SEED + seed_foods.GENERIC_FOODS) is mapped by hand to one USDA
+record (FDC_IDS or FNDDS_IDS), picked by description and checked against our kcal per 100 g. The
+macros of the dishes in seed_foods come from the same FNDDS record, and the build checks that
+they match. Foods USDA does not describe were dropped from the catalogue
+(seed_foods.RETIRED_FOODS) rather than guessed.
 
 The label fields (sugars, saturated fat, fibre, salt) feed the Nutri-Score model, which needs them
 all, so the few that SR Legacy leaves out are filled from LABEL_ESTIMATES: a close USDA record
@@ -127,6 +134,68 @@ FDC_IDS: dict[str, int] = {
 }
 
 
+# Dishes recognised from photos → FNDDS record. Where FNDDS has no record of the dish itself,
+# the closest one is used and its USDA description is given in the comment.
+FNDDS_IDS: dict[str, int] = {
+    "Apple pie": 2707995, "Pork ribs, cooked": 2705894, "Baklava": 2708044,
+    "Beef carpaccio": 2706394,         # Steak tartare (both raw beef)
+    "Steak tartare": 2706394,
+    "Beet salad": 2709875,             # Beets, fresh, cooked, fat added
+    "Beignets": 2708071, "Bibimbap": 2708950, "Bread pudding": 2705680,
+    "Breakfast burrito": 2707343,      # Egg burrito
+    "Bruschetta": 2707652,
+    "Caesar salad": 2706818,           # Chicken or turkey caesar garden salad
+    "Cannoli": 2708052,                # Pastry, Italian, with cheese
+    "Caprese salad": 2705818,          # Mozzarella cheese, tomato, and basil, with oil and vinegar
+    "Carrot cake": 2707859, "Ceviche": 2706463,
+    "Cheese plate": 2705704,           # Cheese, NFS
+    "Cheesecake": 2707861, "Chicken curry": 2706437, "Chicken quesadilla": 2708593,
+    "Chocolate cake": 2707866, "Chocolate mousse": 2705698, "Churros": 2708070,
+    "Clam chowder": 2707139, "Club sandwich": 2706993, "Crab cakes": 2706549,
+    "Creme brulee": 2705684, "Ham and cheese sandwich": 2706965, "Cupcake": 2707853,
+    "Deviled eggs": 2707181, "Doughnut": 2708062, "Dumplings, steamed": 2708708,
+    "Eggs Benedict": 2707180, "Escargots": 2706368, "Falafel": 2707408,
+    "Beef tenderloin steak": 2705841,
+    "Fried fish": 2706244,             # Fish, cod, fried (fish and chips)
+    "Liver pate": 2706155, "French onion soup": 2710108, "French toast": 2708335,
+    "Fried calamari": 2706334, "Fried rice": 2708952, "Frozen yogurt": 2705452,
+    "Garlic bread": 2707626, "Potato gnocchi": 2708722, "Greek salad": 2709830,
+    "Grilled cheese sandwich": 2705801, "Guacamole": 2709307, "Gyoza, fried": 2708705,
+    "Hot and sour soup": 2707136, "Hot dog": 2707056, "Huevos rancheros": 2707191,
+    "Lasagna": 2708750, "Lobster bisque": 2707140,
+    "Lobster roll": 2706825,           # Lobster salad
+    "Macaroni and cheese": 2708811,
+    "Macarons": 2707936,               # Cookie, macaroon
+    "Miso soup": 2707455, "Mussels": 2706350, "Nachos": 2708576, "Onion rings": 2710055,
+    "Oysters": 2706351, "Pad thai": 2708804, "Paella": 2706723,
+    "Panna cotta": 2705682,            # Custard
+    "Peking duck": 2706141, "Pho": 2707124,
+    "Poutine": 2709469,                # Potato, french fries, with cheese
+    "Roast beef": 2705847, "Pulled pork sandwich": 2706882, "Ramen": 2709153,
+    "Ravioli with meat sauce": 2708764, "Red velvet cake": 2707884,
+    "Risotto": 2708405,                # Rice, white, cooked, made with butter
+    "Samosa": 2708730, "Tuna sashimi": 2706308, "Scallops, grilled": 2706357,
+    "Seaweed salad": 2709990,          # Seaweed, cooked, fat added
+    "Shrimp and grits": 2708369,       # Grits, with cheese, fat added
+    "Spaghetti bolognese": 2708838,    # Pasta with tomato-based sauce and meat, home recipe
+    "Spaghetti carbonara": 2708856,    # Pasta with cream sauce, home recipe
+    "Spring rolls": 2708702,           # Egg roll, with beef and/or pork
+    "Strawberry shortcake": 2707896, "Sushi": 2708959, "Tacos": 2708515,
+    "Takoyaki": 2708024,               # Fritter, plain
+    "Tiramisu": 2705702, "Tuna tartare": 2706308, "Waffles": 2708312,
+    # Ukrainian dishes. "Soup, borscht" in FNDDS is the meatless beet soup (20 kcal); Ukrainian
+    # borscht is cooked on meat broth, so the vegetable soup with meat is closer.
+    "Ukrainian borscht": 2710116,      # Soup, vegetable, with meat
+    "Potato pancakes (deruny)": 2709552,
+    "Stuffed cabbage rolls (holubtsi)": 2706620,
+    "Olivier salad": 2709532,          # Potato salad with egg, made with mayonnaise
+    "Paska (Easter bread)": 2707624,   # Bread, egg, Challah
+    "Shashlik": 2706779,               # Pork shish kabob with vegetables
+    "Varenyky (pierogi)": 2708720,
+}
+MACRO_IDS = {"kcal": 1008, "proteins": 1003, "fats": 1004, "carbs": 1005}
+
+
 def _round(value: float) -> float:
     if value >= 100:
         return round(value)
@@ -151,26 +220,62 @@ def label_fields(name: str, values: dict[int, float]) -> tuple[dict[str, float],
     return {field: round(label[field], 2) for field in (*LABEL_IDS, "salt")}, sources
 
 
-def build(sr_dir: str) -> tuple[dict, dict, dict]:
-    """Micronutrients, label fields and estimate sources per food name."""
-    wanted = {str(i) for i in FDC_IDS.values()}
+def read(data_dir: str, ids: dict[str, int], by_number: bool) -> tuple[dict, dict]:
+    """Descriptions and nutrient amounts of the wanted records of one FoodData Central dataset.
+
+    FNDDS files give the nutrient *number* (208, 203…) in food_nutrient.nutrient_id; it is turned
+    into the nutrient id SR Legacy uses (1008, 1003…) through nutrient.csv."""
+    wanted = {str(i) for i in ids.values()}
+    number_to_id: dict[str, int] = {}
+    if by_number:
+        with open(os.path.join(data_dir, "nutrient.csv"), encoding="utf-8") as f:
+            for row in csv.DictReader(f):
+                number = row["nutrient_nbr"]
+                if number and float(number).is_integer():  # 205 = carbs by difference, not 205.2
+                    number_to_id[str(int(float(number)))] = int(row["id"])
     descriptions: dict[str, str] = {}
-    with open(os.path.join(sr_dir, "food.csv"), encoding="utf-8") as f:
+    with open(os.path.join(data_dir, "food.csv"), encoding="utf-8") as f:
         for row in csv.DictReader(f):
             if row["fdc_id"] in wanted:
                 descriptions[row["fdc_id"]] = row["description"]
     amounts: dict[str, dict[int, float]] = {}
-    with open(os.path.join(sr_dir, "food_nutrient.csv"), encoding="utf-8") as f:
+    with open(os.path.join(data_dir, "food_nutrient.csv"), encoding="utf-8") as f:
         for row in csv.DictReader(f):
             if row["fdc_id"] in wanted and row["amount"]:
-                amounts.setdefault(row["fdc_id"], {})[int(row["nutrient_id"])] = float(row["amount"])
-
+                nid = number_to_id.get(row["nutrient_id"]) if by_number else int(row["nutrient_id"])
+                if nid is not None:
+                    amounts.setdefault(row["fdc_id"], {})[nid] = float(row["amount"])
     missing = wanted - descriptions.keys()
     if missing:
-        raise SystemExit(f"FDC ids not found in {sr_dir}: {sorted(missing)}")
+        raise SystemExit(f"FDC ids not found in {data_dir}: {sorted(missing)}")
+    return descriptions, amounts
+
+
+def check_dish_macros(amounts: dict[str, dict[int, float]]) -> None:
+    """The dishes in seed_foods.GENERIC_FOODS carry the macros of their FNDDS record."""
+    sys.path.insert(0, str(ROOT))
+    from seed_foods import GENERIC_FOODS
+
+    seeded = {name: dict(zip(MACRO_IDS, values)) for name, *values in GENERIC_FOODS}
+    for name, fdc_id in FNDDS_IDS.items():
+        if name not in seeded:
+            raise SystemExit(f"{name}: not in seed_foods.GENERIC_FOODS")
+        usda = amounts[str(fdc_id)]
+        for field, nid in MACRO_IDS.items():
+            if seeded[name][field] != round(usda[nid], 0 if field == "kcal" else 1):  # as written in seed_foods
+                raise SystemExit(f"{name}: {field} is {seeded[name][field]} in seed_foods, {usda[nid]} in FNDDS")
+
+
+def build(sr_dir: str, fndds_dir: str) -> tuple[dict, dict, dict]:
+    """Micronutrients, label fields and estimate sources per food name."""
+    descriptions, amounts = read(sr_dir, FDC_IDS, by_number=False)
+    fndds_descriptions, fndds_amounts = read(fndds_dir, FNDDS_IDS, by_number=True)
+    check_dish_macros(fndds_amounts)
+    descriptions.update(fndds_descriptions)
+    amounts.update(fndds_amounts)
 
     out, labels, estimated = {}, {}, {}
-    for name, fdc_id in FDC_IDS.items():
+    for name, fdc_id in {**FDC_IDS, **FNDDS_IDS}.items():
         values = amounts.get(str(fdc_id), {})
         micros = {ours: values[nid] for ours, nid in NUTRIENT_IDS.items() if nid in values}
         if "Vitamin D" not in micros and VITAMIN_D_UG in values:
@@ -189,7 +294,7 @@ def build(sr_dir: str) -> tuple[dict, dict, dict]:
 def write(data: dict, labels: dict, estimated: dict) -> None:
     lines = [
         '"""Micronutrients and label fields per 100 g for the built-in foods, from USDA FoodData Central',
-        "(SR Legacy, 2018-04).",
+        "(SR Legacy, 2018-04; dishes from FNDDS, 2024-10).",
         "",
         "Public domain (CC0). Generated by tools/build_usda_micros.py — do not edit by hand.",
         "USDA_MICROS maps our food name → (FDC id, USDA description, {nutrient: amount}); a nutrient USDA",
@@ -211,9 +316,9 @@ def write(data: dict, labels: dict, estimated: dict) -> None:
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
+    if len(sys.argv) != 3:
         raise SystemExit(__doc__)
-    micros, labels, estimated = build(sys.argv[1])
+    micros, labels, estimated = build(sys.argv[1], sys.argv[2])
     write(micros, labels, estimated)
     print(f"Wrote {len(micros)} foods to {OUTPUT.name}; "
           f"{sum(map(len, estimated.values()))} label values estimated for {len(estimated)} foods")

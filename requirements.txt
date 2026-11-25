@@ -11,6 +11,9 @@ segno>=1.6
 # Optional: the Nutri-Score model (score_model.py). Without it only Open Food Facts grades are shown.
 lightgbm>=4.0
 numpy>=1.24
+# Optional: dish recognition from a photo (photo_model.py). Without it the photo sheet says "soon".
+onnxruntime>=1.17
+pillow>=10.0
 python-dotenv>=1.0
 
 # tests

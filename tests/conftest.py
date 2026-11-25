@@ -22,6 +22,7 @@ def _make_app(tmp_path, **overrides):
         "SQLALCHEMY_DATABASE_URI": f"sqlite:///{tmp_path / 'test.db'}",
         "WTF_CSRF_ENABLED": False,
         "SCORE_MODEL_DIR": None,  # like a fresh checkout: tests register their own models
+        "PHOTO_MODEL_DIR": None,
     }
     config.update(overrides)
     app = create_app(config)

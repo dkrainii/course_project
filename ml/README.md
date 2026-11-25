@@ -56,7 +56,13 @@ python -m ml.foodphoto.pack                    #    ua_photos.zip → upload to 
 #   3. train.py: the four runs (resumable; checkpoints on Google Drive)
 # runs/ from Google Drive → ml/models/foodphoto/ (best.pt is enough, last.pt is not needed)
 python -m ml.foodphoto.analyze                 # 4. figures 01–11, results/*.json (CPU, ~1 min)
+python -m ml.foodphoto.export                  # 5. ONNX model for the web app → instance/models/foodphoto/
 ```
+
+The web app (`photo_model.py`) loads the exported model at start-up if it is in
+`instance/models/foodphoto/` and onnxruntime is installed; each class stands for one built-in food
+(`seed_foods.PHOTO_FOODS`, nutrition from USDA FNDDS). Like the Nutri-Score files, the export is not
+in git: run step 5 after cloning, or copy the folder.
 
 The write-up (in Ukrainian, a section of the thesis) is `reports/foodphoto/README.md`; the same
 text as a Word file is `reports/foodphoto/foodphoto_report.docx`, built from it with

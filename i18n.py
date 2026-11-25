@@ -89,6 +89,8 @@ JS_STRINGS = [
     N_("Recognising…"),
     N_("Could not recognise this photo."),
     N_("No food found on this photo. Try another angle."),
+    N_("Most likely"),
+    N_("Most likely: {name}"),
 ]
 
 

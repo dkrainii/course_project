@@ -233,3 +233,109 @@ def test_photo_api_rejects_bad_uploads(app, client):
     assert res.status_code == 400
     big = io.BytesIO(b"\xff" * (ml_inference.PHOTO_MAX_BYTES + 1))
     assert client.post("/api/food/photo", data={"photo": (big, "a.jpg", "image/jpeg")}).status_code == 413
+
+
+def test_every_photo_class_is_a_builtin_food_with_usda_data():
+    from app import PRODUCT_SEED
+    from seed_foods import GENERIC_FOODS, PHOTO_FOODS, UK_NAMES
+    from usda_micros import USDA_LABEL, USDA_MICROS
+
+    builtin = {n for n, *_ in GENERIC_FOODS} | set(PRODUCT_SEED)
+    assert len(PHOTO_FOODS) == 108  # 101 Food-101 classes + 7 Ukrainian dishes
+    for cls, name in PHOTO_FOODS.items():
+        assert name in builtin and name in USDA_MICROS and name in UK_NAMES, cls
+        assert set(USDA_LABEL[name]) == {"sugars", "saturated_fat", "fiber", "salt"}, cls
+    ukrainian = {"borscht", "varenyky", "holubtsi", "deruny", "olivier_salad", "paska", "shashlik"}
+    assert ukrainian <= set(PHOTO_FOODS)
+    assert UK_NAMES[PHOTO_FOODS["varenyky"]] == "Вареники"
+
+
+def test_photo_api_offers_the_mapped_builtin_food(app, client):
+    from app import _seed_generic_foods
+
+    with app.app_context():
+        create_user("p@user.test")
+        _seed_generic_foods()
+    login(client, "p@user.test")
+
+    class Double:
+        confident = 0.5
+
+        def __call__(self, image, k):
+            return [("varenyky", 0.67), ("ravioli", 0.21), ("gnocchi", 0.07)]
+
+    ml_inference.register_photo_model(Double())
+    res = client.post("/api/food/photo", data={"photo": (_jpeg(), "a.jpg", "image/jpeg")})
+    body = res.get_json()
+    assert res.status_code == 200 and body["likely"] is True
+    names = [c["product"]["name"] for c in body["candidates"]]
+    assert names == ["Varenyky (pierogi)", "Ravioli with meat sauce", "Potato gnocchi"]
+    assert body["candidates"][0]["product"]["kcal"] == 195  # FNDDS "Pierogi"
+
+    ml_inference.register_photo_model(lambda image, k: [("varenyky", 0.4), ("ravioli", 0.3), ("gnocchi", 0.1)])
+    assert client.post("/api/food/photo", data={"photo": (_jpeg(), "a.jpg", "image/jpeg")}).get_json()["likely"] is False
+
+
+def test_photo_api_rejects_a_file_that_is_not_an_image(app, client):
+    with app.app_context():
+        create_user("p@user.test")
+    login(client, "p@user.test")
+
+    def unreadable(image, k):
+        raise ValueError("cannot read the photo")
+
+    ml_inference.register_photo_model(unreadable)
+    res = client.post("/api/food/photo", data={"photo": (_jpeg(), "a.jpg", "image/jpeg")})
+    assert res.status_code == 400 and "error" in res.get_json()
+
+
+def _tiny_onnx_model(directory, classes):
+    """A stand-in for the exported network: mean colour of the 224 × 224 crop → softmax over 3 classes."""
+    import json
+
+    onnx = pytest.importorskip("onnx")
+    from onnx import TensorProto, helper
+
+    graph = helper.make_graph(
+        [helper.make_node("GlobalAveragePool", ["image"], ["pooled"]),
+         helper.make_node("Flatten", ["pooled"], ["flat"]),
+         helper.make_node("Mul", ["flat", "scale"], ["scaled"]),
+         helper.make_node("Softmax", ["scaled"], ["probabilities"], axis=1)],
+        "tiny",
+        [helper.make_tensor_value_info("image", TensorProto.FLOAT, ["batch", 3, 224, 224])],
+        [helper.make_tensor_value_info("probabilities", TensorProto.FLOAT, ["batch", 3])],
+        [helper.make_tensor("scale", TensorProto.FLOAT, [1], [10.0])],
+    )
+    model = helper.make_model(graph, opset_imports=[helper.make_opsetid("", 17)])
+    model.ir_version = 8
+    onnx.save(model, str(directory / "model.onnx"))
+    meta = {"file": "model.onnx", "classes": classes, "confident": 0.5,
+            "input": {"resize": 256, "crop": 224, "mean": [0.485, 0.456, 0.406], "std": [0.229, 0.224, 0.225]}}
+    (directory / "meta.json").write_text(json.dumps(meta), encoding="utf-8")
+
+
+def test_exported_photo_model_is_loaded_and_reads_real_images(app, tmp_path):
+    pytest.importorskip("onnxruntime")
+    from PIL import Image
+
+    import photo_model
+
+    _tiny_onnx_model(tmp_path, ["red", "green", "blue"])
+    app.config["PHOTO_MODEL_DIR"] = tmp_path
+    assert photo_model.load_photo_model(app) and ml_inference.photo_model_ready()
+    assert ml_inference.photo_confidence_threshold() == 0.5
+
+    photo = io.BytesIO()
+    Image.new("RGB", (640, 480), (220, 30, 30)).save(photo, "JPEG")
+    hits = ml_inference.recognize_photo(photo.getvalue(), top_k=2)
+    assert [h["label"] for h in hits][0] == "red" and len(hits) == 2
+    assert 0.5 < hits[0]["confidence"] <= 1
+    with pytest.raises(ValueError):
+        ml_inference.recognize_photo(b"\xff\xd8\xff\xe0fake-jpeg")
+
+
+def test_photo_model_is_skipped_when_not_exported(app, tmp_path):
+    import photo_model
+
+    app.config["PHOTO_MODEL_DIR"] = tmp_path  # empty folder
+    assert not photo_model.load_photo_model(app) and not ml_inference.photo_model_ready()

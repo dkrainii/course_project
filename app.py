@@ -80,13 +80,15 @@ from ml_inference import (
     LABEL_FIELDS,
     PHOTO_MAX_BYTES,
     PHOTO_TYPES,
+    photo_confidence_threshold,
     photo_model_ready,
     product_grade,
     recognize_photo,
     score_model_ready,
 )
+from photo_model import load_photo_model
 from score_model import load_score_model
-from seed_foods import GENERIC_FOODS, RETIRED_FOODS, UK_NAMES, UK_SEARCH_NAMES
+from seed_foods import GENERIC_FOODS, PHOTO_FOODS, RETIRED_FOODS, UK_NAMES, UK_SEARCH_NAMES
 from usda_micros import USDA_LABEL, USDA_MICROS
 from nutrition import (
     auto_water_goal_ml,
@@ -217,6 +219,7 @@ def create_app(test_config: dict | None = None) -> Flask:
 
     register_routes(app)
     load_score_model(app)
+    load_photo_model(app)
     return app
 
 
@@ -1515,13 +1518,28 @@ def register_routes(app: Flask) -> None:
         image = photo.read(PHOTO_MAX_BYTES + 1)
         if len(image) > PHOTO_MAX_BYTES:
             return jsonify(error=_("The photo is too large (8 MB at most).")), 413
+        try:
+            hits = recognize_photo(image)
+        except ValueError:  # not an image we can decode
+            return jsonify(error=_("Could not read this photo. Try another one.")), 400
+        # Each class of the model stands for one built-in food (seed_foods.PHOTO_FOODS).
+        builtin = {
+            p.name: p for p in Product.query.filter(
+                Product.created_by_id.is_(None), Product.source == SOURCE_SEED,
+                Product.name.in_([PHOTO_FOODS[h["label"]] for h in hits if h["label"] in PHOTO_FOODS]))
+        }
         favorite_ids = favorite_ids_for(current_user.id)
         candidates = []
-        for hit in recognize_photo(image):
-            matches = food_db.search_products(hit["label"], current_user.id, limit=1, remote=False,
-                                              lang=current_language())
-            candidates.append({**hit, "product": product_payload(matches[0], favorite_ids) if matches else None})
-        return jsonify(candidates=candidates)
+        for hit in hits:
+            product = builtin.get(PHOTO_FOODS.get(hit["label"], ""))
+            if product is None:  # a class without a built-in food: the closest catalogue match, if any
+                matches = food_db.search_products(hit["label"].replace("_", " "), current_user.id, limit=1,
+                                                  remote=False, lang=current_language())
+                product = matches[0] if matches else None
+            candidates.append({**hit, "name": hit["label"].replace("_", " ").capitalize(),
+                               "product": product_payload(product, favorite_ids) if product else None})
+        likely = bool(candidates) and candidates[0]["confidence"] >= photo_confidence_threshold()
+        return jsonify(candidates=candidates, likely=likely)
 
     @app.route("/favorites/<int:product_id>/toggle", methods=["POST"])
     @login_required

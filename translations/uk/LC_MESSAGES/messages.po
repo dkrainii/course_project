@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-11-17 16:28+0200\n"
+"POT-Creation-Date: 2026-11-25 13:10+0200\n"
 "PO-Revision-Date: 2026-09-27 12:03+0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: uk\n"
@@ -372,6 +372,9 @@ msgstr "Оберіть фото у форматі JPEG, PNG або WebP."
 msgid "The photo is too large (8 MB at most)."
 msgstr "Фото завелике (щонайбільше 8 МБ)."
 
+msgid "Could not read this photo. Try another one."
+msgstr "Не вдалося прочитати це фото. Спробуйте інше."
+
 msgid "Give the food a name."
 msgstr "Дайте продукту назву."
 
@@ -726,6 +729,13 @@ msgstr "Не вдалося розпізнати це фото."
 
 msgid "No food found on this photo. Try another angle."
 msgstr "На фото не знайдено їжі. Спробуйте інший ракурс."
+
+msgid "Most likely"
+msgstr "Найімовірніше"
+
+#, python-brace-format
+msgid "Most likely: {name}"
+msgstr "Найімовірніше: {name}"
 
 #, python-format
 msgid "Grade %(grade)s"
