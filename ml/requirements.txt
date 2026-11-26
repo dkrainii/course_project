@@ -16,3 +16,4 @@ torchvision==0.26.0
 pillow==10.3.0
 onnx==1.23.2          # export.py
 onnxruntime==1.32.0   # export.py check; the web app uses it too
+open_clip_torch==4.2.2  # clip_embed.py, clip_analyze.py (CLIP comparison)

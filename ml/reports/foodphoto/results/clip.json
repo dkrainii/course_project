@@ -1,0 +1,721 @@
+{
+ "variants": {
+  "effb0_finetune": {
+   "all": {
+    "top1": {
+     "n": 25434,
+     "value": 0.8698,
+     "ci95": [
+      0.8658,
+      0.8741
+     ]
+    },
+    "top3": {
+     "n": 25434,
+     "value": 0.956,
+     "ci95": [
+      0.9535,
+      0.9584
+     ]
+    }
+   },
+   "food101": {
+    "top1": {
+     "n": 25250,
+     "value": 0.8697,
+     "ci95": [
+      0.8655,
+      0.8738
+     ]
+    },
+    "top3": {
+     "n": 25250,
+     "value": 0.956,
+     "ci95": [
+      0.9535,
+      0.9585
+     ]
+    }
+   },
+   "ua": {
+    "top1": {
+     "n": 184,
+     "value": 0.8859,
+     "ci95": [
+      0.837,
+      0.9293
+     ]
+    },
+    "top3": {
+     "n": 184,
+     "value": 0.962,
+     "ci95": [
+      0.9348,
+      0.9891
+     ]
+    }
+   }
+  },
+  "clip_b32/zero_shot": {
+   "all": {
+    "top1": {
+     "n": 25434,
+     "value": 0.7935,
+     "ci95": [
+      0.7885,
+      0.7984
+     ]
+    },
+    "top3": {
+     "n": 25434,
+     "value": 0.9275,
+     "ci95": [
+      0.9245,
+      0.9308
+     ]
+    }
+   },
+   "food101": {
+    "top1": {
+     "n": 25250,
+     "value": 0.7946,
+     "ci95": [
+      0.7896,
+      0.7995
+     ]
+    },
+    "top3": {
+     "n": 25250,
+     "value": 0.9282,
+     "ci95": [
+      0.9251,
+      0.9313
+     ]
+    }
+   },
+   "ua": {
+    "top1": {
+     "n": 184,
+     "value": 0.6359,
+     "ci95": [
+      0.5652,
+      0.7065
+     ]
+    },
+    "top3": {
+     "n": 184,
+     "value": 0.8424,
+     "ci95": [
+      0.788,
+      0.8913
+     ]
+    }
+   }
+  },
+  "clip_b16/zero_shot": {
+   "all": {
+    "top1": {
+     "n": 25434,
+     "value": 0.843,
+     "ci95": [
+      0.8388,
+      0.8474
+     ]
+    },
+    "top3": {
+     "n": 25434,
+     "value": 0.9545,
+     "ci95": [
+      0.952,
+      0.9571
+     ]
+    }
+   },
+   "food101": {
+    "top1": {
+     "n": 25250,
+     "value": 0.8439,
+     "ci95": [
+      0.8393,
+      0.8483
+     ]
+    },
+    "top3": {
+     "n": 25250,
+     "value": 0.9553,
+     "ci95": [
+      0.9528,
+      0.9578
+     ]
+    }
+   },
+   "ua": {
+    "top1": {
+     "n": 184,
+     "value": 0.7174,
+     "ci95": [
+      0.6522,
+      0.7772
+     ]
+    },
+    "top3": {
+     "n": 184,
+     "value": 0.8478,
+     "ci95": [
+      0.7989,
+      0.8967
+     ]
+    }
+   }
+  },
+  "clip_l14/zero_shot": {
+   "all": {
+    "top1": {
+     "n": 25434,
+     "value": 0.8974,
+     "ci95": [
+      0.8939,
+      0.9011
+     ]
+    },
+    "top3": {
+     "n": 25434,
+     "value": 0.9743,
+     "ci95": [
+      0.9724,
+      0.9764
+     ]
+    }
+   },
+   "food101": {
+    "top1": {
+     "n": 25250,
+     "value": 0.8981,
+     "ci95": [
+      0.8942,
+      0.9017
+     ]
+    },
+    "top3": {
+     "n": 25250,
+     "value": 0.9747,
+     "ci95": [
+      0.9727,
+      0.9764
+     ]
+    }
+   },
+   "ua": {
+    "top1": {
+     "n": 184,
+     "value": 0.8098,
+     "ci95": [
+      0.7554,
+      0.8641
+     ]
+    },
+    "top3": {
+     "n": 184,
+     "value": 0.9293,
+     "ci95": [
+      0.8913,
+      0.962
+     ]
+    }
+   }
+  },
+  "clip_b32/probe": {
+   "all": {
+    "top1": {
+     "n": 25434,
+     "value": 0.8649,
+     "ci95": [
+      0.8605,
+      0.869
+     ]
+    },
+    "top3": {
+     "n": 25434,
+     "value": 0.9596,
+     "ci95": [
+      0.9571,
+      0.9621
+     ]
+    }
+   },
+   "food101": {
+    "top1": {
+     "n": 25250,
+     "value": 0.865,
+     "ci95": [
+      0.8609,
+      0.869
+     ]
+    },
+    "top3": {
+     "n": 25250,
+     "value": 0.9597,
+     "ci95": [
+      0.9573,
+      0.9621
+     ]
+    }
+   },
+   "ua": {
+    "top1": {
+     "n": 184,
+     "value": 0.8478,
+     "ci95": [
+      0.7935,
+      0.8967
+     ]
+    },
+    "top3": {
+     "n": 184,
+     "value": 0.9511,
+     "ci95": [
+      0.9185,
+      0.9783
+     ]
+    }
+   }
+  },
+  "clip_b16/probe": {
+   "all": {
+    "top1": {
+     "n": 25434,
+     "value": 0.9096,
+     "ci95": [
+      0.9061,
+      0.913
+     ]
+    },
+    "top3": {
+     "n": 25434,
+     "value": 0.9761,
+     "ci95": [
+      0.9742,
+      0.978
+     ]
+    }
+   },
+   "food101": {
+    "top1": {
+     "n": 25250,
+     "value": 0.9095,
+     "ci95": [
+      0.9059,
+      0.9128
+     ]
+    },
+    "top3": {
+     "n": 25250,
+     "value": 0.9761,
+     "ci95": [
+      0.9743,
+      0.9779
+     ]
+    }
+   },
+   "ua": {
+    "top1": {
+     "n": 184,
+     "value": 0.9293,
+     "ci95": [
+      0.8913,
+      0.962
+     ]
+    },
+    "top3": {
+     "n": 184,
+     "value": 0.9783,
+     "ci95": [
+      0.9565,
+      0.9946
+     ]
+    }
+   }
+  },
+  "clip_l14/probe": {
+   "all": {
+    "top1": {
+     "n": 25434,
+     "value": 0.9399,
+     "ci95": [
+      0.9368,
+      0.9428
+     ]
+    },
+    "top3": {
+     "n": 25434,
+     "value": 0.9868,
+     "ci95": [
+      0.9853,
+      0.9881
+     ]
+    }
+   },
+   "food101": {
+    "top1": {
+     "n": 25250,
+     "value": 0.9397,
+     "ci95": [
+      0.9368,
+      0.9424
+     ]
+    },
+    "top3": {
+     "n": 25250,
+     "value": 0.9867,
+     "ci95": [
+      0.9853,
+      0.988
+     ]
+    }
+   },
+   "ua": {
+    "top1": {
+     "n": 184,
+     "value": 0.9728,
+     "ci95": [
+      0.9457,
+      0.9946
+     ]
+    },
+    "top3": {
+     "n": 184,
+     "value": 1.0,
+     "ci95": [
+      1.0,
+      1.0
+     ]
+    }
+   }
+  },
+  "hybrid": {
+   "all": {
+    "top1": {
+     "n": 25434,
+     "value": 0.9065,
+     "ci95": [
+      0.903,
+      0.91
+     ]
+    },
+    "top3": {
+     "n": 25434,
+     "value": 0.972,
+     "ci95": [
+      0.97,
+      0.9741
+     ]
+    }
+   },
+   "food101": {
+    "top1": {
+     "n": 25250,
+     "value": 0.9065,
+     "ci95": [
+      0.9029,
+      0.91
+     ]
+    },
+    "top3": {
+     "n": 25250,
+     "value": 0.972,
+     "ci95": [
+      0.97,
+      0.9741
+     ]
+    }
+   },
+   "ua": {
+    "top1": {
+     "n": 184,
+     "value": 0.9022,
+     "ci95": [
+      0.8587,
+      0.9402
+     ]
+    },
+    "top3": {
+     "n": 184,
+     "value": 0.9728,
+     "ci95": [
+      0.9457,
+      0.9946
+     ]
+    }
+   }
+  },
+  "average": {
+   "all": {
+    "top1": {
+     "n": 25434,
+     "value": 0.9263,
+     "ci95": [
+      0.9231,
+      0.9293
+     ]
+    },
+    "top3": {
+     "n": 25434,
+     "value": 0.9815,
+     "ci95": [
+      0.9798,
+      0.9832
+     ]
+    }
+   },
+   "food101": {
+    "top1": {
+     "n": 25250,
+     "value": 0.9263,
+     "ci95": [
+      0.923,
+      0.9293
+     ]
+    },
+    "top3": {
+     "n": 25250,
+     "value": 0.9815,
+     "ci95": [
+      0.98,
+      0.9831
+     ]
+    }
+   },
+   "ua": {
+    "top1": {
+     "n": 184,
+     "value": 0.9348,
+     "ci95": [
+      0.8967,
+      0.9674
+     ]
+    },
+    "top3": {
+     "n": 184,
+     "value": 0.9783,
+     "ci95": [
+      0.9565,
+      0.9946
+     ]
+    }
+   }
+  }
+ },
+ "significance_vs_cnn": [
+  {
+   "a": "clip_b32/zero_shot",
+   "b": "effb0_finetune",
+   "subset": "food101",
+   "only_a_right": 1242,
+   "only_b_right": 3137,
+   "diff": -0.075,
+   "p_value": 3.56e-186
+  },
+  {
+   "a": "clip_b32/zero_shot",
+   "b": "effb0_finetune",
+   "subset": "ua",
+   "only_a_right": 7,
+   "only_b_right": 53,
+   "diff": -0.25,
+   "p_value": 7.67e-10
+  },
+  {
+   "a": "clip_b16/zero_shot",
+   "b": "effb0_finetune",
+   "subset": "food101",
+   "only_a_right": 1652,
+   "only_b_right": 2303,
+   "diff": -0.0258,
+   "p_value": 3.81e-25
+  },
+  {
+   "a": "clip_b16/zero_shot",
+   "b": "effb0_finetune",
+   "subset": "ua",
+   "only_a_right": 9,
+   "only_b_right": 40,
+   "diff": -0.1685,
+   "p_value": 9.26e-06
+  },
+  {
+   "a": "clip_l14/zero_shot",
+   "b": "effb0_finetune",
+   "subset": "food101",
+   "only_a_right": 2056,
+   "only_b_right": 1339,
+   "diff": 0.0284,
+   "p_value": 5.92e-35
+  },
+  {
+   "a": "clip_l14/zero_shot",
+   "b": "effb0_finetune",
+   "subset": "ua",
+   "only_a_right": 13,
+   "only_b_right": 27,
+   "diff": -0.0761,
+   "p_value": 0.0385
+  },
+  {
+   "a": "clip_b32/probe",
+   "b": "effb0_finetune",
+   "subset": "food101",
+   "only_a_right": 1475,
+   "only_b_right": 1592,
+   "diff": -0.0046,
+   "p_value": 0.0362
+  },
+  {
+   "a": "clip_b32/probe",
+   "b": "effb0_finetune",
+   "subset": "ua",
+   "only_a_right": 10,
+   "only_b_right": 17,
+   "diff": -0.038,
+   "p_value": 0.248
+  },
+  {
+   "a": "clip_b16/probe",
+   "b": "effb0_finetune",
+   "subset": "food101",
+   "only_a_right": 1913,
+   "only_b_right": 908,
+   "diff": 0.0398,
+   "p_value": 2.02e-81
+  },
+  {
+   "a": "clip_b16/probe",
+   "b": "effb0_finetune",
+   "subset": "ua",
+   "only_a_right": 17,
+   "only_b_right": 9,
+   "diff": 0.0435,
+   "p_value": 0.169
+  },
+  {
+   "a": "clip_l14/probe",
+   "b": "effb0_finetune",
+   "subset": "food101",
+   "only_a_right": 2273,
+   "only_b_right": 505,
+   "diff": 0.07,
+   "p_value": 2.61e-266
+  },
+  {
+   "a": "clip_l14/probe",
+   "b": "effb0_finetune",
+   "subset": "ua",
+   "only_a_right": 20,
+   "only_b_right": 4,
+   "diff": 0.087,
+   "p_value": 0.00154
+  },
+  {
+   "a": "hybrid",
+   "b": "effb0_finetune",
+   "subset": "food101",
+   "only_a_right": 1288,
+   "only_b_right": 358,
+   "diff": 0.0368,
+   "p_value": 5.08e-123
+  },
+  {
+   "a": "hybrid",
+   "b": "effb0_finetune",
+   "subset": "ua",
+   "only_a_right": 6,
+   "only_b_right": 3,
+   "diff": 0.0163,
+   "p_value": 0.508
+  },
+  {
+   "a": "average",
+   "b": "effb0_finetune",
+   "subset": "food101",
+   "only_a_right": 1739,
+   "only_b_right": 310,
+   "diff": 0.0566,
+   "p_value": 1.3e-240
+  },
+  {
+   "a": "average",
+   "b": "effb0_finetune",
+   "subset": "ua",
+   "only_a_right": 13,
+   "only_b_right": 4,
+   "diff": 0.0489,
+   "p_value": 0.049
+  }
+ ],
+ "probe": {
+  "clip_b32": {
+   "weight_decay": 1e-06,
+   "val_top1": {
+    "0": 0.7668,
+    "1e-07": 0.8163,
+    "1e-06": 0.8269,
+    "1e-05": 0.8088,
+    "0.0001": 0.7425
+   }
+  },
+  "clip_b16": {
+   "weight_decay": 1e-06,
+   "val_top1": {
+    "0": 0.8159,
+    "1e-07": 0.8624,
+    "1e-06": 0.8709,
+    "1e-05": 0.8489,
+    "0.0001": 0.8042
+   }
+  },
+  "clip_l14": {
+   "weight_decay": 1e-06,
+   "val_top1": {
+    "0": 0.8768,
+    "1e-07": 0.9067,
+    "1e-06": 0.915,
+    "1e-05": 0.9013,
+    "0.0001": 0.867
+   }
+  }
+ },
+ "hybrid": {
+  "threshold": 0.5,
+  "cnn_share": 0.844
+ },
+ "prompt": "a photo of {}, a type of food.",
+ "logit_scale": 100.0,
+ "speed": {
+  "cpu": "Intel64 Family 6 Model 154 Stepping 3, GenuineIntel",
+  "threads": 4,
+  "torch": "2.11.0+cpu",
+  "effb0_finetune": {
+   "params_m": 4.1,
+   "size_mb_fp32": 15.8,
+   "latency_ms_median": 22.2,
+   "latency_ms_p90": 25.6
+  },
+  "clip_b32": {
+   "params_m": 87.8,
+   "size_mb_fp32": 335.1,
+   "latency_ms_median": 71.8,
+   "latency_ms_p90": 81.1
+  },
+  "clip_b16": {
+   "params_m": 86.2,
+   "size_mb_fp32": 328.8,
+   "latency_ms_median": 228.1,
+   "latency_ms_p90": 258.4
+  },
+  "clip_l14": {
+   "params_m": 304.0,
+   "size_mb_fp32": 1159.5,
+   "latency_ms_median": 1079.5,
+   "latency_ms_p90": 1241.7
+  }
+ }
+}
