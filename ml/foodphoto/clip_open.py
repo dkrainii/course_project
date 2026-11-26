@@ -30,7 +30,7 @@ import torch
 
 from .. import plotting as P
 from . import config
-from .analyze import DISHES_UK, MAIN, SUBSETS, accuracy, load, num, write
+from .analyze import DISHES_UK, MAIN, SUBSETS, accuracy, load, mcnemar, num, write
 from .clip_analyze import CLIP_LABELS, CLIP_MODELS, load_clip
 from .clip_embed import MODELS, TEMPLATE
 
@@ -222,7 +222,9 @@ def accept_matrix(classes: list[str], names: list[str]) -> np.ndarray:
     return out
 
 
-VOCABULARIES = {"all": "усі 5 432 записи FNDDS", "dishes": "лише страви FNDDS"}
+# FNDDS records allowed, plus class names of our catalogue added as extra entries (the prompts of
+# clip_embed: Food-101 labels, Ukrainian dishes with a gloss). An extra entry is right for its class.
+VOCABULARIES = ["all", "dishes", "dishes_ua", "dishes_catalogue"]
 
 
 def evaluate(name: str, names: list[str], dish: np.ndarray, kcal: np.ndarray) -> dict:
@@ -233,21 +235,28 @@ def evaluate(name: str, names: list[str], dish: np.ndarray, kcal: np.ndarray) ->
     assert (accept & dish).any(axis=1)[[classes.index(k) for k in ACCEPT]].all(), "a class lost all its records"
     keep = np.isin(np.array(classes)[test["y"]], list(ACCEPT))
     x, y, source = test["x"][keep], test["y"][keep], test["source"][keep]
+    cat_kcal = catalogue_kcal(classes)
 
-    sims = x @ fndds_text(name, names).T
-    hits, tops = {}, {}
-    for vocab, allowed in (("all", np.ones(len(names), bool)), ("dishes", dish)):
-        s = np.where(allowed, sims, -np.inf)
+    sims, class_sims = x @ fndds_text(name, names).T, x @ c["text"].T
+    ua = [i for i, label in enumerate(classes) if label in DISHES_UK]
+    setups = {"all": (np.ones(len(names), bool), []), "dishes": (dish, []),
+              "dishes_ua": (dish, ua), "dishes_catalogue": (dish, list(range(len(classes))))}
+    hits, tops, entry_kcal, entry_names = {}, {}, {}, {}
+    for vocab, (allowed, extra) in setups.items():
+        s = np.hstack([np.where(allowed, sims, -np.inf), class_sims[:, extra]])
+        right = np.hstack([accept, np.eye(len(classes), dtype=bool)[:, extra]])
         tops[vocab] = np.argsort(-s, axis=1)[:, :max(TOP_K)]
-        hits[vocab] = accept[y[:, None], tops[vocab]]        # [photo, rank]: is the k-th record right?
+        hits[vocab] = right[y[:, None], tops[vocab]]         # [photo, rank]: is the k-th entry right?
+        entry_kcal[vocab] = np.concatenate([kcal, cat_kcal[extra]])
+        entry_names[vocab] = names + [c["prompts"][i] for i in extra]
     closed_rank = np.argsort(-(x @ c["text"].T), axis=1)[:, :max(TOP_K)]
     closed, closed_pred = closed_rank == y[:, None], closed_rank[:, 0]
     cnn = load(MAIN)["test"]
     assert (cnn["path"] == test["path"]).all()
-    cnn_pred, cat_kcal = cnn["pred"][keep], catalogue_kcal(classes)
+    cnn_pred = cnn["pred"][keep]
 
     out = {"photos": int(keep.sum()), "classes": len(ACCEPT),
-           "vocabulary": {"all": len(names), "dishes": int(dish.sum())}}
+           "vocabulary": {v: int(setups[v][0].sum()) + len(setups[v][1]) for v in VOCABULARIES}}
     for subset in ("all", *SUBSETS):
         m = np.ones(len(y), bool) if subset == "all" else source == subset
         out[subset] = {f"closed_top{k}": accuracy(closed[m, :k].any(1)) for k in TOP_K}
@@ -257,8 +266,12 @@ def evaluate(name: str, names: list[str], dish: np.ndarray, kcal: np.ndarray) ->
         out[subset]["kcal_error"] = {
             "cnn": kcal_error(cat_kcal[cnn_pred[m]], cat_kcal[y[m]]),
             "closed": kcal_error(cat_kcal[closed_pred[m]], cat_kcal[y[m]]),
-            "dishes": kcal_error(kcal[tops["dishes"][m, 0]], cat_kcal[y[m]]),
+            **{v: kcal_error(entry_kcal[v][tops[v][m, 0]], cat_kcal[y[m]]) for v in VOCABULARIES[1:]},
         }
+    # do better names help? the same photos, top-1 with and without the extra entries (exact McNemar)
+    out["significance"] = [{"a": v, "b": "dishes", "subset": subset,
+                            **mcnemar(hits[v][source == subset, 0], hits["dishes"][source == subset, 0])}
+                           for v in ("dishes_ua", "dishes_catalogue") for subset in SUBSETS]
     per_class = []
     top, hit = tops["dishes"], hits["dishes"]
     for ci, label in enumerate(classes):
@@ -271,6 +284,11 @@ def evaluate(name: str, names: list[str], dish: np.ndarray, kcal: np.ndarray) ->
                           "all_top1": round(float(hits["all"][m, 0].mean()), 4),
                           "dishes_top1": round(float(hit[m, 0].mean()), 4),
                           "dishes_top3": round(float(hit[m, :3].any(1).mean()), 4),
+                          "dishes_ua_top1": round(float(hits["dishes_ua"][m, 0].mean()), 4),
+                          "dishes_catalogue_top1": round(float(hits["dishes_catalogue"][m, 0].mean()), 4),
+                          "catalogue_mistake": Counter(entry_names["dishes_catalogue"][j] for j, ok in zip(
+                              tops["dishes_catalogue"][m, 0], hits["dishes_catalogue"][m, 0]) if not ok
+                          ).most_common(1)[0][0] if not hits["dishes_catalogue"][m, 0].all() else None,
                           "accepted_records": int((accept[ci] & dish).sum()),
                           "usual_answer": right.most_common(1)[0][0] if right else None,
                           "usual_mistake": wrong.most_common(1)[0][0] if wrong else None})
@@ -279,12 +297,12 @@ def evaluate(name: str, names: list[str], dish: np.ndarray, kcal: np.ndarray) ->
 
 
 def fig_open(results: dict) -> None:
-    n_dishes = results[CLIP_MODELS[0]]["vocabulary"]["dishes"]
-    bars = [("closed_top1", P.NEUTRAL, "108 назв класів, top-1"),
-            ("all_top1", P.ORANGE, f"усі {P.thousands(results[CLIP_MODELS[0]]['vocabulary']['all'])} записи FNDDS, top-1"),
-            ("dishes_top1", P.VIOLET, f"{P.thousands(n_dishes)} страв FNDDS, top-1"),
-            ("dishes_top3", P.AQUA, f"{P.thousands(n_dishes)} страв FNDDS, top-3")]
-    fig, axes = plt.subplots(1, 2, figsize=(11, 4.6), sharey=True)
+    n_dishes = P.thousands(results[CLIP_MODELS[0]]["vocabulary"]["dishes"])
+    bars = [("closed_top1", P.NEUTRAL, "лише 108 назв класів"),
+            ("dishes_top1", P.ORANGE, f"{n_dishes} страв FNDDS (назви USDA)"),
+            ("dishes_ua_top1", P.VIOLET, "+ 7 українських страв зі зрозумілими назвами"),
+            ("dishes_catalogue_top1", P.AQUA, "+ усі 108 страв каталогу зі зрозумілими назвами")]
+    fig, axes = plt.subplots(1, 2, figsize=(11, 4.8), sharey=True)
     for ax, subset in zip(axes, SUBSETS):
         for i, name in enumerate(CLIP_MODELS):
             r = results[name][subset]
@@ -298,12 +316,13 @@ def fig_open(results: dict) -> None:
         P.horizontal_grid(ax)
         ax.set_xlim(0, 110)
         ax.set_title(f"{SUBSETS[subset]} (n = {P.thousands(results[CLIP_MODELS[0]][subset]['closed_top1']['n'])})")
-        ax.set_xlabel("Частка тестових фото з правильною стравою, %")
+        ax.set_xlabel("Перша відповідь — правильна страва, % тестових фото")
     axes[0].set_yticks(range(len(CLIP_MODELS)), [CLIP_LABELS[n] for n in CLIP_MODELS])
     axes[0].invert_yaxis()
     handles, labels = axes[0].get_legend_handles_labels()
-    fig.legend(handles, labels, loc="lower center", ncol=4, fontsize=8.5, frameon=False)
-    fig.tight_layout(rect=(0, 0.07, 1, 1))
+    fig.legend(handles, labels, loc="lower center", ncol=2, fontsize=8.5, frameon=False, title="Словник:",
+               title_fontsize=8.5)
+    fig.tight_layout(rect=(0, 0.12, 1, 1))
     P.save(fig, config.FIGURES_DIR / "14_clip_open.png")
 
 
@@ -319,14 +338,15 @@ def run() -> dict:
     fig_open(results)
     for name in CLIP_MODELS:
         r = results[name]
-        print(f"{name} (dishes: {r['vocabulary']['dishes']}): " + "   ".join(
-            f"{s} closed {r[s]['closed_top1']['value']:.3f} all {r[s]['all_top1']['value']:.3f} "
-            f"dishes {r[s]['dishes_top1']['value']:.3f}/{r[s]['dishes_top3']['value']:.3f}/{r[s]['dishes_top5']['value']:.3f}"
-            for s in SUBSETS))
+        print(f"{name} {r['vocabulary']}")
+        for s in SUBSETS:
+            print(f"  {s:8s} closed {r[s]['closed_top1']['value']:.3f}  " + "  ".join(
+                f"{v} {r[s][v + '_top1']['value']:.3f}/{r[s][v + '_top3']['value']:.3f}" for v in VOCABULARIES)
+                + "  kcal±20%: " + " ".join(f"{k} {e['within_20pct']['value']:.2f}" for k, e in r[s]["kcal_error"].items()))
     for row in results["clip_l14"]["per_class"]:
-        if row["class"] in DISHES_UK or row["dishes_top1"] < 0.4:
-            print(f"  {row['class']:24s} dishes {row['dishes_top1']:.2f} all {row['all_top1']:.2f} "
-                  f"closed {row['closed_top1']:.2f}  mistake: {row['usual_mistake']}")
+        if row["class"] in DISHES_UK:
+            print(f"  {row['class']:14s} dishes {row['dishes_top1']:.2f} +ua {row['dishes_ua_top1']:.2f} "
+                  f"+catalogue {row['dishes_catalogue_top1']:.2f}  mistake: {row['catalogue_mistake']}")
     return results
 
 
