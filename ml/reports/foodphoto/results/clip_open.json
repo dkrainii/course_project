@@ -1,0 +1,4387 @@
+{
+ "clip_b32": {
+  "photos": 23170,
+  "classes": 98,
+  "vocabulary": {
+   "all": 5432,
+   "dishes": 4380
+  },
+  "all": {
+   "closed_top1": {
+    "n": 23170,
+    "value": 0.7908,
+    "ci95": [
+     0.7857,
+     0.7961
+    ]
+   },
+   "closed_top3": {
+    "n": 23170,
+    "value": 0.9264,
+    "ci95": [
+     0.923,
+     0.9297
+    ]
+   },
+   "closed_top5": {
+    "n": 23170,
+    "value": 0.9593,
+    "ci95": [
+     0.9567,
+     0.9618
+    ]
+   },
+   "all_top1": {
+    "n": 23170,
+    "value": 0.4499,
+    "ci95": [
+     0.4436,
+     0.4562
+    ]
+   },
+   "all_top3": {
+    "n": 23170,
+    "value": 0.5884,
+    "ci95": [
+     0.5817,
+     0.5945
+    ]
+   },
+   "all_top5": {
+    "n": 23170,
+    "value": 0.6433,
+    "ci95": [
+     0.6372,
+     0.6495
+    ]
+   },
+   "dishes_top1": {
+    "n": 23170,
+    "value": 0.4608,
+    "ci95": [
+     0.4546,
+     0.467
+    ]
+   },
+   "dishes_top3": {
+    "n": 23170,
+    "value": 0.5981,
+    "ci95": [
+     0.5915,
+     0.6041
+    ]
+   },
+   "dishes_top5": {
+    "n": 23170,
+    "value": 0.6534,
+    "ci95": [
+     0.6476,
+     0.6596
+    ]
+   },
+   "kcal_error": {
+    "cnn": {
+     "median_abs": 0.0,
+     "mean_abs": 11.1,
+     "within_20pct": {
+      "n": 23170,
+      "value": 0.913,
+      "ci95": [
+       0.9095,
+       0.9167
+      ]
+     }
+    },
+    "closed": {
+     "median_abs": 0.0,
+     "mean_abs": 16.6,
+     "within_20pct": {
+      "n": 23170,
+      "value": 0.8617,
+      "ci95": [
+       0.8574,
+       0.8663
+      ]
+     }
+    },
+    "dishes": {
+     "median_abs": 23.0,
+     "mean_abs": 47.5,
+     "within_20pct": {
+      "n": 23170,
+      "value": 0.5632,
+      "ci95": [
+       0.5566,
+       0.5695
+      ]
+     }
+    }
+   }
+  },
+  "food101": {
+   "closed_top1": {
+    "n": 23000,
+    "value": 0.7919,
+    "ci95": [
+     0.7867,
+     0.7971
+    ]
+   },
+   "closed_top3": {
+    "n": 23000,
+    "value": 0.9268,
+    "ci95": [
+     0.9235,
+     0.9302
+    ]
+   },
+   "closed_top5": {
+    "n": 23000,
+    "value": 0.9597,
+    "ci95": [
+     0.9572,
+     0.9622
+    ]
+   },
+   "all_top1": {
+    "n": 23000,
+    "value": 0.4508,
+    "ci95": [
+     0.4444,
+     0.4574
+    ]
+   },
+   "all_top3": {
+    "n": 23000,
+    "value": 0.5896,
+    "ci95": [
+     0.5833,
+     0.596
+    ]
+   },
+   "all_top5": {
+    "n": 23000,
+    "value": 0.6445,
+    "ci95": [
+     0.6383,
+     0.6507
+    ]
+   },
+   "dishes_top1": {
+    "n": 23000,
+    "value": 0.4617,
+    "ci95": [
+     0.4551,
+     0.4683
+    ]
+   },
+   "dishes_top3": {
+    "n": 23000,
+    "value": 0.5992,
+    "ci95": [
+     0.5931,
+     0.6055
+    ]
+   },
+   "dishes_top5": {
+    "n": 23000,
+    "value": 0.6546,
+    "ci95": [
+     0.6485,
+     0.6605
+    ]
+   },
+   "kcal_error": {
+    "cnn": {
+     "median_abs": 0.0,
+     "mean_abs": 11.1,
+     "within_20pct": {
+      "n": 23000,
+      "value": 0.9129,
+      "ci95": [
+       0.9092,
+       0.9167
+      ]
+     }
+    },
+    "closed": {
+     "median_abs": 0.0,
+     "mean_abs": 16.5,
+     "within_20pct": {
+      "n": 23000,
+      "value": 0.8626,
+      "ci95": [
+       0.8583,
+       0.867
+      ]
+     }
+    },
+    "dishes": {
+     "median_abs": 23.0,
+     "mean_abs": 47.4,
+     "within_20pct": {
+      "n": 23000,
+      "value": 0.5646,
+      "ci95": [
+       0.5581,
+       0.5712
+      ]
+     }
+    }
+   }
+  },
+  "ua": {
+   "closed_top1": {
+    "n": 170,
+    "value": 0.6471,
+    "ci95": [
+     0.5706,
+     0.7176
+    ]
+   },
+   "closed_top3": {
+    "n": 170,
+    "value": 0.8647,
+    "ci95": [
+     0.8176,
+     0.9118
+    ]
+   },
+   "closed_top5": {
+    "n": 170,
+    "value": 0.9,
+    "ci95": [
+     0.8529,
+     0.9412
+    ]
+   },
+   "all_top1": {
+    "n": 170,
+    "value": 0.3235,
+    "ci95": [
+     0.2529,
+     0.3941
+    ]
+   },
+   "all_top3": {
+    "n": 170,
+    "value": 0.4294,
+    "ci95": [
+     0.3529,
+     0.5059
+    ]
+   },
+   "all_top5": {
+    "n": 170,
+    "value": 0.4882,
+    "ci95": [
+     0.4176,
+     0.5647
+    ]
+   },
+   "dishes_top1": {
+    "n": 170,
+    "value": 0.3412,
+    "ci95": [
+     0.2706,
+     0.4118
+    ]
+   },
+   "dishes_top3": {
+    "n": 170,
+    "value": 0.4471,
+    "ci95": [
+     0.3763,
+     0.5235
+    ]
+   },
+   "dishes_top5": {
+    "n": 170,
+    "value": 0.5,
+    "ci95": [
+     0.4293,
+     0.5765
+    ]
+   },
+   "kcal_error": {
+    "cnn": {
+     "median_abs": 0.0,
+     "mean_abs": 10.7,
+     "within_20pct": {
+      "n": 170,
+      "value": 0.9353,
+      "ci95": [
+       0.8941,
+       0.9706
+      ]
+     }
+    },
+    "closed": {
+     "median_abs": 0.0,
+     "mean_abs": 28.7,
+     "within_20pct": {
+      "n": 170,
+      "value": 0.7412,
+      "ci95": [
+       0.6765,
+       0.8059
+      ]
+     }
+    },
+    "dishes": {
+     "median_abs": 32.0,
+     "mean_abs": 56.1,
+     "within_20pct": {
+      "n": 170,
+      "value": 0.3765,
+      "ci95": [
+       0.3,
+       0.4471
+      ]
+     }
+    }
+   }
+  },
+  "per_class": [
+   {
+    "class": "bread_pudding",
+    "n": 250,
+    "closed_top1": 0.756,
+    "all_top1": 0.0,
+    "dishes_top1": 0.0,
+    "dishes_top3": 0.0,
+    "accepted_records": 1,
+    "usual_answer": null,
+    "usual_mistake": "Funnel cake with sugar"
+   },
+   {
+    "class": "foie_gras",
+    "n": 250,
+    "closed_top1": 0.552,
+    "all_top1": 0.0,
+    "dishes_top1": 0.0,
+    "dishes_top3": 0.0,
+    "accepted_records": 1,
+    "usual_answer": null,
+    "usual_mistake": "Duck, roasted, skin not eaten"
+   },
+   {
+    "class": "pulled_pork_sandwich",
+    "n": 250,
+    "closed_top1": 0.852,
+    "all_top1": 0.0,
+    "dishes_top1": 0.0,
+    "dishes_top3": 0.072,
+    "accepted_records": 1,
+    "usual_answer": null,
+    "usual_mistake": "Barbecue rib sandwich"
+   },
+   {
+    "class": "tuna_tartare",
+    "n": 250,
+    "closed_top1": 0.536,
+    "all_top1": 0.004,
+    "dishes_top1": 0.004,
+    "dishes_top3": 0.008,
+    "accepted_records": 1,
+    "usual_answer": "Fish, tuna, raw",
+    "usual_mistake": "Steak tartare"
+   },
+   {
+    "class": "apple_pie",
+    "n": 250,
+    "closed_top1": 0.524,
+    "all_top1": 0.012,
+    "dishes_top1": 0.012,
+    "dishes_top3": 0.06,
+    "accepted_records": 2,
+    "usual_answer": "Pie, apple, fast food",
+    "usual_mistake": "Funnel cake with sugar"
+   },
+   {
+    "class": "cannoli",
+    "n": 250,
+    "closed_top1": 0.924,
+    "all_top1": 0.012,
+    "dishes_top1": 0.012,
+    "dishes_top3": 0.032,
+    "accepted_records": 1,
+    "usual_answer": "Pastry, Italian, with cheese",
+    "usual_mistake": "Crepe, chocolate filled"
+   },
+   {
+    "class": "filet_mignon",
+    "n": 250,
+    "closed_top1": 0.624,
+    "all_top1": 0.016,
+    "dishes_top1": 0.016,
+    "dishes_top3": 0.024,
+    "accepted_records": 1,
+    "usual_answer": "Beef, steak, tenderloin",
+    "usual_mistake": "Lamb, chop"
+   },
+   {
+    "class": "deviled_eggs",
+    "n": 250,
+    "closed_top1": 0.892,
+    "all_top1": 0.024,
+    "dishes_top1": 0.024,
+    "dishes_top3": 0.076,
+    "accepted_records": 1,
+    "usual_answer": "Egg, deviled",
+    "usual_mistake": "Potato salad with egg, from restaurant"
+   },
+   {
+    "class": "pork_chop",
+    "n": 250,
+    "closed_top1": 0.568,
+    "all_top1": 0.032,
+    "dishes_top1": 0.032,
+    "dishes_top3": 0.224,
+    "accepted_records": 7,
+    "usual_answer": "Pork, chop, NS as to fat eaten",
+    "usual_mistake": "Lamb, chop"
+   },
+   {
+    "class": "hot_and_sour_soup",
+    "n": 250,
+    "closed_top1": 0.924,
+    "all_top1": 0.048,
+    "dishes_top1": 0.056,
+    "dishes_top3": 0.224,
+    "accepted_records": 1,
+    "usual_answer": "Soup, hot and sour",
+    "usual_mistake": "Soup, wonton"
+   },
+   {
+    "class": "chocolate_mousse",
+    "n": 250,
+    "closed_top1": 0.596,
+    "all_top1": 0.036,
+    "dishes_top1": 0.06,
+    "dishes_top3": 0.196,
+    "accepted_records": 1,
+    "usual_answer": "Mousse",
+    "usual_mistake": "Pudding, chocolate, made from dry mix"
+   },
+   {
+    "class": "fried_rice",
+    "n": 250,
+    "closed_top1": 0.892,
+    "all_top1": 0.064,
+    "dishes_top1": 0.064,
+    "dishes_top3": 0.12,
+    "accepted_records": 6,
+    "usual_answer": "Rice, fried, with shrimp",
+    "usual_mistake": "Rice pilaf"
+   },
+   {
+    "class": "lobster_bisque",
+    "n": 250,
+    "closed_top1": 0.792,
+    "all_top1": 0.068,
+    "dishes_top1": 0.084,
+    "dishes_top3": 0.384,
+    "accepted_records": 1,
+    "usual_answer": "Soup, bisque",
+    "usual_mistake": "Soup, pumpkin"
+   },
+   {
+    "class": "french_onion_soup",
+    "n": 250,
+    "closed_top1": 0.868,
+    "all_top1": 0.088,
+    "dishes_top1": 0.1,
+    "dishes_top3": 0.256,
+    "accepted_records": 1,
+    "usual_answer": "Soup, French onion",
+    "usual_mistake": "Cheese souffle"
+   },
+   {
+    "class": "holubtsi",
+    "n": 30,
+    "closed_top1": 0.5667,
+    "all_top1": 0.1333,
+    "dishes_top1": 0.1333,
+    "dishes_top3": 0.2667,
+    "accepted_records": 3,
+    "usual_answer": "Stuffed cabbage, with meat, Puerto Rican style",
+    "usual_mistake": "Artichokes, stuffed"
+   },
+   {
+    "class": "crab_cakes",
+    "n": 250,
+    "closed_top1": 0.632,
+    "all_top1": 0.136,
+    "dishes_top1": 0.136,
+    "dishes_top3": 0.284,
+    "accepted_records": 1,
+    "usual_answer": "Crab, cake",
+    "usual_mistake": "Ham croquette"
+   },
+   {
+    "class": "olivier_salad",
+    "n": 20,
+    "closed_top1": 0.4,
+    "all_top1": 0.15,
+    "dishes_top1": 0.15,
+    "dishes_top3": 0.15,
+    "accepted_records": 10,
+    "usual_answer": "Potato salad with egg, made with mayonnaise",
+    "usual_mistake": "Macaroni or pasta salad with egg"
+   },
+   {
+    "class": "prime_rib",
+    "n": 250,
+    "closed_top1": 0.896,
+    "all_top1": 0.16,
+    "dishes_top1": 0.164,
+    "dishes_top3": 0.46,
+    "accepted_records": 4,
+    "usual_answer": "Beef, roast",
+    "usual_mistake": "Beef, steak, T-bone, NS as to fat eaten"
+   },
+   {
+    "class": "chicken_curry",
+    "n": 250,
+    "closed_top1": 0.624,
+    "all_top1": 0.144,
+    "dishes_top1": 0.168,
+    "dishes_top3": 0.38,
+    "accepted_records": 2,
+    "usual_answer": "Chicken curry",
+    "usual_mistake": "Fish curry"
+   },
+   {
+    "class": "lobster_roll_sandwich",
+    "n": 250,
+    "closed_top1": 0.912,
+    "all_top1": 0.172,
+    "dishes_top1": 0.172,
+    "dishes_top3": 0.336,
+    "accepted_records": 1,
+    "usual_answer": "Lobster salad",
+    "usual_mistake": "Seafood salad sandwich"
+   },
+   {
+    "class": "chocolate_cake",
+    "n": 250,
+    "closed_top1": 0.796,
+    "all_top1": 0.18,
+    "dishes_top1": 0.18,
+    "dishes_top3": 0.456,
+    "accepted_records": 8,
+    "usual_answer": "Cake or cupcake, Black Forest",
+    "usual_mistake": "Cake, Boston cream pie"
+   },
+   {
+    "class": "carrot_cake",
+    "n": 250,
+    "closed_top1": 0.824,
+    "all_top1": 0.192,
+    "dishes_top1": 0.192,
+    "dishes_top3": 0.292,
+    "accepted_records": 1,
+    "usual_answer": "Cake or cupcake, carrot",
+    "usual_mistake": "Cake, torte"
+   },
+   {
+    "class": "gyoza",
+    "n": 250,
+    "closed_top1": 0.72,
+    "all_top1": 0.192,
+    "dishes_top1": 0.192,
+    "dishes_top3": 0.332,
+    "accepted_records": 3,
+    "usual_answer": "Wonton, dumpling or pot sticker, steamed",
+    "usual_mistake": "Pierogi"
+   },
+   {
+    "class": "ceviche",
+    "n": 250,
+    "closed_top1": 0.576,
+    "all_top1": 0.184,
+    "dishes_top1": 0.2,
+    "dishes_top3": 0.344,
+    "accepted_records": 1,
+    "usual_answer": "Ceviche",
+    "usual_mistake": "Octopus salad, Puerto Rican style"
+   },
+   {
+    "class": "seaweed_salad",
+    "n": 250,
+    "closed_top1": 0.908,
+    "all_top1": 0.2,
+    "dishes_top1": 0.204,
+    "dishes_top3": 0.348,
+    "accepted_records": 4,
+    "usual_answer": "Seaweed, raw",
+    "usual_mistake": "Poke greens, cooked"
+   },
+   {
+    "class": "deruny",
+    "n": 39,
+    "closed_top1": 0.6154,
+    "all_top1": 0.2051,
+    "dishes_top1": 0.2051,
+    "dishes_top3": 0.359,
+    "accepted_records": 1,
+    "usual_answer": "Potato pancake",
+    "usual_mistake": "Fried green tomatoes"
+   },
+   {
+    "class": "frozen_yogurt",
+    "n": 250,
+    "closed_top1": 0.944,
+    "all_top1": 0.224,
+    "dishes_top1": 0.236,
+    "dishes_top3": 0.732,
+    "accepted_records": 9,
+    "usual_answer": "Frozen yogurt, NFS",
+    "usual_mistake": "Frozen yogurt bar, vanilla"
+   },
+   {
+    "class": "miso_soup",
+    "n": 250,
+    "closed_top1": 0.796,
+    "all_top1": 0.132,
+    "dishes_top1": 0.236,
+    "dishes_top3": 0.448,
+    "accepted_records": 1,
+    "usual_answer": "Soup, miso or tofu",
+    "usual_mistake": "Soup, seaweed"
+   },
+   {
+    "class": "beet_salad",
+    "n": 250,
+    "closed_top1": 0.724,
+    "all_top1": 0.248,
+    "dishes_top1": 0.252,
+    "dishes_top3": 0.436,
+    "accepted_records": 8,
+    "usual_answer": "Beets, NS as to form, cooked",
+    "usual_mistake": "Apple salad with dressing"
+   },
+   {
+    "class": "grilled_salmon",
+    "n": 250,
+    "closed_top1": 0.768,
+    "all_top1": 0.256,
+    "dishes_top1": 0.26,
+    "dishes_top3": 0.412,
+    "accepted_records": 3,
+    "usual_answer": "Fish, salmon, grilled",
+    "usual_mistake": "Salmon salad"
+   },
+   {
+    "class": "sashimi",
+    "n": 250,
+    "closed_top1": 0.884,
+    "all_top1": 0.284,
+    "dishes_top1": 0.284,
+    "dishes_top3": 0.664,
+    "accepted_records": 3,
+    "usual_answer": "Fish, tuna, raw",
+    "usual_mistake": "Sushi, topped with salmon"
+   },
+   {
+    "class": "gnocchi",
+    "n": 250,
+    "closed_top1": 0.6,
+    "all_top1": 0.292,
+    "dishes_top1": 0.292,
+    "dishes_top3": 0.44,
+    "accepted_records": 2,
+    "usual_answer": "Gnocchi, cheese",
+    "usual_mistake": "Macaroni or noodles with cheese, from restaurant"
+   },
+   {
+    "class": "peking_duck",
+    "n": 250,
+    "closed_top1": 0.844,
+    "all_top1": 0.284,
+    "dishes_top1": 0.296,
+    "dishes_top3": 0.432,
+    "accepted_records": 3,
+    "usual_answer": "Duck, Peking",
+    "usual_mistake": "Chinese pancake"
+   },
+   {
+    "class": "breakfast_burrito",
+    "n": 250,
+    "closed_top1": 0.668,
+    "all_top1": 0.304,
+    "dishes_top1": 0.304,
+    "dishes_top3": 0.38,
+    "accepted_records": 4,
+    "usual_answer": "Egg burrito",
+    "usual_mistake": "Turkey sandwich wrap"
+   },
+   {
+    "class": "ravioli",
+    "n": 250,
+    "closed_top1": 0.408,
+    "all_top1": 0.3,
+    "dishes_top1": 0.312,
+    "dishes_top3": 0.476,
+    "accepted_records": 15,
+    "usual_answer": "Ravioli, cheese and spinach-filled, with cream sauce",
+    "usual_mistake": "Tortellini, cheese-filled, with cream sauce"
+   },
+   {
+    "class": "cheesecake",
+    "n": 250,
+    "closed_top1": 0.736,
+    "all_top1": 0.32,
+    "dishes_top1": 0.324,
+    "dishes_top3": 0.62,
+    "accepted_records": 3,
+    "usual_answer": "Cheesecake, plain",
+    "usual_mistake": "Pie, blueberry"
+   },
+   {
+    "class": "fish_and_chips",
+    "n": 250,
+    "closed_top1": 0.924,
+    "all_top1": 0.316,
+    "dishes_top1": 0.324,
+    "dishes_top3": 0.532,
+    "accepted_records": 13,
+    "usual_answer": "Fish, haddock, fried",
+    "usual_mistake": "Chicken tenders or strips, breaded, from restaurant"
+   },
+   {
+    "class": "strawberry_shortcake",
+    "n": 250,
+    "closed_top1": 0.816,
+    "all_top1": 0.336,
+    "dishes_top1": 0.336,
+    "dishes_top3": 0.608,
+    "accepted_records": 1,
+    "usual_answer": "Cake, strawberry shortcake",
+    "usual_mistake": "Pie, strawberry"
+   },
+   {
+    "class": "samosa",
+    "n": 250,
+    "closed_top1": 0.656,
+    "all_top1": 0.344,
+    "dishes_top1": 0.344,
+    "dishes_top3": 0.444,
+    "accepted_records": 1,
+    "usual_answer": "Samosa",
+    "usual_mistake": "Empanada, NFS"
+   },
+   {
+    "class": "steak",
+    "n": 250,
+    "closed_top1": 0.308,
+    "all_top1": 0.36,
+    "dishes_top1": 0.36,
+    "dishes_top3": 0.552,
+    "accepted_records": 20,
+    "usual_answer": "Beef, steak, T-bone, NS as to fat eaten",
+    "usual_mistake": "Lamb, chop"
+   },
+   {
+    "class": "varenyky",
+    "n": 11,
+    "closed_top1": 0.4545,
+    "all_top1": 0.3636,
+    "dishes_top1": 0.3636,
+    "dishes_top3": 0.3636,
+    "accepted_records": 1,
+    "usual_answer": "Pierogi",
+    "usual_mistake": "Ravioli, meat-filled, with cream sauce"
+   },
+   {
+    "class": "caprese_salad",
+    "n": 250,
+    "closed_top1": 0.82,
+    "all_top1": 0.396,
+    "dishes_top1": 0.4,
+    "dishes_top3": 0.536,
+    "accepted_records": 1,
+    "usual_answer": "Mozzarella cheese, tomato, and basil, with oil and vinegar dressing",
+    "usual_mistake": "Tomatoes, scalloped"
+   },
+   {
+    "class": "escargots",
+    "n": 250,
+    "closed_top1": 0.72,
+    "all_top1": 0.408,
+    "dishes_top1": 0.408,
+    "dishes_top3": 0.572,
+    "accepted_records": 1,
+    "usual_answer": "Escargot",
+    "usual_mistake": "Oysters Rockefeller"
+   },
+   {
+    "class": "hummus",
+    "n": 250,
+    "closed_top1": 0.696,
+    "all_top1": 0.416,
+    "dishes_top1": 0.416,
+    "dishes_top3": 0.516,
+    "accepted_records": 2,
+    "usual_answer": "Hummus, flavored",
+    "usual_mistake": "Tzatziki dip"
+   },
+   {
+    "class": "fried_calamari",
+    "n": 250,
+    "closed_top1": 0.728,
+    "all_top1": 0.42,
+    "dishes_top1": 0.42,
+    "dishes_top3": 0.676,
+    "accepted_records": 2,
+    "usual_answer": "Calamari, fried",
+    "usual_mistake": "Fried onion rings"
+   },
+   {
+    "class": "huevos_rancheros",
+    "n": 250,
+    "closed_top1": 0.716,
+    "all_top1": 0.436,
+    "dishes_top1": 0.44,
+    "dishes_top3": 0.56,
+    "accepted_records": 1,
+    "usual_answer": "Huevos rancheros",
+    "usual_mistake": "Chimichanga, with beans"
+   },
+   {
+    "class": "lasagna",
+    "n": 250,
+    "closed_top1": 0.628,
+    "all_top1": 0.44,
+    "dishes_top1": 0.444,
+    "dishes_top3": 0.672,
+    "accepted_records": 10,
+    "usual_answer": "Lasagna with meat, from restaurant",
+    "usual_mistake": "Veal parmigiana"
+   },
+   {
+    "class": "tacos",
+    "n": 250,
+    "closed_top1": 0.796,
+    "all_top1": 0.448,
+    "dishes_top1": 0.456,
+    "dishes_top3": 0.676,
+    "accepted_records": 20,
+    "usual_answer": "Taco, NFS",
+    "usual_mistake": "Gordita/sope shell, plain, no filling"
+   },
+   {
+    "class": "borscht",
+    "n": 31,
+    "closed_top1": 0.8387,
+    "all_top1": 0.4194,
+    "dishes_top1": 0.5161,
+    "dishes_top3": 0.6774,
+    "accepted_records": 1,
+    "usual_answer": "Soup, borscht",
+    "usual_mistake": "Soup, pozole"
+   },
+   {
+    "class": "scallops",
+    "n": 250,
+    "closed_top1": 0.568,
+    "all_top1": 0.52,
+    "dishes_top1": 0.524,
+    "dishes_top3": 0.62,
+    "accepted_records": 4,
+    "usual_answer": "Scallops, grilled",
+    "usual_mistake": "Chicken kiev"
+   },
+   {
+    "class": "macaroni_and_cheese",
+    "n": 250,
+    "closed_top1": 0.788,
+    "all_top1": 0.528,
+    "dishes_top1": 0.528,
+    "dishes_top3": 0.652,
+    "accepted_records": 16,
+    "usual_answer": "Macaroni or noodles with cheese, from restaurant",
+    "usual_mistake": "Shepherd's pie"
+   },
+   {
+    "class": "falafel",
+    "n": 250,
+    "closed_top1": 0.784,
+    "all_top1": 0.532,
+    "dishes_top1": 0.532,
+    "dishes_top3": 0.688,
+    "accepted_records": 2,
+    "usual_answer": "Falafel",
+    "usual_mistake": "Swedish meatballs with cream or white sauce"
+   },
+   {
+    "class": "baklava",
+    "n": 250,
+    "closed_top1": 0.736,
+    "all_top1": 0.536,
+    "dishes_top1": 0.536,
+    "dishes_top3": 0.684,
+    "accepted_records": 1,
+    "usual_answer": "Baklava",
+    "usual_mistake": "Spanakopita"
+   },
+   {
+    "class": "bruschetta",
+    "n": 250,
+    "closed_top1": 0.736,
+    "all_top1": 0.564,
+    "dishes_top1": 0.564,
+    "dishes_top3": 0.676,
+    "accepted_records": 1,
+    "usual_answer": "Bruschetta",
+    "usual_mistake": "Potato skins, with cheese and bacon"
+   },
+   {
+    "class": "eggs_benedict",
+    "n": 250,
+    "closed_top1": 0.904,
+    "all_top1": 0.536,
+    "dishes_top1": 0.564,
+    "dishes_top3": 0.628,
+    "accepted_records": 1,
+    "usual_answer": "Egg, Benedict",
+    "usual_mistake": "Egg sandwich on croissant, with ham"
+   },
+   {
+    "class": "garlic_bread",
+    "n": 250,
+    "closed_top1": 0.664,
+    "all_top1": 0.568,
+    "dishes_top1": 0.568,
+    "dishes_top3": 0.676,
+    "accepted_records": 7,
+    "usual_answer": "Garlic bread, from fast food / restaurant",
+    "usual_mistake": "Calzone, with cheese, meatless"
+   },
+   {
+    "class": "spring_rolls",
+    "n": 250,
+    "closed_top1": 0.86,
+    "all_top1": 0.576,
+    "dishes_top1": 0.584,
+    "dishes_top3": 0.7,
+    "accepted_records": 5,
+    "usual_answer": "Roll with meat and/or shrimp, vegetables and rice paper, not fried",
+    "usual_mistake": "Breadsticks, NFS"
+   },
+   {
+    "class": "baby_back_ribs",
+    "n": 250,
+    "closed_top1": 0.776,
+    "all_top1": 0.576,
+    "dishes_top1": 0.588,
+    "dishes_top3": 0.724,
+    "accepted_records": 2,
+    "usual_answer": "Ribs, NFS",
+    "usual_mistake": "Chicken, neck or ribs"
+   },
+   {
+    "class": "shashlik",
+    "n": 39,
+    "closed_top1": 0.7692,
+    "all_top1": 0.5897,
+    "dishes_top1": 0.5897,
+    "dishes_top3": 0.6667,
+    "accepted_records": 6,
+    "usual_answer": "Chicken or turkey shish kabob with vegetables, excluding potatoes",
+    "usual_mistake": "Barbecue chicken"
+   },
+   {
+    "class": "guacamole",
+    "n": 250,
+    "closed_top1": 0.892,
+    "all_top1": 0.564,
+    "dishes_top1": 0.604,
+    "dishes_top3": 0.764,
+    "accepted_records": 2,
+    "usual_answer": "Guacamole, NFS",
+    "usual_mistake": "Salsa verde or salsa, green"
+   },
+   {
+    "class": "caesar_salad",
+    "n": 250,
+    "closed_top1": 0.888,
+    "all_top1": 0.608,
+    "dishes_top1": 0.608,
+    "dishes_top3": 0.744,
+    "accepted_records": 3,
+    "usual_answer": "Caesar salad, with romaine, no dressing",
+    "usual_mistake": "Chicken or turkey salad, made with any type of fat free dressing"
+   },
+   {
+    "class": "greek_salad",
+    "n": 250,
+    "closed_top1": 0.808,
+    "all_top1": 0.6,
+    "dishes_top1": 0.608,
+    "dishes_top3": 0.708,
+    "accepted_records": 1,
+    "usual_answer": "Greek Salad, no dressing",
+    "usual_mistake": "Seafood garden salad with seafood, lettuce, tomato and/or carrots, other vegetables, no dressing"
+   },
+   {
+    "class": "nachos",
+    "n": 250,
+    "closed_top1": 0.888,
+    "all_top1": 0.608,
+    "dishes_top1": 0.608,
+    "dishes_top3": 0.744,
+    "accepted_records": 7,
+    "usual_answer": "Nachos, NFS",
+    "usual_mistake": "Tortilla chips, other flavors (Doritos)"
+   },
+   {
+    "class": "grilled_cheese_sandwich",
+    "n": 250,
+    "closed_top1": 0.736,
+    "all_top1": 0.608,
+    "dishes_top1": 0.612,
+    "dishes_top3": 0.724,
+    "accepted_records": 14,
+    "usual_answer": "Grilled cheese sandwich, NFS",
+    "usual_mistake": "Club sandwich on wheat"
+   },
+   {
+    "class": "ice_cream",
+    "n": 250,
+    "closed_top1": 0.736,
+    "all_top1": 0.532,
+    "dishes_top1": 0.612,
+    "dishes_top3": 0.836,
+    "accepted_records": 29,
+    "usual_answer": "Ice cream, chocolate, with additional ingredients",
+    "usual_mistake": "Soft serve, blended with candy or cookies, from fast food"
+   },
+   {
+    "class": "spaghetti_bolognese",
+    "n": 250,
+    "closed_top1": 0.928,
+    "all_top1": 0.408,
+    "dishes_top1": 0.62,
+    "dishes_top3": 0.728,
+    "accepted_records": 4,
+    "usual_answer": "Spaghetti with meat sauce, diet frozen meal",
+    "usual_mistake": "Pasta with tomato-based sauce, restaurant"
+   },
+   {
+    "class": "hamburger",
+    "n": 250,
+    "closed_top1": 0.812,
+    "all_top1": 0.624,
+    "dishes_top1": 0.624,
+    "dishes_top3": 0.8,
+    "accepted_records": 55,
+    "usual_answer": "Hamburger, NFS",
+    "usual_mistake": "Veggie burger, on bun"
+   },
+   {
+    "class": "onion_rings",
+    "n": 250,
+    "closed_top1": 0.944,
+    "all_top1": 0.624,
+    "dishes_top1": 0.624,
+    "dishes_top3": 0.92,
+    "accepted_records": 1,
+    "usual_answer": "Fried onion rings",
+    "usual_mistake": "Onion flavored rings"
+   },
+   {
+    "class": "hot_dog",
+    "n": 250,
+    "closed_top1": 0.928,
+    "all_top1": 0.632,
+    "dishes_top1": 0.632,
+    "dishes_top3": 0.904,
+    "accepted_records": 33,
+    "usual_answer": "Hot dog, reduced fat",
+    "usual_mistake": "Frankfurters or hot dogs and sauerkraut"
+   },
+   {
+    "class": "churros",
+    "n": 250,
+    "closed_top1": 0.832,
+    "all_top1": 0.616,
+    "dishes_top1": 0.64,
+    "dishes_top3": 0.804,
+    "accepted_records": 1,
+    "usual_answer": "Churros",
+    "usual_mistake": "French toast sticks"
+   },
+   {
+    "class": "french_fries",
+    "n": 250,
+    "closed_top1": 0.936,
+    "all_top1": 0.636,
+    "dishes_top1": 0.652,
+    "dishes_top3": 0.8,
+    "accepted_records": 16,
+    "usual_answer": "Potato, french fries, from frozen, fried",
+    "usual_mistake": "Potato sticks, fry shaped"
+   },
+   {
+    "class": "red_velvet_cake",
+    "n": 250,
+    "closed_top1": 0.896,
+    "all_top1": 0.656,
+    "dishes_top1": 0.656,
+    "dishes_top3": 0.792,
+    "accepted_records": 1,
+    "usual_answer": "Cake or cupcake, red velvet",
+    "usual_mistake": "Cake, torte"
+   },
+   {
+    "class": "omelette",
+    "n": 250,
+    "closed_top1": 0.66,
+    "all_top1": 0.66,
+    "dishes_top1": 0.66,
+    "dishes_top3": 0.808,
+    "accepted_records": 82,
+    "usual_answer": "Egg omelet or scrambled egg, from fast food / restaurant",
+    "usual_mistake": "Egg white omelet, scrambled, or fried, NS as to fat type"
+   },
+   {
+    "class": "edamame",
+    "n": 250,
+    "closed_top1": 1.0,
+    "all_top1": 0.668,
+    "dishes_top1": 0.668,
+    "dishes_top3": 0.816,
+    "accepted_records": 1,
+    "usual_answer": "Edamame, cooked",
+    "usual_mistake": "Green beans, frozen, cooked with butter or margarine"
+   },
+   {
+    "class": "tiramisu",
+    "n": 250,
+    "closed_top1": 0.712,
+    "all_top1": 0.624,
+    "dishes_top1": 0.672,
+    "dishes_top3": 0.78,
+    "accepted_records": 1,
+    "usual_answer": "Tiramisu",
+    "usual_mistake": "Cake, Boston cream pie"
+   },
+   {
+    "class": "clam_chowder",
+    "n": 250,
+    "closed_top1": 0.796,
+    "all_top1": 0.668,
+    "dishes_top1": 0.704,
+    "dishes_top3": 0.792,
+    "accepted_records": 2,
+    "usual_answer": "Soup, New England clam chowder",
+    "usual_mistake": "Soup, cream of mushroom"
+   },
+   {
+    "class": "french_toast",
+    "n": 250,
+    "closed_top1": 0.768,
+    "all_top1": 0.692,
+    "dishes_top1": 0.704,
+    "dishes_top3": 0.796,
+    "accepted_records": 10,
+    "usual_answer": "French toast, plain",
+    "usual_mistake": "Funnel cake with sugar and fruit"
+   },
+   {
+    "class": "sushi",
+    "n": 250,
+    "closed_top1": 0.836,
+    "all_top1": 0.704,
+    "dishes_top1": 0.704,
+    "dishes_top3": 0.908,
+    "accepted_records": 14,
+    "usual_answer": "Sushi roll, California",
+    "usual_mistake": "Roll with meat and/or shrimp, vegetables and rice paper, not fried"
+   },
+   {
+    "class": "pancakes",
+    "n": 250,
+    "closed_top1": 0.824,
+    "all_top1": 0.648,
+    "dishes_top1": 0.712,
+    "dishes_top3": 0.824,
+    "accepted_records": 19,
+    "usual_answer": "Pancakes, plain",
+    "usual_mistake": "Pie, blueberry"
+   },
+   {
+    "class": "pad_thai",
+    "n": 250,
+    "closed_top1": 0.88,
+    "all_top1": 0.716,
+    "dishes_top1": 0.716,
+    "dishes_top3": 0.784,
+    "accepted_records": 5,
+    "usual_answer": "Pad Thai with chicken",
+    "usual_mistake": "Lo mein, with chicken"
+   },
+   {
+    "class": "chicken_quesadilla",
+    "n": 250,
+    "closed_top1": 0.86,
+    "all_top1": 0.72,
+    "dishes_top1": 0.72,
+    "dishes_top3": 0.812,
+    "accepted_records": 9,
+    "usual_answer": "Quesadilla, with vegetables",
+    "usual_mistake": "Lefse"
+   },
+   {
+    "class": "pizza",
+    "n": 250,
+    "closed_top1": 0.944,
+    "all_top1": 0.66,
+    "dishes_top1": 0.728,
+    "dishes_top3": 0.892,
+    "accepted_records": 77,
+    "usual_answer": "Pizza with meat and vegetables, from restaurant or fast food, thin crust",
+    "usual_mistake": "Pepperoni, reduced fat"
+   },
+   {
+    "class": "club_sandwich",
+    "n": 250,
+    "closed_top1": 0.944,
+    "all_top1": 0.74,
+    "dishes_top1": 0.74,
+    "dishes_top3": 0.816,
+    "accepted_records": 5,
+    "usual_answer": "Club sandwich or sub, restaurant",
+    "usual_mistake": "French dip sandwich"
+   },
+   {
+    "class": "beef_tartare",
+    "n": 250,
+    "closed_top1": 0.776,
+    "all_top1": 0.744,
+    "dishes_top1": 0.744,
+    "dishes_top3": 0.832,
+    "accepted_records": 1,
+    "usual_answer": "Steak tartare",
+    "usual_mistake": "Tuna salad with egg"
+   },
+   {
+    "class": "beignets",
+    "n": 250,
+    "closed_top1": 0.916,
+    "all_top1": 0.752,
+    "dishes_top1": 0.752,
+    "dishes_top3": 0.876,
+    "accepted_records": 1,
+    "usual_answer": "Beignet",
+    "usual_mistake": "Funnel cake with sugar"
+   },
+   {
+    "class": "pho",
+    "n": 250,
+    "closed_top1": 0.888,
+    "all_top1": 0.772,
+    "dishes_top1": 0.772,
+    "dishes_top3": 0.888,
+    "accepted_records": 2,
+    "usual_answer": "Soup, pho, with meat",
+    "usual_mistake": "Rice noodles, cooked"
+   },
+   {
+    "class": "dumplings",
+    "n": 250,
+    "closed_top1": 0.904,
+    "all_top1": 0.78,
+    "dishes_top1": 0.78,
+    "dishes_top3": 0.9,
+    "accepted_records": 4,
+    "usual_answer": "Dumpling, no meat",
+    "usual_mistake": "Bao bun"
+   },
+   {
+    "class": "bibimbap",
+    "n": 250,
+    "closed_top1": 0.928,
+    "all_top1": 0.78,
+    "dishes_top1": 0.788,
+    "dishes_top3": 0.856,
+    "accepted_records": 1,
+    "usual_answer": "Bibimbap, Korean",
+    "usual_mistake": "Ramen bowl, vegetarian with egg"
+   },
+   {
+    "class": "mussels",
+    "n": 250,
+    "closed_top1": 0.9,
+    "all_top1": 0.792,
+    "dishes_top1": 0.796,
+    "dishes_top3": 0.856,
+    "accepted_records": 1,
+    "usual_answer": "Mussels",
+    "usual_mistake": "Shellfish, NFS"
+   },
+   {
+    "class": "macarons",
+    "n": 250,
+    "closed_top1": 0.952,
+    "all_top1": 0.82,
+    "dishes_top1": 0.82,
+    "dishes_top3": 0.872,
+    "accepted_records": 1,
+    "usual_answer": "Cookie, macaroon",
+    "usual_mistake": "Meringues"
+   },
+   {
+    "class": "waffles",
+    "n": 250,
+    "closed_top1": 0.86,
+    "all_top1": 0.828,
+    "dishes_top1": 0.828,
+    "dishes_top3": 0.892,
+    "accepted_records": 19,
+    "usual_answer": "Waffle, cinnamon",
+    "usual_mistake": "Funnel cake with sugar"
+   },
+   {
+    "class": "ramen",
+    "n": 250,
+    "closed_top1": 0.728,
+    "all_top1": 0.832,
+    "dishes_top1": 0.832,
+    "dishes_top3": 0.92,
+    "accepted_records": 8,
+    "usual_answer": "Ramen bowl with fish",
+    "usual_mistake": "Soup, noodle, NFS"
+   },
+   {
+    "class": "paella",
+    "n": 250,
+    "closed_top1": 0.836,
+    "all_top1": 0.848,
+    "dishes_top1": 0.852,
+    "dishes_top3": 0.888,
+    "accepted_records": 3,
+    "usual_answer": "Seafood paella, Puerto Rican style",
+    "usual_mistake": "Spanish rice, from restaurant"
+   },
+   {
+    "class": "donuts",
+    "n": 250,
+    "closed_top1": 0.884,
+    "all_top1": 0.856,
+    "dishes_top1": 0.86,
+    "dishes_top3": 0.928,
+    "accepted_records": 13,
+    "usual_answer": "Doughnut, NFS",
+    "usual_mistake": "Beignet"
+   },
+   {
+    "class": "creme_brulee",
+    "n": 250,
+    "closed_top1": 0.924,
+    "all_top1": 0.852,
+    "dishes_top1": 0.864,
+    "dishes_top3": 0.928,
+    "accepted_records": 1,
+    "usual_answer": "Creme brulee",
+    "usual_mistake": "Tiramisu"
+   },
+   {
+    "class": "chicken_wings",
+    "n": 250,
+    "closed_top1": 0.956,
+    "all_top1": 0.872,
+    "dishes_top1": 0.88,
+    "dishes_top3": 0.92,
+    "accepted_records": 25,
+    "usual_answer": "Chicken \"wings\" with hot sauce, from fast food / restaurant",
+    "usual_mistake": "Chicken tenders or strips, breaded, from fast food"
+   },
+   {
+    "class": "cup_cakes",
+    "n": 250,
+    "closed_top1": 0.776,
+    "all_top1": 0.908,
+    "dishes_top1": 0.912,
+    "dishes_top3": 0.952,
+    "accepted_records": 27,
+    "usual_answer": "Cake or cupcake, NFS",
+    "usual_mistake": "Muffin, chocolate"
+   },
+   {
+    "class": "oysters",
+    "n": 250,
+    "closed_top1": 0.992,
+    "all_top1": 0.96,
+    "dishes_top1": 0.964,
+    "dishes_top3": 0.98,
+    "accepted_records": 6,
+    "usual_answer": "Oysters, steamed",
+    "usual_mistake": "Seafood dip"
+   }
+  ]
+ },
+ "clip_b16": {
+  "photos": 23170,
+  "classes": 98,
+  "vocabulary": {
+   "all": 5432,
+   "dishes": 4380
+  },
+  "all": {
+   "closed_top1": {
+    "n": 23170,
+    "value": 0.8418,
+    "ci95": [
+     0.8371,
+     0.8467
+    ]
+   },
+   "closed_top3": {
+    "n": 23170,
+    "value": 0.9551,
+    "ci95": [
+     0.9524,
+     0.9577
+    ]
+   },
+   "closed_top5": {
+    "n": 23170,
+    "value": 0.9755,
+    "ci95": [
+     0.9735,
+     0.9776
+    ]
+   },
+   "all_top1": {
+    "n": 23170,
+    "value": 0.5259,
+    "ci95": [
+     0.5195,
+     0.5324
+    ]
+   },
+   "all_top3": {
+    "n": 23170,
+    "value": 0.6625,
+    "ci95": [
+     0.6565,
+     0.6687
+    ]
+   },
+   "all_top5": {
+    "n": 23170,
+    "value": 0.7167,
+    "ci95": [
+     0.7112,
+     0.7226
+    ]
+   },
+   "dishes_top1": {
+    "n": 23170,
+    "value": 0.5394,
+    "ci95": [
+     0.5327,
+     0.5459
+    ]
+   },
+   "dishes_top3": {
+    "n": 23170,
+    "value": 0.675,
+    "ci95": [
+     0.6692,
+     0.681
+    ]
+   },
+   "dishes_top5": {
+    "n": 23170,
+    "value": 0.7282,
+    "ci95": [
+     0.7227,
+     0.734
+    ]
+   },
+   "kcal_error": {
+    "cnn": {
+     "median_abs": 0.0,
+     "mean_abs": 11.1,
+     "within_20pct": {
+      "n": 23170,
+      "value": 0.913,
+      "ci95": [
+       0.9095,
+       0.9167
+      ]
+     }
+    },
+    "closed": {
+     "median_abs": 0.0,
+     "mean_abs": 12.0,
+     "within_20pct": {
+      "n": 23170,
+      "value": 0.9005,
+      "ci95": [
+       0.8966,
+       0.9044
+      ]
+     }
+    },
+    "dishes": {
+     "median_abs": 17.0,
+     "mean_abs": 42.8,
+     "within_20pct": {
+      "n": 23170,
+      "value": 0.6041,
+      "ci95": [
+       0.5976,
+       0.6102
+      ]
+     }
+    }
+   }
+  },
+  "food101": {
+   "closed_top1": {
+    "n": 23000,
+    "value": 0.8426,
+    "ci95": [
+     0.8376,
+     0.8472
+    ]
+   },
+   "closed_top3": {
+    "n": 23000,
+    "value": 0.9558,
+    "ci95": [
+     0.953,
+     0.9584
+    ]
+   },
+   "closed_top5": {
+    "n": 23000,
+    "value": 0.976,
+    "ci95": [
+     0.974,
+     0.9779
+    ]
+   },
+   "all_top1": {
+    "n": 23000,
+    "value": 0.5282,
+    "ci95": [
+     0.5215,
+     0.5347
+    ]
+   },
+   "all_top3": {
+    "n": 23000,
+    "value": 0.6648,
+    "ci95": [
+     0.6587,
+     0.6712
+    ]
+   },
+   "all_top5": {
+    "n": 23000,
+    "value": 0.719,
+    "ci95": [
+     0.713,
+     0.7249
+    ]
+   },
+   "dishes_top1": {
+    "n": 23000,
+    "value": 0.5417,
+    "ci95": [
+     0.535,
+     0.5484
+    ]
+   },
+   "dishes_top3": {
+    "n": 23000,
+    "value": 0.6774,
+    "ci95": [
+     0.6713,
+     0.6834
+    ]
+   },
+   "dishes_top5": {
+    "n": 23000,
+    "value": 0.7303,
+    "ci95": [
+     0.7244,
+     0.7359
+    ]
+   },
+   "kcal_error": {
+    "cnn": {
+     "median_abs": 0.0,
+     "mean_abs": 11.1,
+     "within_20pct": {
+      "n": 23000,
+      "value": 0.9129,
+      "ci95": [
+       0.9092,
+       0.9167
+      ]
+     }
+    },
+    "closed": {
+     "median_abs": 0.0,
+     "mean_abs": 11.9,
+     "within_20pct": {
+      "n": 23000,
+      "value": 0.901,
+      "ci95": [
+       0.8972,
+       0.905
+      ]
+     }
+    },
+    "dishes": {
+     "median_abs": 17.0,
+     "mean_abs": 42.7,
+     "within_20pct": {
+      "n": 23000,
+      "value": 0.6057,
+      "ci95": [
+       0.5996,
+       0.612
+      ]
+     }
+    }
+   }
+  },
+  "ua": {
+   "closed_top1": {
+    "n": 170,
+    "value": 0.7412,
+    "ci95": [
+     0.6765,
+     0.8059
+    ]
+   },
+   "closed_top3": {
+    "n": 170,
+    "value": 0.8588,
+    "ci95": [
+     0.8059,
+     0.9118
+    ]
+   },
+   "closed_top5": {
+    "n": 170,
+    "value": 0.9176,
+    "ci95": [
+     0.8765,
+     0.9588
+    ]
+   },
+   "all_top1": {
+    "n": 170,
+    "value": 0.2235,
+    "ci95": [
+     0.1647,
+     0.2882
+    ]
+   },
+   "all_top3": {
+    "n": 170,
+    "value": 0.3412,
+    "ci95": [
+     0.2706,
+     0.4176
+    ]
+   },
+   "all_top5": {
+    "n": 170,
+    "value": 0.4176,
+    "ci95": [
+     0.3471,
+     0.4943
+    ]
+   },
+   "dishes_top1": {
+    "n": 170,
+    "value": 0.2294,
+    "ci95": [
+     0.1706,
+     0.2941
+    ]
+   },
+   "dishes_top3": {
+    "n": 170,
+    "value": 0.3412,
+    "ci95": [
+     0.2706,
+     0.4176
+    ]
+   },
+   "dishes_top5": {
+    "n": 170,
+    "value": 0.4353,
+    "ci95": [
+     0.3647,
+     0.5118
+    ]
+   },
+   "kcal_error": {
+    "cnn": {
+     "median_abs": 0.0,
+     "mean_abs": 10.7,
+     "within_20pct": {
+      "n": 170,
+      "value": 0.9353,
+      "ci95": [
+       0.8941,
+       0.9706
+      ]
+     }
+    },
+    "closed": {
+     "median_abs": 0.0,
+     "mean_abs": 18.3,
+     "within_20pct": {
+      "n": 170,
+      "value": 0.8294,
+      "ci95": [
+       0.7706,
+       0.8824
+      ]
+     }
+    },
+    "dishes": {
+     "median_abs": 33.5,
+     "mean_abs": 54.5,
+     "within_20pct": {
+      "n": 170,
+      "value": 0.3765,
+      "ci95": [
+       0.3057,
+       0.4529
+      ]
+     }
+    }
+   }
+  },
+  "per_class": [
+   {
+    "class": "bread_pudding",
+    "n": 250,
+    "closed_top1": 0.68,
+    "all_top1": 0.0,
+    "dishes_top1": 0.0,
+    "dishes_top3": 0.004,
+    "accepted_records": 1,
+    "usual_answer": null,
+    "usual_mistake": "Ice cream sundae, caramel topping"
+   },
+   {
+    "class": "cannoli",
+    "n": 250,
+    "closed_top1": 0.92,
+    "all_top1": 0.004,
+    "dishes_top1": 0.004,
+    "dishes_top3": 0.008,
+    "accepted_records": 1,
+    "usual_answer": "Pastry, Italian, with cheese",
+    "usual_mistake": "Crepe, chocolate filled"
+   },
+   {
+    "class": "foie_gras",
+    "n": 250,
+    "closed_top1": 0.656,
+    "all_top1": 0.004,
+    "dishes_top1": 0.004,
+    "dishes_top3": 0.008,
+    "accepted_records": 1,
+    "usual_answer": "Liver, paste or pate",
+    "usual_mistake": "Duck, roasted, skin eaten"
+   },
+   {
+    "class": "tuna_tartare",
+    "n": 250,
+    "closed_top1": 0.78,
+    "all_top1": 0.004,
+    "dishes_top1": 0.004,
+    "dishes_top3": 0.02,
+    "accepted_records": 1,
+    "usual_answer": "Fish, tuna, raw",
+    "usual_mistake": "Steak tartare"
+   },
+   {
+    "class": "chocolate_mousse",
+    "n": 250,
+    "closed_top1": 0.624,
+    "all_top1": 0.004,
+    "dishes_top1": 0.016,
+    "dishes_top3": 0.056,
+    "accepted_records": 1,
+    "usual_answer": "Mousse",
+    "usual_mistake": "Pudding, chocolate, made from dry mix"
+   },
+   {
+    "class": "filet_mignon",
+    "n": 250,
+    "closed_top1": 0.468,
+    "all_top1": 0.032,
+    "dishes_top1": 0.032,
+    "dishes_top3": 0.112,
+    "accepted_records": 1,
+    "usual_answer": "Beef, steak, tenderloin",
+    "usual_mistake": "Venison, steak"
+   },
+   {
+    "class": "apple_pie",
+    "n": 250,
+    "closed_top1": 0.776,
+    "all_top1": 0.036,
+    "dishes_top1": 0.036,
+    "dishes_top3": 0.192,
+    "accepted_records": 2,
+    "usual_answer": "Pie, apple",
+    "usual_mistake": "Apple pie filling"
+   },
+   {
+    "class": "lobster_roll_sandwich",
+    "n": 250,
+    "closed_top1": 0.944,
+    "all_top1": 0.056,
+    "dishes_top1": 0.056,
+    "dishes_top3": 0.276,
+    "accepted_records": 1,
+    "usual_answer": "Lobster salad",
+    "usual_mistake": "Lobster with bread stuffing, baked"
+   },
+   {
+    "class": "olivier_salad",
+    "n": 20,
+    "closed_top1": 0.5,
+    "all_top1": 0.1,
+    "dishes_top1": 0.1,
+    "dishes_top3": 0.25,
+    "accepted_records": 10,
+    "usual_answer": "Potato salad with egg, from restaurant",
+    "usual_mistake": "Potato salad, made with creamy dressing"
+   },
+   {
+    "class": "pulled_pork_sandwich",
+    "n": 250,
+    "closed_top1": 0.92,
+    "all_top1": 0.116,
+    "dishes_top1": 0.116,
+    "dishes_top3": 0.42,
+    "accepted_records": 1,
+    "usual_answer": "Barbecue sandwich, NFS",
+    "usual_mistake": "Barbecue pork sandwich, on wheat bun"
+   },
+   {
+    "class": "holubtsi",
+    "n": 30,
+    "closed_top1": 0.5667,
+    "all_top1": 0.1333,
+    "dishes_top1": 0.1333,
+    "dishes_top3": 0.2333,
+    "accepted_records": 3,
+    "usual_answer": "Stuffed cabbage, with meat, Puerto Rican style",
+    "usual_mistake": "Stuffed shells, with chicken, with tomato sauce"
+   },
+   {
+    "class": "fried_rice",
+    "n": 250,
+    "closed_top1": 0.936,
+    "all_top1": 0.14,
+    "dishes_top1": 0.14,
+    "dishes_top3": 0.256,
+    "accepted_records": 6,
+    "usual_answer": "Rice, fried, with shrimp",
+    "usual_mistake": "Dirty rice"
+   },
+   {
+    "class": "carrot_cake",
+    "n": 250,
+    "closed_top1": 0.788,
+    "all_top1": 0.144,
+    "dishes_top1": 0.144,
+    "dishes_top3": 0.22,
+    "accepted_records": 1,
+    "usual_answer": "Cake or cupcake, carrot",
+    "usual_mistake": "Cake, torte"
+   },
+   {
+    "class": "deruny",
+    "n": 39,
+    "closed_top1": 0.8462,
+    "all_top1": 0.1538,
+    "dishes_top1": 0.1538,
+    "dishes_top3": 0.2821,
+    "accepted_records": 1,
+    "usual_answer": "Potato pancake",
+    "usual_mistake": "Fried green tomatoes"
+   },
+   {
+    "class": "crab_cakes",
+    "n": 250,
+    "closed_top1": 0.824,
+    "all_top1": 0.18,
+    "dishes_top1": 0.184,
+    "dishes_top3": 0.376,
+    "accepted_records": 1,
+    "usual_answer": "Crab, cake",
+    "usual_mistake": "Flounder with crab stuffing"
+   },
+   {
+    "class": "macaroni_and_cheese",
+    "n": 250,
+    "closed_top1": 0.776,
+    "all_top1": 0.208,
+    "dishes_top1": 0.208,
+    "dishes_top3": 0.332,
+    "accepted_records": 16,
+    "usual_answer": "Macaroni or noodles with cheese, Easy Mac type",
+    "usual_mistake": "Potato, hash brown, from restaurant, with cheese"
+   },
+   {
+    "class": "sashimi",
+    "n": 250,
+    "closed_top1": 0.916,
+    "all_top1": 0.208,
+    "dishes_top1": 0.208,
+    "dishes_top3": 0.484,
+    "accepted_records": 3,
+    "usual_answer": "Fish, tuna, raw",
+    "usual_mistake": "Sushi, topped with salmon"
+   },
+   {
+    "class": "prime_rib",
+    "n": 250,
+    "closed_top1": 0.952,
+    "all_top1": 0.208,
+    "dishes_top1": 0.212,
+    "dishes_top3": 0.512,
+    "accepted_records": 4,
+    "usual_answer": "Beef, roast",
+    "usual_mistake": "Beef, cow head"
+   },
+   {
+    "class": "chicken_curry",
+    "n": 250,
+    "closed_top1": 0.744,
+    "all_top1": 0.232,
+    "dishes_top1": 0.252,
+    "dishes_top3": 0.432,
+    "accepted_records": 2,
+    "usual_answer": "Chicken curry",
+    "usual_mistake": "Lentil curry"
+   },
+   {
+    "class": "grilled_salmon",
+    "n": 250,
+    "closed_top1": 0.812,
+    "all_top1": 0.252,
+    "dishes_top1": 0.252,
+    "dishes_top3": 0.532,
+    "accepted_records": 3,
+    "usual_answer": "Fish, salmon, grilled",
+    "usual_mistake": "Fish, salmon, steamed"
+   },
+   {
+    "class": "shashlik",
+    "n": 39,
+    "closed_top1": 0.8718,
+    "all_top1": 0.2564,
+    "dishes_top1": 0.2564,
+    "dishes_top3": 0.359,
+    "accepted_records": 6,
+    "usual_answer": "Pork shish kabob with vegetables, excluding potatoes",
+    "usual_mistake": "Barbecue chicken"
+   },
+   {
+    "class": "french_onion_soup",
+    "n": 250,
+    "closed_top1": 0.872,
+    "all_top1": 0.256,
+    "dishes_top1": 0.26,
+    "dishes_top3": 0.412,
+    "accepted_records": 1,
+    "usual_answer": "Soup, French onion",
+    "usual_mistake": "Cheese souffle"
+   },
+   {
+    "class": "pork_chop",
+    "n": 250,
+    "closed_top1": 0.708,
+    "all_top1": 0.26,
+    "dishes_top1": 0.26,
+    "dishes_top3": 0.464,
+    "accepted_records": 7,
+    "usual_answer": "Pork, chop, stuffed",
+    "usual_mistake": "Veal, chop"
+   },
+   {
+    "class": "gnocchi",
+    "n": 250,
+    "closed_top1": 0.62,
+    "all_top1": 0.264,
+    "dishes_top1": 0.264,
+    "dishes_top3": 0.376,
+    "accepted_records": 2,
+    "usual_answer": "Gnocchi, potato",
+    "usual_mistake": "Tortellini, cheese-filled, with cream sauce"
+   },
+   {
+    "class": "peking_duck",
+    "n": 250,
+    "closed_top1": 0.812,
+    "all_top1": 0.264,
+    "dishes_top1": 0.264,
+    "dishes_top3": 0.428,
+    "accepted_records": 3,
+    "usual_answer": "Duck, roasted, skin eaten",
+    "usual_mistake": "Pork or ham with soy-based sauce"
+   },
+   {
+    "class": "hot_and_sour_soup",
+    "n": 250,
+    "closed_top1": 0.872,
+    "all_top1": 0.232,
+    "dishes_top1": 0.268,
+    "dishes_top3": 0.588,
+    "accepted_records": 1,
+    "usual_answer": "Soup, hot and sour",
+    "usual_mistake": "Soup, miso or tofu"
+   },
+   {
+    "class": "ceviche",
+    "n": 250,
+    "closed_top1": 0.668,
+    "all_top1": 0.26,
+    "dishes_top1": 0.3,
+    "dishes_top3": 0.472,
+    "accepted_records": 1,
+    "usual_answer": "Ceviche",
+    "usual_mistake": "Fajita, shrimp"
+   },
+   {
+    "class": "beet_salad",
+    "n": 250,
+    "closed_top1": 0.772,
+    "all_top1": 0.32,
+    "dishes_top1": 0.32,
+    "dishes_top3": 0.468,
+    "accepted_records": 8,
+    "usual_answer": "Beets, NS as to form, cooked",
+    "usual_mistake": "Spinach salad, no dressing"
+   },
+   {
+    "class": "cheesecake",
+    "n": 250,
+    "closed_top1": 0.764,
+    "all_top1": 0.288,
+    "dishes_top1": 0.324,
+    "dishes_top3": 0.604,
+    "accepted_records": 3,
+    "usual_answer": "Cheesecake, plain",
+    "usual_mistake": "Pie, blueberry"
+   },
+   {
+    "class": "breakfast_burrito",
+    "n": 250,
+    "closed_top1": 0.888,
+    "all_top1": 0.348,
+    "dishes_top1": 0.356,
+    "dishes_top3": 0.508,
+    "accepted_records": 4,
+    "usual_answer": "Egg burrito",
+    "usual_mistake": "Burrito, NFS"
+   },
+   {
+    "class": "gyoza",
+    "n": 250,
+    "closed_top1": 0.88,
+    "all_top1": 0.384,
+    "dishes_top1": 0.384,
+    "dishes_top3": 0.616,
+    "accepted_records": 3,
+    "usual_answer": "Wonton, dumpling or pot sticker, fried",
+    "usual_mistake": "Dumpling, no meat"
+   },
+   {
+    "class": "borscht",
+    "n": 31,
+    "closed_top1": 0.7742,
+    "all_top1": 0.3548,
+    "dishes_top1": 0.3871,
+    "dishes_top3": 0.4516,
+    "accepted_records": 1,
+    "usual_answer": "Soup, borscht",
+    "usual_mistake": "Soup, tomato"
+   },
+   {
+    "class": "chocolate_cake",
+    "n": 250,
+    "closed_top1": 0.852,
+    "all_top1": 0.368,
+    "dishes_top1": 0.388,
+    "dishes_top3": 0.628,
+    "accepted_records": 8,
+    "usual_answer": "Cake or cupcake, chocolate with chocolate icing, from mix",
+    "usual_mistake": "Cake, Boston cream pie"
+   },
+   {
+    "class": "edamame",
+    "n": 250,
+    "closed_top1": 0.988,
+    "all_top1": 0.392,
+    "dishes_top1": 0.392,
+    "dishes_top3": 0.588,
+    "accepted_records": 1,
+    "usual_answer": "Edamame, cooked",
+    "usual_mistake": "Green beans, cooked, from restaurant"
+   },
+   {
+    "class": "steak",
+    "n": 250,
+    "closed_top1": 0.416,
+    "all_top1": 0.38,
+    "dishes_top1": 0.404,
+    "dishes_top3": 0.644,
+    "accepted_records": 20,
+    "usual_answer": "Beef, steak, T-bone, NS as to fat eaten",
+    "usual_mistake": "Beef, cow head"
+   },
+   {
+    "class": "lobster_bisque",
+    "n": 250,
+    "closed_top1": 0.884,
+    "all_top1": 0.372,
+    "dishes_top1": 0.42,
+    "dishes_top3": 0.7,
+    "accepted_records": 1,
+    "usual_answer": "Soup, bisque",
+    "usual_mistake": "Soup, cream of tomato"
+   },
+   {
+    "class": "huevos_rancheros",
+    "n": 250,
+    "closed_top1": 0.7,
+    "all_top1": 0.428,
+    "dishes_top1": 0.436,
+    "dishes_top3": 0.58,
+    "accepted_records": 1,
+    "usual_answer": "Huevos rancheros",
+    "usual_mistake": "Egg burrito, with bacon"
+   },
+   {
+    "class": "varenyky",
+    "n": 11,
+    "closed_top1": 0.7273,
+    "all_top1": 0.4545,
+    "dishes_top1": 0.4545,
+    "dishes_top3": 0.6364,
+    "accepted_records": 1,
+    "usual_answer": "Pierogi",
+    "usual_mistake": "Ravioli, meat-filled, with cream sauce"
+   },
+   {
+    "class": "lasagna",
+    "n": 250,
+    "closed_top1": 0.824,
+    "all_top1": 0.48,
+    "dishes_top1": 0.484,
+    "dishes_top3": 0.656,
+    "accepted_records": 10,
+    "usual_answer": "Lasagna with meat, from restaurant",
+    "usual_mistake": "Veal parmigiana"
+   },
+   {
+    "class": "miso_soup",
+    "n": 250,
+    "closed_top1": 0.872,
+    "all_top1": 0.436,
+    "dishes_top1": 0.492,
+    "dishes_top3": 0.716,
+    "accepted_records": 1,
+    "usual_answer": "Soup, miso or tofu",
+    "usual_mistake": "Soup, seaweed"
+   },
+   {
+    "class": "spaghetti_bolognese",
+    "n": 250,
+    "closed_top1": 0.964,
+    "all_top1": 0.188,
+    "dishes_top1": 0.52,
+    "dishes_top3": 0.704,
+    "accepted_records": 4,
+    "usual_answer": "Spaghetti with meat sauce, diet frozen meal",
+    "usual_mistake": "Pasta, whole grain, with tomato-based sauce and meat, restaurant"
+   },
+   {
+    "class": "grilled_cheese_sandwich",
+    "n": 250,
+    "closed_top1": 0.788,
+    "all_top1": 0.536,
+    "dishes_top1": 0.536,
+    "dishes_top3": 0.692,
+    "accepted_records": 14,
+    "usual_answer": "Grilled cheese sandwich, NFS",
+    "usual_mistake": "Club sandwich on wheat"
+   },
+   {
+    "class": "ice_cream",
+    "n": 250,
+    "closed_top1": 0.776,
+    "all_top1": 0.524,
+    "dishes_top1": 0.552,
+    "dishes_top3": 0.796,
+    "accepted_records": 29,
+    "usual_answer": "Ice cream, chocolate, with additional ingredients",
+    "usual_mistake": "Sherbet, all flavors"
+   },
+   {
+    "class": "hummus",
+    "n": 250,
+    "closed_top1": 0.864,
+    "all_top1": 0.54,
+    "dishes_top1": 0.556,
+    "dishes_top3": 0.716,
+    "accepted_records": 2,
+    "usual_answer": "Hummus, plain",
+    "usual_mistake": "Artichoke dip"
+   },
+   {
+    "class": "garlic_bread",
+    "n": 250,
+    "closed_top1": 0.72,
+    "all_top1": 0.56,
+    "dishes_top1": 0.56,
+    "dishes_top3": 0.68,
+    "accepted_records": 7,
+    "usual_answer": "Garlic bread, with parmesan cheese, from fast food / restaurant",
+    "usual_mistake": "Anisette toast"
+   },
+   {
+    "class": "ravioli",
+    "n": 250,
+    "closed_top1": 0.572,
+    "all_top1": 0.588,
+    "dishes_top1": 0.592,
+    "dishes_top3": 0.716,
+    "accepted_records": 15,
+    "usual_answer": "Ravioli, cheese and spinach filled, with tomato sauce",
+    "usual_mistake": "Shrimp with lobster sauce"
+   },
+   {
+    "class": "seaweed_salad",
+    "n": 250,
+    "closed_top1": 0.968,
+    "all_top1": 0.584,
+    "dishes_top1": 0.592,
+    "dishes_top3": 0.688,
+    "accepted_records": 4,
+    "usual_answer": "Seaweed, cooked, no added fat",
+    "usual_mistake": "Mixed salad greens, raw"
+   },
+   {
+    "class": "bibimbap",
+    "n": 250,
+    "closed_top1": 0.932,
+    "all_top1": 0.604,
+    "dishes_top1": 0.604,
+    "dishes_top3": 0.78,
+    "accepted_records": 1,
+    "usual_answer": "Bibimbap, Korean",
+    "usual_mistake": "Ramen bowl with meat and egg"
+   },
+   {
+    "class": "greek_salad",
+    "n": 250,
+    "closed_top1": 0.828,
+    "all_top1": 0.604,
+    "dishes_top1": 0.604,
+    "dishes_top3": 0.736,
+    "accepted_records": 1,
+    "usual_answer": "Greek Salad, no dressing",
+    "usual_mistake": "Cobb salad, no dressing"
+   },
+   {
+    "class": "omelette",
+    "n": 250,
+    "closed_top1": 0.776,
+    "all_top1": 0.596,
+    "dishes_top1": 0.608,
+    "dishes_top3": 0.764,
+    "accepted_records": 82,
+    "usual_answer": "Egg omelet or scrambled egg, with cheese, tomatoes, and dark-green vegetables, no added fat",
+    "usual_mistake": "Egg substitute, omelet, scrambled, or fried, with vegetables"
+   },
+   {
+    "class": "samosa",
+    "n": 250,
+    "closed_top1": 0.9,
+    "all_top1": 0.612,
+    "dishes_top1": 0.612,
+    "dishes_top3": 0.768,
+    "accepted_records": 1,
+    "usual_answer": "Samosa",
+    "usual_mistake": "Empanada, NFS"
+   },
+   {
+    "class": "scallops",
+    "n": 250,
+    "closed_top1": 0.708,
+    "all_top1": 0.612,
+    "dishes_top1": 0.612,
+    "dishes_top3": 0.716,
+    "accepted_records": 4,
+    "usual_answer": "Scallops, grilled",
+    "usual_mistake": "Shrimp with lobster sauce"
+   },
+   {
+    "class": "clam_chowder",
+    "n": 250,
+    "closed_top1": 0.848,
+    "all_top1": 0.592,
+    "dishes_top1": 0.616,
+    "dishes_top3": 0.804,
+    "accepted_records": 2,
+    "usual_answer": "Soup, New England clam chowder",
+    "usual_mistake": "Cheese dip"
+   },
+   {
+    "class": "baby_back_ribs",
+    "n": 250,
+    "closed_top1": 0.74,
+    "all_top1": 0.624,
+    "dishes_top1": 0.628,
+    "dishes_top3": 0.752,
+    "accepted_records": 2,
+    "usual_answer": "Pork, ribs",
+    "usual_mistake": "Chicken, neck or ribs"
+   },
+   {
+    "class": "falafel",
+    "n": 250,
+    "closed_top1": 0.832,
+    "all_top1": 0.628,
+    "dishes_top1": 0.628,
+    "dishes_top3": 0.736,
+    "accepted_records": 2,
+    "usual_answer": "Falafel",
+    "usual_mistake": "Sandwich wrap, NFS"
+   },
+   {
+    "class": "tiramisu",
+    "n": 250,
+    "closed_top1": 0.732,
+    "all_top1": 0.588,
+    "dishes_top1": 0.628,
+    "dishes_top3": 0.764,
+    "accepted_records": 1,
+    "usual_answer": "Tiramisu",
+    "usual_mistake": "Cake, Boston cream pie"
+   },
+   {
+    "class": "frozen_yogurt",
+    "n": 250,
+    "closed_top1": 0.968,
+    "all_top1": 0.624,
+    "dishes_top1": 0.636,
+    "dishes_top3": 0.82,
+    "accepted_records": 9,
+    "usual_answer": "Frozen yogurt, NFS",
+    "usual_mistake": "Ice cream sundae, fruit topping"
+   },
+   {
+    "class": "baklava",
+    "n": 250,
+    "closed_top1": 0.772,
+    "all_top1": 0.648,
+    "dishes_top1": 0.648,
+    "dishes_top3": 0.74,
+    "accepted_records": 1,
+    "usual_answer": "Baklava",
+    "usual_mistake": "Spanakopita"
+   },
+   {
+    "class": "eggs_benedict",
+    "n": 250,
+    "closed_top1": 0.968,
+    "all_top1": 0.576,
+    "dishes_top1": 0.664,
+    "dishes_top3": 0.808,
+    "accepted_records": 1,
+    "usual_answer": "Egg, Benedict",
+    "usual_mistake": "Egg sandwich on English muffin, with ham"
+   },
+   {
+    "class": "strawberry_shortcake",
+    "n": 250,
+    "closed_top1": 0.84,
+    "all_top1": 0.664,
+    "dishes_top1": 0.664,
+    "dishes_top3": 0.848,
+    "accepted_records": 1,
+    "usual_answer": "Cake, strawberry shortcake",
+    "usual_mistake": "Pie, strawberry"
+   },
+   {
+    "class": "nachos",
+    "n": 250,
+    "closed_top1": 0.948,
+    "all_top1": 0.664,
+    "dishes_top1": 0.672,
+    "dishes_top3": 0.792,
+    "accepted_records": 7,
+    "usual_answer": "Nachos, cheese only",
+    "usual_mistake": "Taco or tostada salad with meat and sour cream"
+   },
+   {
+    "class": "caprese_salad",
+    "n": 250,
+    "closed_top1": 0.876,
+    "all_top1": 0.688,
+    "dishes_top1": 0.692,
+    "dishes_top3": 0.812,
+    "accepted_records": 1,
+    "usual_answer": "Mozzarella cheese, tomato, and basil, with oil and vinegar dressing",
+    "usual_mistake": "Greek Salad, no dressing"
+   },
+   {
+    "class": "hamburger",
+    "n": 250,
+    "closed_top1": 0.9,
+    "all_top1": 0.696,
+    "dishes_top1": 0.696,
+    "dishes_top3": 0.92,
+    "accepted_records": 55,
+    "usual_answer": "Cheeseburger, NFS",
+    "usual_mistake": "Chiliburger, with or without cheese, on bun"
+   },
+   {
+    "class": "red_velvet_cake",
+    "n": 250,
+    "closed_top1": 0.968,
+    "all_top1": 0.7,
+    "dishes_top1": 0.7,
+    "dishes_top3": 0.836,
+    "accepted_records": 1,
+    "usual_answer": "Cake or cupcake, red velvet",
+    "usual_mistake": "Cake or cupcake, Black Forest"
+   },
+   {
+    "class": "caesar_salad",
+    "n": 250,
+    "closed_top1": 0.98,
+    "all_top1": 0.7,
+    "dishes_top1": 0.704,
+    "dishes_top3": 0.824,
+    "accepted_records": 3,
+    "usual_answer": "Caesar salad, with romaine, no dressing",
+    "usual_mistake": "Lettuce, wilted, with bacon dressing"
+   },
+   {
+    "class": "fried_calamari",
+    "n": 250,
+    "closed_top1": 0.892,
+    "all_top1": 0.708,
+    "dishes_top1": 0.712,
+    "dishes_top3": 0.864,
+    "accepted_records": 2,
+    "usual_answer": "Calamari, fried",
+    "usual_mistake": "Fried cauliflower"
+   },
+   {
+    "class": "escargots",
+    "n": 250,
+    "closed_top1": 0.84,
+    "all_top1": 0.712,
+    "dishes_top1": 0.716,
+    "dishes_top3": 0.792,
+    "accepted_records": 1,
+    "usual_answer": "Escargot",
+    "usual_mistake": "Spinach and artichoke dip"
+   },
+   {
+    "class": "spring_rolls",
+    "n": 250,
+    "closed_top1": 0.86,
+    "all_top1": 0.72,
+    "dishes_top1": 0.72,
+    "dishes_top3": 0.816,
+    "accepted_records": 5,
+    "usual_answer": "Egg roll, meatless",
+    "usual_mistake": "Samosa"
+   },
+   {
+    "class": "chicken_quesadilla",
+    "n": 250,
+    "closed_top1": 0.784,
+    "all_top1": 0.724,
+    "dishes_top1": 0.724,
+    "dishes_top3": 0.848,
+    "accepted_records": 9,
+    "usual_answer": "Quesadilla, with vegetables",
+    "usual_mistake": "Calzone, with meat and cheese"
+   },
+   {
+    "class": "churros",
+    "n": 250,
+    "closed_top1": 0.912,
+    "all_top1": 0.704,
+    "dishes_top1": 0.728,
+    "dishes_top3": 0.864,
+    "accepted_records": 1,
+    "usual_answer": "Churros",
+    "usual_mistake": "French toast sticks"
+   },
+   {
+    "class": "bruschetta",
+    "n": 250,
+    "closed_top1": 0.864,
+    "all_top1": 0.716,
+    "dishes_top1": 0.732,
+    "dishes_top3": 0.816,
+    "accepted_records": 1,
+    "usual_answer": "Bruschetta",
+    "usual_mistake": "Tomato sandwich on wheat"
+   },
+   {
+    "class": "dumplings",
+    "n": 250,
+    "closed_top1": 0.896,
+    "all_top1": 0.732,
+    "dishes_top1": 0.732,
+    "dishes_top3": 0.956,
+    "accepted_records": 4,
+    "usual_answer": "Dumpling, no meat",
+    "usual_mistake": "Bao bun"
+   },
+   {
+    "class": "tacos",
+    "n": 250,
+    "closed_top1": 0.84,
+    "all_top1": 0.728,
+    "dishes_top1": 0.732,
+    "dishes_top3": 0.824,
+    "accepted_records": 20,
+    "usual_answer": "Taco, fish",
+    "usual_mistake": "Taco or tostada salad with chicken and sour cream"
+   },
+   {
+    "class": "fish_and_chips",
+    "n": 250,
+    "closed_top1": 0.912,
+    "all_top1": 0.724,
+    "dishes_top1": 0.736,
+    "dishes_top3": 0.828,
+    "accepted_records": 13,
+    "usual_answer": "Fish, NS as to type, fried",
+    "usual_mistake": "Chicken tenders or strips, breaded, from restaurant"
+   },
+   {
+    "class": "mussels",
+    "n": 250,
+    "closed_top1": 0.94,
+    "all_top1": 0.748,
+    "dishes_top1": 0.748,
+    "dishes_top3": 0.852,
+    "accepted_records": 1,
+    "usual_answer": "Mussels",
+    "usual_mistake": "Clams, NFS"
+   },
+   {
+    "class": "beef_tartare",
+    "n": 250,
+    "closed_top1": 0.604,
+    "all_top1": 0.752,
+    "dishes_top1": 0.752,
+    "dishes_top3": 0.828,
+    "accepted_records": 1,
+    "usual_answer": "Steak tartare",
+    "usual_mistake": "Egg, whole, pickled"
+   },
+   {
+    "class": "french_fries",
+    "n": 250,
+    "closed_top1": 0.96,
+    "all_top1": 0.728,
+    "dishes_top1": 0.752,
+    "dishes_top3": 0.896,
+    "accepted_records": 16,
+    "usual_answer": "Potato, french fries, from fresh, fried",
+    "usual_mistake": "Potato sticks, fry shaped"
+   },
+   {
+    "class": "deviled_eggs",
+    "n": 250,
+    "closed_top1": 0.932,
+    "all_top1": 0.76,
+    "dishes_top1": 0.76,
+    "dishes_top3": 0.872,
+    "accepted_records": 1,
+    "usual_answer": "Egg, deviled",
+    "usual_mistake": "Sushi, topped with egg"
+   },
+   {
+    "class": "paella",
+    "n": 250,
+    "closed_top1": 0.868,
+    "all_top1": 0.756,
+    "dishes_top1": 0.76,
+    "dishes_top3": 0.84,
+    "accepted_records": 3,
+    "usual_answer": "Paella with seafood",
+    "usual_mistake": "Spanish rice, from restaurant"
+   },
+   {
+    "class": "ramen",
+    "n": 250,
+    "closed_top1": 0.852,
+    "all_top1": 0.752,
+    "dishes_top1": 0.76,
+    "dishes_top3": 0.892,
+    "accepted_records": 8,
+    "usual_answer": "Ramen bowl with meat and egg",
+    "usual_mistake": "Soup, seaweed"
+   },
+   {
+    "class": "french_toast",
+    "n": 250,
+    "closed_top1": 0.852,
+    "all_top1": 0.752,
+    "dishes_top1": 0.764,
+    "dishes_top3": 0.864,
+    "accepted_records": 10,
+    "usual_answer": "French toast, NFS",
+    "usual_mistake": "Sopaipilla with syrup or honey"
+   },
+   {
+    "class": "beignets",
+    "n": 250,
+    "closed_top1": 0.936,
+    "all_top1": 0.768,
+    "dishes_top1": 0.768,
+    "dishes_top3": 0.884,
+    "accepted_records": 1,
+    "usual_answer": "Beignet",
+    "usual_mistake": "Doughnut holes"
+   },
+   {
+    "class": "club_sandwich",
+    "n": 250,
+    "closed_top1": 0.972,
+    "all_top1": 0.776,
+    "dishes_top1": 0.78,
+    "dishes_top3": 0.884,
+    "accepted_records": 5,
+    "usual_answer": "Club sandwich on wheat",
+    "usual_mistake": "Bacon, lettuce, tomato sandwich on wheat"
+   },
+   {
+    "class": "hot_dog",
+    "n": 250,
+    "closed_top1": 0.952,
+    "all_top1": 0.776,
+    "dishes_top1": 0.78,
+    "dishes_top3": 0.92,
+    "accepted_records": 33,
+    "usual_answer": "Chili hot dog, no bun",
+    "usual_mistake": "Frankfurters or hot dogs with tomato-based sauce"
+   },
+   {
+    "class": "creme_brulee",
+    "n": 250,
+    "closed_top1": 0.932,
+    "all_top1": 0.788,
+    "dishes_top1": 0.812,
+    "dishes_top3": 0.876,
+    "accepted_records": 1,
+    "usual_answer": "Creme brulee",
+    "usual_mistake": "Cheese souffle"
+   },
+   {
+    "class": "pad_thai",
+    "n": 250,
+    "closed_top1": 0.912,
+    "all_top1": 0.816,
+    "dishes_top1": 0.816,
+    "dishes_top3": 0.892,
+    "accepted_records": 5,
+    "usual_answer": "Pad Thai with chicken",
+    "usual_mistake": "Shrimp with crab stuffing"
+   },
+   {
+    "class": "pancakes",
+    "n": 250,
+    "closed_top1": 0.884,
+    "all_top1": 0.78,
+    "dishes_top1": 0.844,
+    "dishes_top3": 0.916,
+    "accepted_records": 19,
+    "usual_answer": "Pancakes, plain",
+    "usual_mistake": "Crepe, NFS"
+   },
+   {
+    "class": "pizza",
+    "n": 250,
+    "closed_top1": 0.98,
+    "all_top1": 0.816,
+    "dishes_top1": 0.848,
+    "dishes_top3": 0.936,
+    "accepted_records": 77,
+    "usual_answer": "Pizza with meat other than pepperoni, from restaurant or fast food, NS as to type of crust",
+    "usual_mistake": "Breakfast pizza with egg"
+   },
+   {
+    "class": "guacamole",
+    "n": 250,
+    "closed_top1": 0.936,
+    "all_top1": 0.84,
+    "dishes_top1": 0.864,
+    "dishes_top3": 0.92,
+    "accepted_records": 2,
+    "usual_answer": "Guacamole, NFS",
+    "usual_mistake": "Salsa verde or salsa, green"
+   },
+   {
+    "class": "waffles",
+    "n": 250,
+    "closed_top1": 0.892,
+    "all_top1": 0.868,
+    "dishes_top1": 0.872,
+    "dishes_top3": 0.896,
+    "accepted_records": 19,
+    "usual_answer": "Waffle, plain",
+    "usual_mistake": "Funnel cake with sugar"
+   },
+   {
+    "class": "onion_rings",
+    "n": 250,
+    "closed_top1": 0.888,
+    "all_top1": 0.876,
+    "dishes_top1": 0.88,
+    "dishes_top3": 0.948,
+    "accepted_records": 1,
+    "usual_answer": "Fried onion rings",
+    "usual_mistake": "Onion flavored rings"
+   },
+   {
+    "class": "chicken_wings",
+    "n": 250,
+    "closed_top1": 0.968,
+    "all_top1": 0.88,
+    "dishes_top1": 0.884,
+    "dishes_top3": 0.936,
+    "accepted_records": 25,
+    "usual_answer": "Chicken wing, baked, coated",
+    "usual_mistake": "Chicken, NS as to part, fried, coated, skin / coating eaten"
+   },
+   {
+    "class": "sushi",
+    "n": 250,
+    "closed_top1": 0.904,
+    "all_top1": 0.88,
+    "dishes_top1": 0.884,
+    "dishes_top3": 0.952,
+    "accepted_records": 14,
+    "usual_answer": "Sushi roll, California",
+    "usual_mistake": "Roll with meat and/or shrimp, vegetables and rice paper, not fried"
+   },
+   {
+    "class": "cup_cakes",
+    "n": 250,
+    "closed_top1": 0.728,
+    "all_top1": 0.852,
+    "dishes_top1": 0.9,
+    "dishes_top3": 0.948,
+    "accepted_records": 27,
+    "usual_answer": "Cake or cupcake, red velvet",
+    "usual_mistake": "Muffin, chocolate"
+   },
+   {
+    "class": "pho",
+    "n": 250,
+    "closed_top1": 0.852,
+    "all_top1": 0.9,
+    "dishes_top1": 0.9,
+    "dishes_top3": 0.956,
+    "accepted_records": 2,
+    "usual_answer": "Soup, pho, with meat",
+    "usual_mistake": "Noodles, cooked"
+   },
+   {
+    "class": "macarons",
+    "n": 250,
+    "closed_top1": 0.972,
+    "all_top1": 0.912,
+    "dishes_top1": 0.916,
+    "dishes_top3": 0.956,
+    "accepted_records": 1,
+    "usual_answer": "Cookie, macaroon",
+    "usual_mistake": "Meringues"
+   },
+   {
+    "class": "oysters",
+    "n": 250,
+    "closed_top1": 0.992,
+    "all_top1": 0.912,
+    "dishes_top1": 0.916,
+    "dishes_top3": 0.984,
+    "accepted_records": 6,
+    "usual_answer": "Oysters, raw",
+    "usual_mistake": "Dressing with oysters"
+   },
+   {
+    "class": "donuts",
+    "n": 250,
+    "closed_top1": 0.932,
+    "all_top1": 0.936,
+    "dishes_top1": 0.936,
+    "dishes_top3": 0.968,
+    "accepted_records": 13,
+    "usual_answer": "Doughnut, NFS",
+    "usual_mistake": "Beignet"
+   }
+  ]
+ },
+ "clip_l14": {
+  "photos": 23170,
+  "classes": 98,
+  "vocabulary": {
+   "all": 5432,
+   "dishes": 4380
+  },
+  "all": {
+   "closed_top1": {
+    "n": 23170,
+    "value": 0.8956,
+    "ci95": [
+     0.8917,
+     0.8997
+    ]
+   },
+   "closed_top3": {
+    "n": 23170,
+    "value": 0.9739,
+    "ci95": [
+     0.9719,
+     0.976
+    ]
+   },
+   "closed_top5": {
+    "n": 23170,
+    "value": 0.9853,
+    "ci95": [
+     0.9837,
+     0.9869
+    ]
+   },
+   "all_top1": {
+    "n": 23170,
+    "value": 0.5837,
+    "ci95": [
+     0.5776,
+     0.5898
+    ]
+   },
+   "all_top3": {
+    "n": 23170,
+    "value": 0.7293,
+    "ci95": [
+     0.7239,
+     0.7347
+    ]
+   },
+   "all_top5": {
+    "n": 23170,
+    "value": 0.7808,
+    "ci95": [
+     0.7754,
+     0.786
+    ]
+   },
+   "dishes_top1": {
+    "n": 23170,
+    "value": 0.6066,
+    "ci95": [
+     0.6004,
+     0.6126
+    ]
+   },
+   "dishes_top3": {
+    "n": 23170,
+    "value": 0.7432,
+    "ci95": [
+     0.7376,
+     0.7486
+    ]
+   },
+   "dishes_top5": {
+    "n": 23170,
+    "value": 0.7912,
+    "ci95": [
+     0.7858,
+     0.7964
+    ]
+   },
+   "kcal_error": {
+    "cnn": {
+     "median_abs": 0.0,
+     "mean_abs": 11.1,
+     "within_20pct": {
+      "n": 23170,
+      "value": 0.913,
+      "ci95": [
+       0.9095,
+       0.9167
+      ]
+     }
+    },
+    "closed": {
+     "median_abs": 0.0,
+     "mean_abs": 7.9,
+     "within_20pct": {
+      "n": 23170,
+      "value": 0.9341,
+      "ci95": [
+       0.9308,
+       0.9373
+      ]
+     }
+    },
+    "dishes": {
+     "median_abs": 14.0,
+     "mean_abs": 36.9,
+     "within_20pct": {
+      "n": 23170,
+      "value": 0.6518,
+      "ci95": [
+       0.6452,
+       0.6577
+      ]
+     }
+    }
+   }
+  },
+  "food101": {
+   "closed_top1": {
+    "n": 23000,
+    "value": 0.896,
+    "ci95": [
+     0.8922,
+     0.9001
+    ]
+   },
+   "closed_top3": {
+    "n": 23000,
+    "value": 0.9741,
+    "ci95": [
+     0.972,
+     0.9762
+    ]
+   },
+   "closed_top5": {
+    "n": 23000,
+    "value": 0.9855,
+    "ci95": [
+     0.984,
+     0.987
+    ]
+   },
+   "all_top1": {
+    "n": 23000,
+    "value": 0.5847,
+    "ci95": [
+     0.5782,
+     0.5915
+    ]
+   },
+   "all_top3": {
+    "n": 23000,
+    "value": 0.7302,
+    "ci95": [
+     0.7245,
+     0.7361
+    ]
+   },
+   "all_top5": {
+    "n": 23000,
+    "value": 0.7815,
+    "ci95": [
+     0.7762,
+     0.7869
+    ]
+   },
+   "dishes_top1": {
+    "n": 23000,
+    "value": 0.6077,
+    "ci95": [
+     0.6013,
+     0.6145
+    ]
+   },
+   "dishes_top3": {
+    "n": 23000,
+    "value": 0.7442,
+    "ci95": [
+     0.7387,
+     0.75
+    ]
+   },
+   "dishes_top5": {
+    "n": 23000,
+    "value": 0.792,
+    "ci95": [
+     0.7868,
+     0.7974
+    ]
+   },
+   "kcal_error": {
+    "cnn": {
+     "median_abs": 0.0,
+     "mean_abs": 11.1,
+     "within_20pct": {
+      "n": 23000,
+      "value": 0.9129,
+      "ci95": [
+       0.9092,
+       0.9167
+      ]
+     }
+    },
+    "closed": {
+     "median_abs": 0.0,
+     "mean_abs": 7.9,
+     "within_20pct": {
+      "n": 23000,
+      "value": 0.9343,
+      "ci95": [
+       0.9311,
+       0.9376
+      ]
+     }
+    },
+    "dishes": {
+     "median_abs": 14.0,
+     "mean_abs": 36.9,
+     "within_20pct": {
+      "n": 23000,
+      "value": 0.6532,
+      "ci95": [
+       0.647,
+       0.6594
+      ]
+     }
+    }
+   }
+  },
+  "ua": {
+   "closed_top1": {
+    "n": 170,
+    "value": 0.8412,
+    "ci95": [
+     0.7882,
+     0.8941
+    ]
+   },
+   "closed_top3": {
+    "n": 170,
+    "value": 0.9529,
+    "ci95": [
+     0.9235,
+     0.9824
+    ]
+   },
+   "closed_top5": {
+    "n": 170,
+    "value": 0.9647,
+    "ci95": [
+     0.9353,
+     0.9882
+    ]
+   },
+   "all_top1": {
+    "n": 170,
+    "value": 0.4471,
+    "ci95": [
+     0.3706,
+     0.5235
+    ]
+   },
+   "all_top3": {
+    "n": 170,
+    "value": 0.6118,
+    "ci95": [
+     0.5412,
+     0.6882
+    ]
+   },
+   "all_top5": {
+    "n": 170,
+    "value": 0.6765,
+    "ci95": [
+     0.6059,
+     0.7471
+    ]
+   },
+   "dishes_top1": {
+    "n": 170,
+    "value": 0.4588,
+    "ci95": [
+     0.3824,
+     0.5353
+    ]
+   },
+   "dishes_top3": {
+    "n": 170,
+    "value": 0.6118,
+    "ci95": [
+     0.5412,
+     0.6882
+    ]
+   },
+   "dishes_top5": {
+    "n": 170,
+    "value": 0.6824,
+    "ci95": [
+     0.6118,
+     0.7529
+    ]
+   },
+   "kcal_error": {
+    "cnn": {
+     "median_abs": 0.0,
+     "mean_abs": 10.7,
+     "within_20pct": {
+      "n": 170,
+      "value": 0.9353,
+      "ci95": [
+       0.8941,
+       0.9706
+      ]
+     }
+    },
+    "closed": {
+     "median_abs": 0.0,
+     "mean_abs": 9.0,
+     "within_20pct": {
+      "n": 170,
+      "value": 0.8941,
+      "ci95": [
+       0.8471,
+       0.9353
+      ]
+     }
+    },
+    "dishes": {
+     "median_abs": 24.0,
+     "mean_abs": 34.6,
+     "within_20pct": {
+      "n": 170,
+      "value": 0.4647,
+      "ci95": [
+       0.3882,
+       0.5412
+      ]
+     }
+    }
+   }
+  },
+  "per_class": [
+   {
+    "class": "bread_pudding",
+    "n": 250,
+    "closed_top1": 0.672,
+    "all_top1": 0.008,
+    "dishes_top1": 0.008,
+    "dishes_top3": 0.04,
+    "accepted_records": 1,
+    "usual_answer": "Pudding, bread",
+    "usual_mistake": "Creme brulee"
+   },
+   {
+    "class": "pulled_pork_sandwich",
+    "n": 250,
+    "closed_top1": 0.976,
+    "all_top1": 0.024,
+    "dishes_top1": 0.024,
+    "dishes_top3": 0.372,
+    "accepted_records": 1,
+    "usual_answer": "Barbecue sandwich, NFS",
+    "usual_mistake": "Barbecue rib sandwich"
+   },
+   {
+    "class": "filet_mignon",
+    "n": 250,
+    "closed_top1": 0.876,
+    "all_top1": 0.032,
+    "dishes_top1": 0.032,
+    "dishes_top3": 0.184,
+    "accepted_records": 1,
+    "usual_answer": "Beef, steak, tenderloin",
+    "usual_mistake": "Venison, steak"
+   },
+   {
+    "class": "cannoli",
+    "n": 250,
+    "closed_top1": 0.968,
+    "all_top1": 0.052,
+    "dishes_top1": 0.06,
+    "dishes_top3": 0.132,
+    "accepted_records": 1,
+    "usual_answer": "Pastry, Italian, with cheese",
+    "usual_mistake": "Cream puff, eclair, custard or cream filled, not iced"
+   },
+   {
+    "class": "foie_gras",
+    "n": 250,
+    "closed_top1": 0.736,
+    "all_top1": 0.076,
+    "dishes_top1": 0.076,
+    "dishes_top3": 0.12,
+    "accepted_records": 1,
+    "usual_answer": "Liver, paste or pate",
+    "usual_mistake": "Duck, roasted, skin not eaten"
+   },
+   {
+    "class": "tuna_tartare",
+    "n": 250,
+    "closed_top1": 0.736,
+    "all_top1": 0.076,
+    "dishes_top1": 0.076,
+    "dishes_top3": 0.264,
+    "accepted_records": 1,
+    "usual_answer": "Fish, tuna, raw",
+    "usual_mistake": "Steak tartare"
+   },
+   {
+    "class": "olivier_salad",
+    "n": 20,
+    "closed_top1": 0.85,
+    "all_top1": 0.1,
+    "dishes_top1": 0.1,
+    "dishes_top3": 0.15,
+    "accepted_records": 10,
+    "usual_answer": "Potato salad with egg, from restaurant",
+    "usual_mistake": "Tuna salad with egg"
+   },
+   {
+    "class": "lobster_roll_sandwich",
+    "n": 250,
+    "closed_top1": 0.988,
+    "all_top1": 0.132,
+    "dishes_top1": 0.132,
+    "dishes_top3": 0.392,
+    "accepted_records": 1,
+    "usual_answer": "Lobster salad",
+    "usual_mistake": "Lobster with bread stuffing, baked"
+   },
+   {
+    "class": "chocolate_mousse",
+    "n": 250,
+    "closed_top1": 0.776,
+    "all_top1": 0.128,
+    "dishes_top1": 0.16,
+    "dishes_top3": 0.26,
+    "accepted_records": 1,
+    "usual_answer": "Mousse",
+    "usual_mistake": "Pudding, chocolate, made from dry mix"
+   },
+   {
+    "class": "fried_rice",
+    "n": 250,
+    "closed_top1": 0.932,
+    "all_top1": 0.172,
+    "dishes_top1": 0.172,
+    "dishes_top3": 0.232,
+    "accepted_records": 6,
+    "usual_answer": "Rice, fried, with shrimp",
+    "usual_mistake": "Rice, brown, with vegetables, soy-based sauce, fat added"
+   },
+   {
+    "class": "peking_duck",
+    "n": 250,
+    "closed_top1": 0.88,
+    "all_top1": 0.172,
+    "dishes_top1": 0.172,
+    "dishes_top3": 0.616,
+    "accepted_records": 3,
+    "usual_answer": "Duck, Peking",
+    "usual_mistake": "Duck, cooked, skin not eaten"
+   },
+   {
+    "class": "pork_chop",
+    "n": 250,
+    "closed_top1": 0.804,
+    "all_top1": 0.18,
+    "dishes_top1": 0.18,
+    "dishes_top3": 0.344,
+    "accepted_records": 7,
+    "usual_answer": "Pork, chop, NS as to fat eaten",
+    "usual_mistake": "Veal, chop"
+   },
+   {
+    "class": "crab_cakes",
+    "n": 250,
+    "closed_top1": 0.876,
+    "all_top1": 0.18,
+    "dishes_top1": 0.184,
+    "dishes_top3": 0.384,
+    "accepted_records": 1,
+    "usual_answer": "Crab, cake",
+    "usual_mistake": "Crab cake sandwich"
+   },
+   {
+    "class": "holubtsi",
+    "n": 30,
+    "closed_top1": 0.7667,
+    "all_top1": 0.2333,
+    "dishes_top1": 0.2333,
+    "dishes_top3": 0.4333,
+    "accepted_records": 3,
+    "usual_answer": "Stuffed cabbage rolls with beef and rice",
+    "usual_mistake": "Stuffed shells, with chicken, with tomato sauce"
+   },
+   {
+    "class": "chocolate_cake",
+    "n": 250,
+    "closed_top1": 0.896,
+    "all_top1": 0.22,
+    "dishes_top1": 0.236,
+    "dishes_top3": 0.508,
+    "accepted_records": 8,
+    "usual_answer": "Cake or cupcake, chocolate with chocolate icing, from mix",
+    "usual_mistake": "Snack cake, chocolate"
+   },
+   {
+    "class": "prime_rib",
+    "n": 250,
+    "closed_top1": 0.904,
+    "all_top1": 0.272,
+    "dishes_top1": 0.272,
+    "dishes_top3": 0.584,
+    "accepted_records": 4,
+    "usual_answer": "Beef, roast",
+    "usual_mistake": "Beef and vegetables including carrots, broccoli, and/or dark-green leafy; no potatoes, gravy"
+   },
+   {
+    "class": "carrot_cake",
+    "n": 250,
+    "closed_top1": 0.86,
+    "all_top1": 0.284,
+    "dishes_top1": 0.284,
+    "dishes_top3": 0.42,
+    "accepted_records": 1,
+    "usual_answer": "Cake or cupcake, carrot",
+    "usual_mistake": "Coffee cake, crumb or quick-bread type"
+   },
+   {
+    "class": "deruny",
+    "n": 39,
+    "closed_top1": 0.7179,
+    "all_top1": 0.3077,
+    "dishes_top1": 0.3077,
+    "dishes_top3": 0.5641,
+    "accepted_records": 1,
+    "usual_answer": "Potato pancake",
+    "usual_mistake": "Soybean curd, breaded, fried"
+   },
+   {
+    "class": "grilled_salmon",
+    "n": 250,
+    "closed_top1": 0.936,
+    "all_top1": 0.316,
+    "dishes_top1": 0.316,
+    "dishes_top3": 0.56,
+    "accepted_records": 3,
+    "usual_answer": "Fish, salmon, baked or broiled",
+    "usual_mistake": "Fish, salmon, steamed"
+   },
+   {
+    "class": "hot_and_sour_soup",
+    "n": 250,
+    "closed_top1": 0.856,
+    "all_top1": 0.272,
+    "dishes_top1": 0.332,
+    "dishes_top3": 0.584,
+    "accepted_records": 1,
+    "usual_answer": "Soup, hot and sour",
+    "usual_mistake": "Soup, broth"
+   },
+   {
+    "class": "lobster_bisque",
+    "n": 250,
+    "closed_top1": 0.96,
+    "all_top1": 0.328,
+    "dishes_top1": 0.356,
+    "dishes_top3": 0.708,
+    "accepted_records": 1,
+    "usual_answer": "Soup, bisque",
+    "usual_mistake": "Soup, cream of tomato"
+   },
+   {
+    "class": "apple_pie",
+    "n": 250,
+    "closed_top1": 0.896,
+    "all_top1": 0.36,
+    "dishes_top1": 0.36,
+    "dishes_top3": 0.508,
+    "accepted_records": 2,
+    "usual_answer": "Pie, apple",
+    "usual_mistake": "Strudel, apple"
+   },
+   {
+    "class": "french_onion_soup",
+    "n": 250,
+    "closed_top1": 0.848,
+    "all_top1": 0.36,
+    "dishes_top1": 0.372,
+    "dishes_top3": 0.592,
+    "accepted_records": 1,
+    "usual_answer": "Soup, French onion",
+    "usual_mistake": "Macaroni or noodles with cheese, from restaurant"
+   },
+   {
+    "class": "miso_soup",
+    "n": 250,
+    "closed_top1": 0.928,
+    "all_top1": 0.228,
+    "dishes_top1": 0.388,
+    "dishes_top3": 0.684,
+    "accepted_records": 1,
+    "usual_answer": "Soup, miso or tofu",
+    "usual_mistake": "Soup, seaweed"
+   },
+   {
+    "class": "chicken_curry",
+    "n": 250,
+    "closed_top1": 0.876,
+    "all_top1": 0.352,
+    "dishes_top1": 0.392,
+    "dishes_top3": 0.576,
+    "accepted_records": 2,
+    "usual_answer": "Chicken curry",
+    "usual_mistake": "Fish curry"
+   },
+   {
+    "class": "beet_salad",
+    "n": 250,
+    "closed_top1": 0.884,
+    "all_top1": 0.404,
+    "dishes_top1": 0.404,
+    "dishes_top3": 0.548,
+    "accepted_records": 8,
+    "usual_answer": "Beets, NS as to form, cooked",
+    "usual_mistake": "Beet greens, cooked"
+   },
+   {
+    "class": "tacos",
+    "n": 250,
+    "closed_top1": 0.892,
+    "all_top1": 0.42,
+    "dishes_top1": 0.42,
+    "dishes_top3": 0.66,
+    "accepted_records": 20,
+    "usual_answer": "Taco, fish",
+    "usual_mistake": "Pork, carnitas"
+   },
+   {
+    "class": "ceviche",
+    "n": 250,
+    "closed_top1": 0.724,
+    "all_top1": 0.404,
+    "dishes_top1": 0.432,
+    "dishes_top3": 0.588,
+    "accepted_records": 1,
+    "usual_answer": "Ceviche",
+    "usual_mistake": "Seafood salad"
+   },
+   {
+    "class": "steak",
+    "n": 250,
+    "closed_top1": 0.464,
+    "all_top1": 0.432,
+    "dishes_top1": 0.436,
+    "dishes_top3": 0.668,
+    "accepted_records": 20,
+    "usual_answer": "Steak, NS as to type of meat, NS as to fat eaten",
+    "usual_mistake": "Venison, steak"
+   },
+   {
+    "class": "breakfast_burrito",
+    "n": 250,
+    "closed_top1": 0.896,
+    "all_top1": 0.456,
+    "dishes_top1": 0.46,
+    "dishes_top3": 0.568,
+    "accepted_records": 4,
+    "usual_answer": "Egg burrito",
+    "usual_mistake": "Burrito, with beans and rice, cheese"
+   },
+   {
+    "class": "sashimi",
+    "n": 250,
+    "closed_top1": 0.888,
+    "all_top1": 0.496,
+    "dishes_top1": 0.5,
+    "dishes_top3": 0.836,
+    "accepted_records": 3,
+    "usual_answer": "Fish, tuna, raw",
+    "usual_mistake": "Fish, salmon, steamed"
+   },
+   {
+    "class": "seaweed_salad",
+    "n": 250,
+    "closed_top1": 0.992,
+    "all_top1": 0.5,
+    "dishes_top1": 0.512,
+    "dishes_top3": 0.752,
+    "accepted_records": 4,
+    "usual_answer": "Seaweed, cooked, no added fat",
+    "usual_mistake": "Poke greens, cooked"
+   },
+   {
+    "class": "sushi",
+    "n": 250,
+    "closed_top1": 0.896,
+    "all_top1": 0.52,
+    "dishes_top1": 0.524,
+    "dishes_top3": 0.868,
+    "accepted_records": 14,
+    "usual_answer": "Sushi roll, California",
+    "usual_mistake": "Roll with meat and/or shrimp, vegetables and rice paper, not fried"
+   },
+   {
+    "class": "ravioli",
+    "n": 250,
+    "closed_top1": 0.596,
+    "all_top1": 0.524,
+    "dishes_top1": 0.536,
+    "dishes_top3": 0.652,
+    "accepted_records": 15,
+    "usual_answer": "Ravioli, meat-filled, with cream sauce",
+    "usual_mistake": "Tortellini, cheese-filled, meatless, with vinaigrette dressing"
+   },
+   {
+    "class": "garlic_bread",
+    "n": 250,
+    "closed_top1": 0.788,
+    "all_top1": 0.556,
+    "dishes_top1": 0.56,
+    "dishes_top3": 0.676,
+    "accepted_records": 7,
+    "usual_answer": "Garlic bread, with parmesan cheese, from fast food / restaurant",
+    "usual_mistake": "Breadsticks, soft, stuffed or topped with melted cheese"
+   },
+   {
+    "class": "fish_and_chips",
+    "n": 250,
+    "closed_top1": 0.964,
+    "all_top1": 0.524,
+    "dishes_top1": 0.576,
+    "dishes_top3": 0.792,
+    "accepted_records": 13,
+    "usual_answer": "Fish, haddock, fried",
+    "usual_mistake": "Chicken tenders or strips, breaded, from restaurant"
+   },
+   {
+    "class": "cheesecake",
+    "n": 250,
+    "closed_top1": 0.86,
+    "all_top1": 0.552,
+    "dishes_top1": 0.58,
+    "dishes_top3": 0.788,
+    "accepted_records": 3,
+    "usual_answer": "Cheesecake, plain",
+    "usual_mistake": "Pie, blueberry"
+   },
+   {
+    "class": "falafel",
+    "n": 250,
+    "closed_top1": 0.852,
+    "all_top1": 0.592,
+    "dishes_top1": 0.6,
+    "dishes_top3": 0.744,
+    "accepted_records": 2,
+    "usual_answer": "Falafel",
+    "usual_mistake": "Porcupine balls with mushroom sauce"
+   },
+   {
+    "class": "gnocchi",
+    "n": 250,
+    "closed_top1": 0.884,
+    "all_top1": 0.604,
+    "dishes_top1": 0.604,
+    "dishes_top3": 0.728,
+    "accepted_records": 2,
+    "usual_answer": "Gnocchi, cheese",
+    "usual_mistake": "Tortellini, spinach-filled, no sauce"
+   },
+   {
+    "class": "hummus",
+    "n": 250,
+    "closed_top1": 0.864,
+    "all_top1": 0.604,
+    "dishes_top1": 0.604,
+    "dishes_top3": 0.74,
+    "accepted_records": 2,
+    "usual_answer": "Hummus, plain",
+    "usual_mistake": "Tahini"
+   },
+   {
+    "class": "ice_cream",
+    "n": 250,
+    "closed_top1": 0.876,
+    "all_top1": 0.576,
+    "dishes_top1": 0.604,
+    "dishes_top3": 0.848,
+    "accepted_records": 29,
+    "usual_answer": "Gelato, vanilla",
+    "usual_mistake": "Frozen yogurt cone, chocolate"
+   },
+   {
+    "class": "huevos_rancheros",
+    "n": 250,
+    "closed_top1": 0.888,
+    "all_top1": 0.612,
+    "dishes_top1": 0.616,
+    "dishes_top3": 0.76,
+    "accepted_records": 1,
+    "usual_answer": "Huevos rancheros",
+    "usual_mistake": "Quesadilla, egg, with meat"
+   },
+   {
+    "class": "frozen_yogurt",
+    "n": 250,
+    "closed_top1": 0.964,
+    "all_top1": 0.616,
+    "dishes_top1": 0.624,
+    "dishes_top3": 0.848,
+    "accepted_records": 9,
+    "usual_answer": "Frozen yogurt, NFS",
+    "usual_mistake": "Yogurt parfait, with fruit"
+   },
+   {
+    "class": "deviled_eggs",
+    "n": 250,
+    "closed_top1": 0.96,
+    "all_top1": 0.632,
+    "dishes_top1": 0.632,
+    "dishes_top3": 0.732,
+    "accepted_records": 1,
+    "usual_answer": "Egg, deviled",
+    "usual_mistake": "Egg salad, made with light mayonnaise"
+   },
+   {
+    "class": "hot_dog",
+    "n": 250,
+    "closed_top1": 0.952,
+    "all_top1": 0.656,
+    "dishes_top1": 0.656,
+    "dishes_top3": 0.92,
+    "accepted_records": 33,
+    "usual_answer": "Hot dog, NFS",
+    "usual_mistake": "Frankfurters or hot dogs with tomato-based sauce"
+   },
+   {
+    "class": "escargots",
+    "n": 250,
+    "closed_top1": 0.848,
+    "all_top1": 0.66,
+    "dishes_top1": 0.664,
+    "dishes_top3": 0.74,
+    "accepted_records": 1,
+    "usual_answer": "Escargot",
+    "usual_mistake": "Spinach souffle"
+   },
+   {
+    "class": "shashlik",
+    "n": 39,
+    "closed_top1": 0.9744,
+    "all_top1": 0.6667,
+    "dishes_top1": 0.6667,
+    "dishes_top3": 0.7692,
+    "accepted_records": 6,
+    "usual_answer": "Pork shish kabob with vegetables, excluding potatoes",
+    "usual_mistake": "Barbecue meat, NFS"
+   },
+   {
+    "class": "macaroni_and_cheese",
+    "n": 250,
+    "closed_top1": 0.924,
+    "all_top1": 0.664,
+    "dishes_top1": 0.672,
+    "dishes_top3": 0.76,
+    "accepted_records": 16,
+    "usual_answer": "Macaroni or noodles with cheese, from restaurant",
+    "usual_mistake": "Macaroni or pasta salad with chicken"
+   },
+   {
+    "class": "strawberry_shortcake",
+    "n": 250,
+    "closed_top1": 0.916,
+    "all_top1": 0.664,
+    "dishes_top1": 0.672,
+    "dishes_top3": 0.836,
+    "accepted_records": 1,
+    "usual_answer": "Cake, strawberry shortcake",
+    "usual_mistake": "Ice cream sundae, fruit topping"
+   },
+   {
+    "class": "baby_back_ribs",
+    "n": 250,
+    "closed_top1": 0.92,
+    "all_top1": 0.676,
+    "dishes_top1": 0.676,
+    "dishes_top3": 0.768,
+    "accepted_records": 2,
+    "usual_answer": "Pork, ribs",
+    "usual_mistake": "Barbecue beef, with sauce"
+   },
+   {
+    "class": "caesar_salad",
+    "n": 250,
+    "closed_top1": 0.96,
+    "all_top1": 0.48,
+    "dishes_top1": 0.68,
+    "dishes_top3": 0.78,
+    "accepted_records": 3,
+    "usual_answer": "Caesar salad, with romaine, no dressing",
+    "usual_mistake": "Lettuce, wilted, with bacon dressing"
+   },
+   {
+    "class": "onion_rings",
+    "n": 250,
+    "closed_top1": 0.868,
+    "all_top1": 0.68,
+    "dishes_top1": 0.68,
+    "dishes_top3": 0.932,
+    "accepted_records": 1,
+    "usual_answer": "Fried onion rings",
+    "usual_mistake": "Onion flavored rings"
+   },
+   {
+    "class": "club_sandwich",
+    "n": 250,
+    "closed_top1": 0.936,
+    "all_top1": 0.684,
+    "dishes_top1": 0.688,
+    "dishes_top3": 0.8,
+    "accepted_records": 5,
+    "usual_answer": "Club sandwich on wheat",
+    "usual_mistake": "Bacon, lettuce, tomato sandwich on wheat"
+   },
+   {
+    "class": "bruschetta",
+    "n": 250,
+    "closed_top1": 0.884,
+    "all_top1": 0.684,
+    "dishes_top1": 0.7,
+    "dishes_top3": 0.804,
+    "accepted_records": 1,
+    "usual_answer": "Bruschetta",
+    "usual_mistake": "Mozzarella cheese, tomato, and basil, with oil and vinegar dressing"
+   },
+   {
+    "class": "lasagna",
+    "n": 250,
+    "closed_top1": 0.916,
+    "all_top1": 0.7,
+    "dishes_top1": 0.7,
+    "dishes_top3": 0.872,
+    "accepted_records": 10,
+    "usual_answer": "Lasagna with meat, from restaurant",
+    "usual_mistake": "Eggplant parmesan casserole, regular"
+   },
+   {
+    "class": "nachos",
+    "n": 250,
+    "closed_top1": 0.944,
+    "all_top1": 0.696,
+    "dishes_top1": 0.704,
+    "dishes_top3": 0.828,
+    "accepted_records": 7,
+    "usual_answer": "Nachos, beef or pork, with beans",
+    "usual_mistake": "Taco or tostada salad, meatless with sour cream"
+   },
+   {
+    "class": "samosa",
+    "n": 250,
+    "closed_top1": 0.916,
+    "all_top1": 0.7,
+    "dishes_top1": 0.704,
+    "dishes_top3": 0.784,
+    "accepted_records": 1,
+    "usual_answer": "Samosa",
+    "usual_mistake": "Empanada, NFS"
+   },
+   {
+    "class": "hamburger",
+    "n": 250,
+    "closed_top1": 0.904,
+    "all_top1": 0.668,
+    "dishes_top1": 0.716,
+    "dishes_top3": 0.92,
+    "accepted_records": 55,
+    "usual_answer": "Cheeseburger, on white bun, 1 large patty",
+    "usual_mistake": "Veggie burger, on bun"
+   },
+   {
+    "class": "varenyky",
+    "n": 11,
+    "closed_top1": 0.8182,
+    "all_top1": 0.7273,
+    "dishes_top1": 0.7273,
+    "dishes_top3": 0.8182,
+    "accepted_records": 1,
+    "usual_answer": "Pierogi",
+    "usual_mistake": "Ravioli, meat-filled, with cream sauce"
+   },
+   {
+    "class": "grilled_cheese_sandwich",
+    "n": 250,
+    "closed_top1": 0.932,
+    "all_top1": 0.72,
+    "dishes_top1": 0.732,
+    "dishes_top3": 0.82,
+    "accepted_records": 14,
+    "usual_answer": "Grilled cheese sandwich, NFS",
+    "usual_mistake": "Bread, cornmeal and molasses, toasted"
+   },
+   {
+    "class": "borscht",
+    "n": 31,
+    "closed_top1": 0.9032,
+    "all_top1": 0.6774,
+    "dishes_top1": 0.7419,
+    "dishes_top3": 0.871,
+    "accepted_records": 1,
+    "usual_answer": "Soup, borscht",
+    "usual_mistake": "Soup, tomato"
+   },
+   {
+    "class": "beignets",
+    "n": 250,
+    "closed_top1": 0.956,
+    "all_top1": 0.744,
+    "dishes_top1": 0.748,
+    "dishes_top3": 0.852,
+    "accepted_records": 1,
+    "usual_answer": "Beignet",
+    "usual_mistake": "Doughnut holes"
+   },
+   {
+    "class": "spaghetti_bolognese",
+    "n": 250,
+    "closed_top1": 0.968,
+    "all_top1": 0.288,
+    "dishes_top1": 0.764,
+    "dishes_top3": 0.908,
+    "accepted_records": 4,
+    "usual_answer": "Spaghetti with meat sauce, diet frozen meal",
+    "usual_mistake": "Pasta with tomato-based sauce, restaurant"
+   },
+   {
+    "class": "red_velvet_cake",
+    "n": 250,
+    "closed_top1": 0.924,
+    "all_top1": 0.768,
+    "dishes_top1": 0.772,
+    "dishes_top3": 0.828,
+    "accepted_records": 1,
+    "usual_answer": "Cake or cupcake, red velvet",
+    "usual_mistake": "Cake or cupcake, chocolate with white icing, from mix"
+   },
+   {
+    "class": "french_toast",
+    "n": 250,
+    "closed_top1": 0.824,
+    "all_top1": 0.768,
+    "dishes_top1": 0.78,
+    "dishes_top3": 0.872,
+    "accepted_records": 10,
+    "usual_answer": "French toast, NFS",
+    "usual_mistake": "Grilled cheese sandwich, reduced fat cheese, on white bread"
+   },
+   {
+    "class": "eggs_benedict",
+    "n": 250,
+    "closed_top1": 0.972,
+    "all_top1": 0.628,
+    "dishes_top1": 0.788,
+    "dishes_top3": 0.876,
+    "accepted_records": 1,
+    "usual_answer": "Egg, Benedict",
+    "usual_mistake": "Turnover or breakfast pocket, egg"
+   },
+   {
+    "class": "pizza",
+    "n": 250,
+    "closed_top1": 0.984,
+    "all_top1": 0.704,
+    "dishes_top1": 0.792,
+    "dishes_top3": 0.924,
+    "accepted_records": 77,
+    "usual_answer": "Pizza, cheese, from restaurant or fast food, medium crust",
+    "usual_mistake": "White pizza, cheese, with vegetables, thick crust"
+   },
+   {
+    "class": "scallops",
+    "n": 250,
+    "closed_top1": 0.876,
+    "all_top1": 0.788,
+    "dishes_top1": 0.792,
+    "dishes_top3": 0.864,
+    "accepted_records": 4,
+    "usual_answer": "Scallops, grilled",
+    "usual_mistake": "Porcupine balls with tomato-based sauce"
+   },
+   {
+    "class": "french_fries",
+    "n": 250,
+    "closed_top1": 0.952,
+    "all_top1": 0.756,
+    "dishes_top1": 0.804,
+    "dishes_top3": 0.912,
+    "accepted_records": 16,
+    "usual_answer": "Potato, french fries, from fresh, fried",
+    "usual_mistake": "Sweet potato fries, fast food / restaurant"
+   },
+   {
+    "class": "gyoza",
+    "n": 250,
+    "closed_top1": 0.544,
+    "all_top1": 0.792,
+    "dishes_top1": 0.804,
+    "dishes_top3": 0.872,
+    "accepted_records": 3,
+    "usual_answer": "Wonton, dumpling or pot sticker, fried",
+    "usual_mistake": "Dumpling, no meat"
+   },
+   {
+    "class": "dumplings",
+    "n": 250,
+    "closed_top1": 0.944,
+    "all_top1": 0.808,
+    "dishes_top1": 0.808,
+    "dishes_top3": 0.964,
+    "accepted_records": 4,
+    "usual_answer": "Wonton, dumpling or pot sticker, steamed",
+    "usual_mistake": "Bao bun"
+   },
+   {
+    "class": "omelette",
+    "n": 250,
+    "closed_top1": 0.812,
+    "all_top1": 0.792,
+    "dishes_top1": 0.808,
+    "dishes_top3": 0.88,
+    "accepted_records": 82,
+    "usual_answer": "Egg omelet or scrambled egg, with dark-green vegetables, fat added",
+    "usual_mistake": "Egg white, omelet, scrambled, or fried, with vegetables"
+   },
+   {
+    "class": "guacamole",
+    "n": 250,
+    "closed_top1": 0.96,
+    "all_top1": 0.776,
+    "dishes_top1": 0.812,
+    "dishes_top3": 0.92,
+    "accepted_records": 2,
+    "usual_answer": "Guacamole, NFS",
+    "usual_mistake": "Salsa verde or salsa, green"
+   },
+   {
+    "class": "beef_tartare",
+    "n": 250,
+    "closed_top1": 0.892,
+    "all_top1": 0.816,
+    "dishes_top1": 0.816,
+    "dishes_top3": 0.876,
+    "accepted_records": 1,
+    "usual_answer": "Steak tartare",
+    "usual_mistake": "Beef, ground, raw"
+   },
+   {
+    "class": "clam_chowder",
+    "n": 250,
+    "closed_top1": 0.892,
+    "all_top1": 0.776,
+    "dishes_top1": 0.832,
+    "dishes_top3": 0.904,
+    "accepted_records": 2,
+    "usual_answer": "Soup, New England clam chowder",
+    "usual_mistake": "Cheese dip"
+   },
+   {
+    "class": "fried_calamari",
+    "n": 250,
+    "closed_top1": 0.96,
+    "all_top1": 0.828,
+    "dishes_top1": 0.832,
+    "dishes_top3": 0.912,
+    "accepted_records": 2,
+    "usual_answer": "Calamari, fried",
+    "usual_mistake": "Oysters, fried"
+   },
+   {
+    "class": "ramen",
+    "n": 250,
+    "closed_top1": 0.9,
+    "all_top1": 0.832,
+    "dishes_top1": 0.832,
+    "dishes_top3": 0.924,
+    "accepted_records": 8,
+    "usual_answer": "Ramen bowl, NFS",
+    "usual_mistake": "Soup, pork or ham"
+   },
+   {
+    "class": "spring_rolls",
+    "n": 250,
+    "closed_top1": 0.968,
+    "all_top1": 0.808,
+    "dishes_top1": 0.832,
+    "dishes_top3": 0.924,
+    "accepted_records": 5,
+    "usual_answer": "Roll with meat and/or shrimp, vegetables and rice paper, not fried",
+    "usual_mistake": "Rice paper"
+   },
+   {
+    "class": "greek_salad",
+    "n": 250,
+    "closed_top1": 0.968,
+    "all_top1": 0.824,
+    "dishes_top1": 0.836,
+    "dishes_top3": 0.92,
+    "accepted_records": 1,
+    "usual_answer": "Greek Salad, no dressing",
+    "usual_mistake": "Tomato and cucumber salad made with tomato, cucumber, oil, and vinegar"
+   },
+   {
+    "class": "paella",
+    "n": 250,
+    "closed_top1": 0.916,
+    "all_top1": 0.832,
+    "dishes_top1": 0.836,
+    "dishes_top3": 0.908,
+    "accepted_records": 3,
+    "usual_answer": "Paella with seafood",
+    "usual_mistake": "Spanish rice, NS as to fat"
+   },
+   {
+    "class": "tiramisu",
+    "n": 250,
+    "closed_top1": 0.904,
+    "all_top1": 0.808,
+    "dishes_top1": 0.836,
+    "dishes_top3": 0.908,
+    "accepted_records": 1,
+    "usual_answer": "Tiramisu",
+    "usual_mistake": "Pudding, chocolate, made from dry mix"
+   },
+   {
+    "class": "bibimbap",
+    "n": 250,
+    "closed_top1": 0.972,
+    "all_top1": 0.828,
+    "dishes_top1": 0.84,
+    "dishes_top3": 0.908,
+    "accepted_records": 1,
+    "usual_answer": "Bibimbap, Korean",
+    "usual_mistake": "Ramen bowl, vegetarian with egg"
+   },
+   {
+    "class": "churros",
+    "n": 250,
+    "closed_top1": 0.956,
+    "all_top1": 0.832,
+    "dishes_top1": 0.84,
+    "dishes_top3": 0.912,
+    "accepted_records": 1,
+    "usual_answer": "Churros",
+    "usual_mistake": "Soybean curd, deep fried"
+   },
+   {
+    "class": "baklava",
+    "n": 250,
+    "closed_top1": 0.916,
+    "all_top1": 0.848,
+    "dishes_top1": 0.848,
+    "dishes_top3": 0.888,
+    "accepted_records": 1,
+    "usual_answer": "Baklava",
+    "usual_mistake": "Pie, vanilla cream"
+   },
+   {
+    "class": "caprese_salad",
+    "n": 250,
+    "closed_top1": 0.932,
+    "all_top1": 0.852,
+    "dishes_top1": 0.856,
+    "dishes_top3": 0.924,
+    "accepted_records": 1,
+    "usual_answer": "Mozzarella cheese, tomato, and basil, with oil and vinegar dressing",
+    "usual_mistake": "Greek Salad, no dressing"
+   },
+   {
+    "class": "edamame",
+    "n": 250,
+    "closed_top1": 1.0,
+    "all_top1": 0.86,
+    "dishes_top1": 0.864,
+    "dishes_top3": 0.936,
+    "accepted_records": 1,
+    "usual_answer": "Edamame, cooked",
+    "usual_mistake": "Snowpeas, fresh, cooked, fat added"
+   },
+   {
+    "class": "chicken_quesadilla",
+    "n": 250,
+    "closed_top1": 0.892,
+    "all_top1": 0.864,
+    "dishes_top1": 0.868,
+    "dishes_top3": 0.916,
+    "accepted_records": 9,
+    "usual_answer": "Quesadilla, with vegetables",
+    "usual_mistake": "Burrito, with beans and rice, cheese"
+   },
+   {
+    "class": "oysters",
+    "n": 250,
+    "closed_top1": 0.996,
+    "all_top1": 0.884,
+    "dishes_top1": 0.884,
+    "dishes_top3": 0.988,
+    "accepted_records": 6,
+    "usual_answer": "Oysters, raw",
+    "usual_mistake": "Dressing with oysters"
+   },
+   {
+    "class": "mussels",
+    "n": 250,
+    "closed_top1": 0.98,
+    "all_top1": 0.86,
+    "dishes_top1": 0.888,
+    "dishes_top3": 0.936,
+    "accepted_records": 1,
+    "usual_answer": "Mussels",
+    "usual_mistake": "Soup, bouillabaisse"
+   },
+   {
+    "class": "pho",
+    "n": 250,
+    "closed_top1": 0.98,
+    "all_top1": 0.912,
+    "dishes_top1": 0.916,
+    "dishes_top3": 0.956,
+    "accepted_records": 2,
+    "usual_answer": "Soup, pho, with meat",
+    "usual_mistake": "Ramen bowl with beef"
+   },
+   {
+    "class": "pancakes",
+    "n": 250,
+    "closed_top1": 0.968,
+    "all_top1": 0.82,
+    "dishes_top1": 0.924,
+    "dishes_top3": 0.944,
+    "accepted_records": 19,
+    "usual_answer": "Pancakes, plain",
+    "usual_mistake": "Crepe, NFS"
+   },
+   {
+    "class": "creme_brulee",
+    "n": 250,
+    "closed_top1": 0.972,
+    "all_top1": 0.924,
+    "dishes_top1": 0.932,
+    "dishes_top3": 0.948,
+    "accepted_records": 1,
+    "usual_answer": "Creme brulee",
+    "usual_mistake": "Pudding, flavors other than chocolate, made from dry mix"
+   },
+   {
+    "class": "macarons",
+    "n": 250,
+    "closed_top1": 0.988,
+    "all_top1": 0.924,
+    "dishes_top1": 0.932,
+    "dishes_top3": 0.968,
+    "accepted_records": 1,
+    "usual_answer": "Cookie, macaroon",
+    "usual_mistake": "Meringues"
+   },
+   {
+    "class": "donuts",
+    "n": 250,
+    "closed_top1": 0.912,
+    "all_top1": 0.928,
+    "dishes_top1": 0.936,
+    "dishes_top3": 0.98,
+    "accepted_records": 13,
+    "usual_answer": "Doughnut holes",
+    "usual_mistake": "Beignet"
+   },
+   {
+    "class": "chicken_wings",
+    "n": 250,
+    "closed_top1": 0.984,
+    "all_top1": 0.904,
+    "dishes_top1": 0.94,
+    "dishes_top3": 0.964,
+    "accepted_records": 25,
+    "usual_answer": "Chicken \"wings\" with other sauces or seasoning, from other sources",
+    "usual_mistake": "Chicken with mole sauce"
+   },
+   {
+    "class": "waffles",
+    "n": 250,
+    "closed_top1": 0.948,
+    "all_top1": 0.932,
+    "dishes_top1": 0.948,
+    "dishes_top3": 0.972,
+    "accepted_records": 19,
+    "usual_answer": "Waffle, NFS",
+    "usual_mistake": "Ice cream cake"
+   },
+   {
+    "class": "pad_thai",
+    "n": 250,
+    "closed_top1": 0.988,
+    "all_top1": 0.952,
+    "dishes_top1": 0.952,
+    "dishes_top3": 0.972,
+    "accepted_records": 5,
+    "usual_answer": "Pad Thai with chicken",
+    "usual_mistake": "Beef chow mein or chop suey, no noodles"
+   },
+   {
+    "class": "cup_cakes",
+    "n": 250,
+    "closed_top1": 0.804,
+    "all_top1": 0.952,
+    "dishes_top1": 0.96,
+    "dishes_top3": 0.98,
+    "accepted_records": 27,
+    "usual_answer": "Cake or cupcake, white with white icing, from mix",
+    "usual_mistake": "Candy, sprinkles"
+   }
+  ]
+ },
+ "no_match_classes": [
+  "beef_carpaccio",
+  "cheese_plate",
+  "croque_madame",
+  "panna_cotta",
+  "poutine",
+  "risotto",
+  "shrimp_and_grits",
+  "spaghetti_carbonara",
+  "takoyaki",
+  "paska"
+ ],
+ "accept": {
+  "apple_pie": "^Pie, apple",
+  "baby_back_ribs": "^Pork, ribs|^Ribs, NFS",
+  "baklava": "^Baklava",
+  "beef_tartare": "^Steak tartare",
+  "beet_salad": "^Beets,",
+  "beignets": "^Beignet",
+  "bibimbap": "^Bibimbap",
+  "bread_pudding": "^Pudding, bread",
+  "breakfast_burrito": "^Egg burrito",
+  "bruschetta": "^Bruschetta",
+  "caesar_salad": "caesar garden salad|^Caesar salad",
+  "cannoli": "^Pastry, Italian, with cheese",
+  "caprese_salad": "^Mozzarella cheese, tomato, and basil",
+  "carrot_cake": "^Cake or cupcake, carrot",
+  "ceviche": "^Ceviche",
+  "cheesecake": "^Cheesecake",
+  "chicken_curry": "^Chicken curry",
+  "chicken_quesadilla": "^Quesadilla",
+  "chicken_wings": "^Chicken wing|^Chicken \"wings\"",
+  "chocolate_cake": "^Cake or cupcake, (chocolate|German chocolate|Black Forest)|^Cake, chocolate",
+  "chocolate_mousse": "^Mousse$",
+  "churros": "^Churros",
+  "clam_chowder": "clam chowder",
+  "club_sandwich": "^Club sandwich",
+  "crab_cakes": "^Crab, cake",
+  "creme_brulee": "^Creme brulee",
+  "cup_cakes": "^Cake or cupcake",
+  "deviled_eggs": "^Egg, deviled",
+  "donuts": "^Doughnut",
+  "dumplings": "^Wonton, dumpling or pot sticker|^Dumpling, no meat",
+  "edamame": "^Edamame",
+  "eggs_benedict": "^Egg, Benedict",
+  "escargots": "^Escargot",
+  "falafel": "^Falafel",
+  "filet_mignon": "^Beef, steak, tenderloin",
+  "fish_and_chips": "^Fish, [^,]+, fried$|^Fish, NS as to type, fried",
+  "foie_gras": "^Liver, paste or pate",
+  "french_fries": "^Potato, french fries",
+  "french_onion_soup": "^Soup, French onion",
+  "french_toast": "^French toast",
+  "fried_calamari": "^Calamari",
+  "fried_rice": "^Rice, fried",
+  "frozen_yogurt": "^Frozen yogurt(?! (sandwich|bar))",
+  "garlic_bread": "^Garlic bread",
+  "gnocchi": "^Gnocchi",
+  "greek_salad": "^Greek Salad",
+  "grilled_cheese_sandwich": "^Grilled cheese sandwich|^Cheese sandwich",
+  "grilled_salmon": "^Fish, salmon, (grilled|baked or broiled)",
+  "guacamole": "^Guacamole",
+  "gyoza": "^Wonton, dumpling or pot sticker",
+  "hamburger": "^(Double )?(Hamburger|Cheeseburger)|^Whopper",
+  "hot_and_sour_soup": "^Soup, hot and sour",
+  "hot_dog": "^Hot dog|^Chili hot dog",
+  "huevos_rancheros": "^Huevos rancheros",
+  "hummus": "^Hummus",
+  "ice_cream": "^(Light )?Ice cream(, (?!fried)| cone| sundae)|^Gelato",
+  "lasagna": "^Lasagna",
+  "lobster_bisque": "^Soup, bisque",
+  "lobster_roll_sandwich": "^Lobster salad",
+  "macaroni_and_cheese": "^Macaroni or noodles,? (creamed, )?with cheese",
+  "macarons": "^Cookie, macaroon",
+  "miso_soup": "^Soup, miso",
+  "mussels": "^Mussels",
+  "nachos": "^Nachos",
+  "omelette": "^Egg omelet",
+  "onion_rings": "onion rings$",
+  "oysters": "^Oysters",
+  "pad_thai": "^Pad Thai",
+  "paella": "paella",
+  "pancakes": "^Pancakes",
+  "peking_duck": "^Duck, (Peking|roasted)",
+  "pho": "^Soup, pho",
+  "pizza": "^Pizza",
+  "pork_chop": "^Pork, chop",
+  "prime_rib": "^Beef, roast$|^Beef, steak, ribeye",
+  "pulled_pork_sandwich": "^Barbecue sandwich|pulled pork",
+  "ramen": "^Ramen bowl|^Soup, ramen",
+  "ravioli": "^Ravioli",
+  "red_velvet_cake": "red velvet",
+  "samosa": "^Samosa",
+  "sashimi": "^Fish, (tuna, |salmon, )?raw",
+  "scallops": "^Scallops",
+  "seaweed_salad": "^Seaweed",
+  "spaghetti_bolognese": "^Pasta with tomato-based sauce and meat|^Spaghetti with meat sauce",
+  "spring_rolls": "^Egg roll|spring roll|^Roll with meat and/or shrimp, vegetables and rice paper",
+  "steak": "^Beef, steak|^Steak, ",
+  "strawberry_shortcake": "strawberry shortcake",
+  "sushi": "^Sushi",
+  "tacos": "^Taco, ",
+  "tiramisu": "^Tiramisu",
+  "tuna_tartare": "^Fish, tuna, raw",
+  "waffles": "^Waffle, ",
+  "borscht": "borscht",
+  "deruny": "^Potato pancake",
+  "holubtsi": "^Stuffed cabbage",
+  "olivier_salad": "^Potato salad with egg",
+  "shashlik": "shish kabob",
+  "varenyky": "^Pierogi"
+ },
+ "prompt": "a photo of {}, a type of food."
+}
