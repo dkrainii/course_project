@@ -11,7 +11,8 @@ names. Everything else is done locally from these files by clip_analyze.py:
 * hybrid: the CNN where it is confident, CLIP elsewhere.
 
 Writes RUNS_DIR/<model>/{train,val,test}.npz (embeddings float16, targets, paths, sources) and
-text.npz (class-name vectors). A split that is already written is skipped, so an interrupted
+text.npz (class-name vectors); `--splits val test` skips the training photos, which only the
+linear probe needs. A split that is already written is skipped, so an interrupted
 session resumes.
 
     pip install open_clip_torch
@@ -30,11 +31,19 @@ from torch.utils.data import DataLoader
 from . import config
 from .train import ImageList, class_names, read_index
 
-# name -> (open_clip architecture, pretrained weights). All three are the original OpenAI models.
+# name -> (open_clip architecture, pretrained weights). The original OpenAI CLIP (400M pairs) and
+# newer image-text models trained on larger, filtered web data with the same idea:
+# SigLIP 2 (Google, WebLI, sigmoid loss), DFN-5B (Apple, data filtering network), MetaCLIP 2
+# (Meta, worldwide multilingual captions) and MobileCLIP2 (Apple, small image encoder).
 MODELS = {
     "clip_b32": ("ViT-B-32", "openai"),
     "clip_b16": ("ViT-B-16", "openai"),
     "clip_l14": ("ViT-L-14", "openai"),
+    "siglip2_b16": ("ViT-B-16-SigLIP2", "webli"),
+    "siglip2_so400m": ("ViT-SO400M-14-SigLIP2", "webli"),
+    "dfn5b_h14": ("ViT-H-14-quickgelu", "dfn5b"),
+    "metaclip2_h14": ("ViT-H-14-worldwide-quickgelu", "metaclip2_worldwide"),
+    "mobileclip2_s2": ("MobileCLIP2-S2", "dfndr2b"),
 }
 TEMPLATE = "a photo of {}, a type of food."  # the Food-101 prompt of the CLIP paper
 # Class labels as CLIP should read them: Food-101 labels with spaces, Ukrainian dishes with a gloss
@@ -85,7 +94,8 @@ def encode_images(model, loader: DataLoader, device: torch.device) -> np.ndarray
     return np.concatenate(out)
 
 
-def embed(name: str, workers: int = 2, batch_size: int = 256, device_name: str | None = None) -> None:
+def embed(name: str, workers: int = 2, batch_size: int = 256, device_name: str | None = None,
+          splits: tuple[str, ...] = SPLITS) -> None:
     device = torch.device(device_name or ("cuda" if torch.cuda.is_available() else "cpu"))
     out = config.RUNS_DIR / name
     out.mkdir(parents=True, exist_ok=True)
@@ -100,7 +110,7 @@ def embed(name: str, workers: int = 2, batch_size: int = 256, device_name: str |
                         embeddings=encode_text(model, tokenizer, prompts, device).astype(np.float16))
     (out / "classes.json").write_text(json.dumps(classes, ensure_ascii=False, indent=1), encoding="utf-8")
 
-    for split in SPLITS:
+    for split in splits:
         path = out / f"{split}.npz"
         if path.exists():
             print(f"[clip] {name} {split}: already done", flush=True)
@@ -123,5 +133,8 @@ if __name__ == "__main__":
     parser.add_argument("--workers", type=int, default=2)
     parser.add_argument("--batch-size", type=int, default=256)
     parser.add_argument("--device")
+    parser.add_argument("--splits", nargs="+", choices=SPLITS, default=list(SPLITS),
+                        help="train is only needed for the linear probe")
     args = parser.parse_args()
-    embed(args.model, workers=args.workers, batch_size=args.batch_size, device_name=args.device)
+    embed(args.model, workers=args.workers, batch_size=args.batch_size, device_name=args.device,
+          splits=tuple(args.splits))

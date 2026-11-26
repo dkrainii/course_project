@@ -80,7 +80,7 @@ for path in sorted(glob.glob(f'{DRIVE}/runs/*/metrics.json')):
 CLIP_CELLS: list[tuple[str, str]] = [
     ("markdown", """# Kolos: dish recognition — CLIP embeddings on Google Colab
 
-Step 3b of `ml/foodphoto` (see `ml/README.md`): runs three CLIP image encoders over the same
+Step 3b of `ml/foodphoto` (see `ml/README.md`): runs CLIP-style image encoders over the same
 photos as the trained CNN and saves the vectors to Drive. The comparison itself runs locally
 (`python -m ml.foodphoto.clip_analyze`), without a GPU.
 
@@ -90,8 +90,9 @@ notebook (`prepared.tar` on Drive) is reused, so step 4 takes a few minutes.
 **Every session:** *Runtime → Run all.* A finished part is skipped, so after a disconnect just run
 everything again.
 
-**At the end:** download `My Drive/Kolos/foodphoto/runs/clip_b32`, `clip_b16` and `clip_l14` and
-put them into `ml/models/foodphoto/` locally (~350 MB together)."""),
+**At the end:** download the `clip_*`, `siglip2_*`, `dfn5b_h14`, `metaclip2_h14` and
+`mobileclip2_s2` folders from `My Drive/Kolos/foodphoto/runs/` and put them into
+`ml/models/foodphoto/` locally (~700 MB together)."""),
     *SETUP,
     ("code", """# 5. CLIP library (OpenAI weights are downloaded on first use).
 !pip install -q open_clip_torch==4.2.2"""),
@@ -101,10 +102,26 @@ put them into `ml/models/foodphoto/` locally (~350 MB together)."""),
 !python -m ml.foodphoto.clip_embed --model clip_b16 --workers 2"""),
     ("code", """# 8. ViT-L/14: the largest (~25 min).
 !python -m ml.foodphoto.clip_embed --model clip_l14 --workers 2 --batch-size 128"""),
-    ("code", """# 9. What is on Drive (each model: text.npz, train.npz, val.npz, test.npz).
+    ("markdown", """## Newer image-text models
+
+Same idea as CLIP, trained on larger and better filtered data. Only the validation and test photos
+are encoded (`--splits val test`): enough for the zero-shot and open-vocabulary comparison.
+Each model is downloaded once (up to ~4 GB for the H/14 ones)."""),
+    ("code", """# 9. SigLIP 2 B/16 (Google), the size of CLIP B/16 (~3 min).
+!python -m ml.foodphoto.clip_embed --model siglip2_b16 --workers 2 --splits val test"""),
+    ("code", """# 10. SigLIP 2 SO400M/14 (~8 min).
+!python -m ml.foodphoto.clip_embed --model siglip2_so400m --workers 2 --batch-size 128 --splits val test"""),
+    ("code", """# 11. DFN-5B ViT-H/14 (Apple) (~10 min).
+!python -m ml.foodphoto.clip_embed --model dfn5b_h14 --workers 2 --batch-size 128 --splits val test"""),
+    ("code", """# 12. MetaCLIP 2 ViT-H/14, worldwide multilingual (Meta) (~10 min).
+!python -m ml.foodphoto.clip_embed --model metaclip2_h14 --workers 2 --batch-size 128 --splits val test"""),
+    ("code", """# 13. MobileCLIP2-S2 (Apple), a small image encoder (~3 min).
+!python -m ml.foodphoto.clip_embed --model mobileclip2_s2 --workers 2 --splits val test"""),
+    ("code", """# 14. What is on Drive (text.npz, val.npz, test.npz per model; train.npz for the OpenAI ones).
 import glob
-for path in sorted(glob.glob(f'{DRIVE}/runs/clip_*/*.npz')):
-    print(f'{os.path.getsize(path) / 1e6:7.1f} MB  {path}')"""),
+for path in sorted(glob.glob(f'{DRIVE}/runs/*/*.npz')):
+    if 'predictions' not in path:
+        print(f'{os.path.getsize(path) / 1e6:7.1f} MB  {path}')"""),
 ]
 
 
